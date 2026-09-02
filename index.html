@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DGX-Mac-Prefill-Sim — Local AI Speed Sim. Prefill + Decode.</title>
-<meta name="description" content="DGX Spark clusters vs Mac Studio on local LLM speed. Same model, same quant, real 61,475-token agentic context in real time, then type the answer at their true decode speed.">
+<title>Prefill Race — what "fast" actually means for local AI</title>
+<meta name="description" content="Pick any two machines. Watch them prefill a real 61,475-token agentic context in real time, then type the answer at their true decode speed.">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="themes.css">
 <link rel="stylesheet" href="v3.css">
@@ -51,7 +51,7 @@
     <h1 class="title">Local AI Speed Sim. <span class="accent">Prefill + Decode.</span></h1>
     <p class="lede">
       Agentic harnesses often start with a <strong>60k context before your prompt even begins</strong>.
-      This simulator incorporates that (defaulting to a <a href="#" id="cold-link" role="button" class="cache-link warm-link">cold harness</a>, which is much slower than <a href="#" id="warm-link" role="button" class="cache-link cold-link">when warm</a>) in an
+      This simulator incorporates that (defaulting to a <a href="#" id="cold-link" role="button" class="cache-link cold-link">cold harness</a>, which is much slower than <a href="#" id="warm-link" role="button" class="cache-link warm-link">when warm</a>) in an
       attempt to show you how it feels to hit enter on your prompt, have it prefill and THEN see the
       output (which is memory bandwidth bound).
     </p>
