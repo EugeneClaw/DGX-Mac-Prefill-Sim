@@ -178,7 +178,7 @@
    "decode_tps": 134,
    "decode_measured": true,
    "decode_modelled_tps": 12.965772589217918,
-   "decode_source": "1\u00d7Spark bake-off (2026-08-28, llama.cpp MTP-2, p-min 0): 131.6-137.1",
+   "decode_source": "owner's 1\u00d7Spark bake-off (2026-08-28, llama.cpp MTP-2, p-min 0): 131.6-137.1",
    "answer_s": 4.888059701492537,
    "total_cold_s": 121.62065883233092,
    "total_warm_s": 10.724689658034457,
@@ -186,7 +186,7 @@
     "stack_eff": 0.85,
     "prefill_tflops_usable": 36,
     "params_basis": "total",
-    "decode_basis": "measured: 1\u00d7Spark bake-off (2026-08-28, llama.cpp MTP-2, p-min 0): 131.6-137.1 = 134 t/s",
+    "decode_basis": "measured: owner's 1\u00d7Spark bake-off (2026-08-28, llama.cpp MTP-2, p-min 0): 131.6-137.1 = 134 t/s",
     "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
    }
   },
@@ -223,7 +223,7 @@
    "decode_tps": 134,
    "decode_measured": true,
    "decode_modelled_tps": 12.965772589217918,
-   "decode_source": "1\u00d7Spark bake-off (2026-08-28, llama.cpp MTP-2, p-min 0): 131.6-137.1",
+   "decode_source": "owner's 1\u00d7Spark bake-off (2026-08-28, llama.cpp MTP-2, p-min 0): 131.6-137.1",
    "answer_s": 4.888059701492537,
    "total_cold_s": 167.54823881823455,
    "total_warm_s": 13.021068657329637,
@@ -231,7 +231,7 @@
     "stack_eff": 0.61,
     "prefill_tflops_usable": 36,
     "params_basis": "total",
-    "decode_basis": "measured: 1\u00d7Spark bake-off (2026-08-28, llama.cpp MTP-2, p-min 0): 131.6-137.1 = 134 t/s",
+    "decode_basis": "measured: owner's 1\u00d7Spark bake-off (2026-08-28, llama.cpp MTP-2, p-min 0): 131.6-137.1 = 134 t/s",
     "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
    }
   },
@@ -1078,7 +1078,7 @@
    "decode_tps": 51,
    "decode_measured": true,
    "decode_modelled_tps": 107.59823148148146,
-   "decode_source": "Mia 2x-Spark prose table (community-corroborated 2026-09-01)",
+   "decode_source": "Mia 2x-Spark prose table (owner-corroborated 2026-09-01)",
    "answer_s": 12.843137254901961,
    "total_cold_s": 25.449249472055133,
    "total_warm_s": 13.473442865759619,
@@ -1086,7 +1086,7 @@
     "stack_eff": 0.85,
     "prefill_tflops_usable": 36,
     "params_basis": "active",
-    "decode_basis": "measured: Mia 2x-Spark prose table (community-corroborated 2026-09-01) = 51 t/s",
+    "decode_basis": "measured: Mia 2x-Spark prose table (owner-corroborated 2026-09-01) = 51 t/s",
     "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
    }
   },
@@ -1123,7 +1123,7 @@
    "decode_tps": 51,
    "decode_measured": true,
    "decode_modelled_tps": 107.59823148148146,
-   "decode_source": "Mia 2x-Spark prose table (community-corroborated 2026-09-01)",
+   "decode_source": "Mia 2x-Spark prose table (owner-corroborated 2026-09-01)",
    "answer_s": 12.843137254901961,
    "total_cold_s": 30.409031327984252,
    "total_warm_s": 13.721431958556076,
@@ -1131,7 +1131,7 @@
     "stack_eff": 0.61,
     "prefill_tflops_usable": 36,
     "params_basis": "active",
-    "decode_basis": "measured: Mia 2x-Spark prose table (community-corroborated 2026-09-01) = 51 t/s",
+    "decode_basis": "measured: Mia 2x-Spark prose table (owner-corroborated 2026-09-01) = 51 t/s",
     "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
    }
   },
@@ -1900,7 +1900,7 @@
    "decode_tps": 40,
    "decode_measured": true,
    "decode_modelled_tps": 59.56392881720429,
-   "decode_source": "Mia 2x-Spark prose table (community-corroborated 2026-09-01)",
+   "decode_source": "Mia 2x-Spark prose table (owner-corroborated 2026-09-01)",
    "answer_s": 16.375,
    "total_cold_s": 43.68824313716521,
    "total_warm_s": 17.74066215685826,
@@ -1908,7 +1908,7 @@
     "stack_eff": 0.85,
     "prefill_tflops_usable": 36,
     "params_basis": "active",
-    "decode_basis": "measured: Mia 2x-Spark prose table (community-corroborated 2026-09-01) = 40 t/s",
+    "decode_basis": "measured: Mia 2x-Spark prose table (owner-corroborated 2026-09-01) = 40 t/s",
     "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
    }
   },
@@ -1945,7 +1945,7 @@
    "decode_tps": 40,
    "decode_measured": true,
    "decode_modelled_tps": 59.56392881720429,
-   "decode_source": "Mia 2x-Spark prose table (community-corroborated 2026-09-01)",
+   "decode_source": "Mia 2x-Spark prose table (owner-corroborated 2026-09-01)",
    "answer_s": 16.375,
    "total_cold_s": 54.43443715834496,
    "total_warm_s": 18.277971857917247,
@@ -1953,7 +1953,7 @@
     "stack_eff": 0.61,
     "prefill_tflops_usable": 36,
     "params_basis": "active",
-    "decode_basis": "measured: Mia 2x-Spark prose table (community-corroborated 2026-09-01) = 40 t/s",
+    "decode_basis": "measured: Mia 2x-Spark prose table (owner-corroborated 2026-09-01) = 40 t/s",
     "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
    }
   },
@@ -2722,7 +2722,7 @@
    "decode_tps": 25,
    "decode_measured": true,
    "decode_modelled_tps": 21.13050590022199,
-   "decode_source": "Mia 2x-Spark prose table (community-corroborated 2026-09-01)",
+   "decode_source": "Mia 2x-Spark prose table (owner-corroborated 2026-09-01)",
    "answer_s": 26.2,
    "total_cold_s": 64.0183366514595,
    "total_warm_s": 28.090916832572976,
@@ -2730,7 +2730,7 @@
     "stack_eff": 0.85,
     "prefill_tflops_usable": 36,
     "params_basis": "active",
-    "decode_basis": "measured: Mia 2x-Spark prose table (community-corroborated 2026-09-01) = 25 t/s",
+    "decode_basis": "measured: Mia 2x-Spark prose table (owner-corroborated 2026-09-01) = 25 t/s",
     "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
    }
   },
@@ -2767,7 +2767,7 @@
    "decode_tps": 25,
    "decode_measured": true,
    "decode_modelled_tps": 21.13050590022199,
-   "decode_source": "Mia 2x-Spark prose table (community-corroborated 2026-09-01)",
+   "decode_source": "Mia 2x-Spark prose table (owner-corroborated 2026-09-01)",
    "answer_s": 26.2,
    "total_cold_s": 78.89768221924686,
    "total_warm_s": 28.834884110962342,
@@ -2775,7 +2775,7 @@
     "stack_eff": 0.61,
     "prefill_tflops_usable": 36,
     "params_basis": "active",
-    "decode_basis": "measured: Mia 2x-Spark prose table (community-corroborated 2026-09-01) = 25 t/s",
+    "decode_basis": "measured: Mia 2x-Spark prose table (owner-corroborated 2026-09-01) = 25 t/s",
     "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
    }
   },

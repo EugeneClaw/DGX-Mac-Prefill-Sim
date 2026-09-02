@@ -5,18 +5,18 @@ const $$ = (s) => [...document.querySelectorAll(s)];
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 let DATA = null, TRANSCRIPT = null;
-const SEL = { a: 'spark-2', b: 'm5u-256', model: null, stackA: null, stackB: null };
+const SEL = { a: 'spark-2', b: 'm5u-256', model: null };
 
 const fmt1 = (x) => Number(x).toFixed(1);
 const fmt2 = (x) => Number(x).toFixed(2);
 const fmtInt = (x) => Math.round(Number(x)).toLocaleString("en-US");
 
-function laneFor(machineId, modelId, stackId) {
-  return DATA.lanes.find((l) => l.machine_id === machineId && l.model.id === modelId && l.stack.id === stackId);
+function laneFor(machineId, modelId) {
+  return DATA.lanes.find((l) => l.machine_id === machineId && l.model.id === modelId);
 }
 function currentLanes() {
-  const a = laneFor(SEL.a, SEL.model, SEL.stackA);
-  const b = laneFor(SEL.b, SEL.model, SEL.stackB);
+  const a = laneFor(SEL.a, SEL.model);
+  const b = laneFor(SEL.b, SEL.model);
   return [a, b].filter(Boolean);
 }
 
@@ -34,15 +34,10 @@ function buildPickers() {
       b.innerHTML = `<span class="pk-label">${m.button ?? m.label}</span><span class="pk-ram">${m.ram}</span>`;
       b.addEventListener("click", () => {
         SEL[side] = m.id;
-        SEL[`stack${side.toUpperCase()}`] = m.stacks[0];
         syncAll();
       });
       wrap.appendChild(b);
     }
-    // stack toggles
-    const srow = $(`#stack-${side}`);
-    srow.innerHTML = "";
-    srow.dataset.side = side;
   }
   // model chips
   const mwrap = $("#model-chips");
@@ -57,32 +52,9 @@ function buildPickers() {
   }
 }
 
-function buildStackToggles() {
-  for (const side of ['a', 'b']) {
-    const mach = DATA.machines.find((m) => m.id === SEL[side]);
-    const srow = $(`#stack-${side}`);
-    srow.innerHTML = "";
-    if (!mach) continue;
-    for (const s of mach.stacks) {
-      const b = document.createElement("button");
-      b.className = "stack-chip";
-      b.textContent = { 'llamacpp-gguf-cuda': 'llama.cpp', 'vllm-tp': 'vLLM', 'llamacpp-metal': 'llama.cpp', 'mlx': 'MLX' }[s] || s;
-      b.dataset.stack = s;
-      b.addEventListener("click", () => { SEL[`stack${side.toUpperCase()}`] = s; syncAll(); });
-      srow.appendChild(b);
-    }
-  }
-}
-
 function syncPickerUI() {
   $$(".pick").forEach((b) => b.classList.toggle("active", Object.values(SEL).includes(b.dataset.machine) && (b.closest('#pick-a') ? SEL.a === b.dataset.machine : SEL.b === b.dataset.machine)));
   $$(".model-chip").forEach((b) => b.classList.toggle("active", b.dataset.model === SEL.model));
-  for (const side of ['a', 'b']) {
-    const mach = DATA.machines.find((m) => m.id === SEL[side]);
-    const cur = SEL[`stack${side.toUpperCase()}`];
-    $$(`#stack-${side} .stack-chip`).forEach((b) => b.classList.toggle("active", b.dataset.stack === cur));
-    void mach;
-  }
 }
 
 // ---------- lanes ----------
@@ -106,7 +78,7 @@ function buildLanes(lanes) {
       <div class="lane-head">
         <div>
           <div class="lane-name">${laneName(l)} <span class="ram-tag">${l.machine.ram}</span></div>
-          <div class="lane-sub">${l.stack.label} · ${l.model.name} ${l.quant.label}</div>
+          <div class="lane-sub">${l.model.name} ${l.quant.label}</div>
         </div>
         <span class="phase-tag" data-phase>PREFILL</span>
       </div>
@@ -134,7 +106,7 @@ function warmMode() { return $("#warm-btn").getAttribute("aria-pressed") === "tr
 function buildResults(lanes, winnerId) {
   const w = lanes.find((l) => l.id === winnerId);
   const warm = warmMode();
-  $("#winner-line").textContent = `${laneName(w)} (${w.stack.label}) wins in ${fmt1(warm ? w.total_warm_s : w.total_cold_s)}s`;
+  $("#winner-line").textContent = `${laneName(w)} wins in ${fmt1(warm ? w.total_warm_s : w.total_cold_s)}s`;
   $("#results-sub").textContent =
     `prefill ${fmt1(warm ? w.ttft_warm_s : w.ttft_cold_s)}s @ ${fmt1(w.prefill_tps)} tok/s · ` +
     `reply ${fmt1(w.answer_s)}s @ ${fmt1(w.decode_tps)} t/s ${w.decode_measured ? "(measured)" : "(modelled)"}`;
@@ -489,12 +461,6 @@ function syncAll() {
     $("#start-btn").disabled = false;
     $("#start-btn").textContent = "▶ START RACE";
   }
-  // ensure stacks valid for the chosen machines
-  const ma = DATA.machines.find((m) => m.id === SEL.a);
-  const mb = DATA.machines.find((m) => m.id === SEL.b);
-  if (!ma.stacks.includes(SEL.stackA)) SEL.stackA = ma.stacks[0];
-  if (!mb.stacks.includes(SEL.stackB)) SEL.stackB = mb.stacks[0];
-  buildStackToggles();
   syncPickerUI();
   buildStage();
   const lanes = currentLanes();
