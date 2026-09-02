@@ -6,14 +6,13 @@ A token speed simulator for local LLM hardware. Pick a DGX Spark cluster configu
 
 **Why the gap:** prefill is compute-bound and scales with the silicon you can put in parallel, while decode is memory-bandwidth-bound — which is why the Macs win the streaming numbers and the Spark clusters win the wait. The simulator models both phases separately so you can see where each machine wins, and serving-stack choice (llama.cpp / vLLM / MLX) is included because it moves prefill throughput more than the hardware does.
 
-## Run — just open the link
+## Run — use link below
 
 **https://eugeneclaw.github.io/DGX-Mac-Prefill-Sim/**
 
-Nothing to install, nothing to run — it's a static page, served by GitHub
-Pages. Works on desktop and phone.
+Works on desktop and phone.
 
-(Developers only: to run a copy locally, serve this directory with any static
+(If you want to run a copy locally, serve this directory with any static
 file server, e.g. `python3 -m http.server 8000`.)
 
 ## How it works
