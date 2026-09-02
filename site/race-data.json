@@ -1,0 +1,4255 @@
+{
+ "frozen_at": "2026-09-02T13:40:02.363Z",
+ "engine_law": "v3 (race-4) + measured decode receipts (race-6): docs/RECEIPTS-PREFILL-2026-09.md",
+ "scenario": {
+  "label": "Agentic harness \u2014 real 61k-token transcript",
+  "context_tokens": 61475,
+  "answer_tokens": 655,
+  "cache_share_warm": 0.95,
+  "style": "mixed"
+ },
+ "machines": [
+  {
+   "id": "spark-1",
+   "side": "spark",
+   "label": "DGX Spark",
+   "ram": "128 GB",
+   "stacks": [
+    "llamacpp-gguf-cuda",
+    "vllm-tp"
+   ],
+   "nodes": 1,
+   "button": "1\u00d7 DGX Spark"
+  },
+  {
+   "id": "spark-2",
+   "side": "spark",
+   "label": "DGX Spark",
+   "ram": "256 GB",
+   "stacks": [
+    "llamacpp-gguf-cuda",
+    "vllm-tp"
+   ],
+   "nodes": 2,
+   "button": "2\u00d7 DGX Spark"
+  },
+  {
+   "id": "spark-4",
+   "side": "spark",
+   "label": "DGX Spark",
+   "ram": "512 GB",
+   "stacks": [
+    "llamacpp-gguf-cuda",
+    "vllm-tp"
+   ],
+   "nodes": 4,
+   "button": "4\u00d7 DGX Spark"
+  },
+  {
+   "id": "m3u-96",
+   "side": "mac",
+   "label": "Mac Studio M3 Ultra",
+   "ram": "96 GB",
+   "stacks": [
+    "llamacpp-metal",
+    "mlx"
+   ],
+   "nodes": 1
+  },
+  {
+   "id": "m3u-256",
+   "side": "mac",
+   "label": "Mac Studio M3 Ultra",
+   "ram": "256 GB",
+   "stacks": [
+    "llamacpp-metal",
+    "mlx"
+   ],
+   "nodes": 1
+  },
+  {
+   "id": "m3u-512",
+   "side": "mac",
+   "label": "Mac Studio M3 Ultra",
+   "ram": "512 GB",
+   "stacks": [
+    "llamacpp-metal",
+    "mlx"
+   ],
+   "nodes": 1
+  },
+  {
+   "id": "m5max-128",
+   "side": "mac",
+   "label": "Mac Studio M5 Max",
+   "ram": "128 GB",
+   "stacks": [
+    "llamacpp-metal",
+    "mlx"
+   ],
+   "nodes": 1
+  },
+  {
+   "id": "m5u-256",
+   "side": "mac",
+   "label": "Mac Studio M5 Ultra",
+   "ram": "256 GB",
+   "stacks": [
+    "llamacpp-metal",
+    "mlx"
+   ],
+   "nodes": 1
+  },
+  {
+   "id": "m5u-512",
+   "side": "mac",
+   "label": "Mac Studio M5 Ultra",
+   "ram": "512 GB",
+   "stacks": [
+    "llamacpp-metal",
+    "mlx"
+   ],
+   "nodes": 1
+  }
+ ],
+ "models": [
+  {
+   "id": "qwen3.8-27b",
+   "name": "Qwen3.8-27B",
+   "quant": "ud_q4_k_xl",
+   "quant_label": "UD-Q4_K_XL"
+  },
+  {
+   "id": "qwen3.8-flash-next",
+   "name": "Qwen3.8-Flash-Next",
+   "quant": "q4_k_m",
+   "quant_label": "UD-Q4_K_XL"
+  },
+  {
+   "id": "dsv4-flash-vision-exp",
+   "name": "DeepSeek-V4-Flash-Vision-Exp",
+   "quant": "q4_k_m",
+   "quant_label": "UD-Q4_K_XL"
+  },
+  {
+   "id": "glm-5.3-flash",
+   "name": "GLM-5.3-Flash",
+   "quant": "ud_q4_k_xl",
+   "quant_label": "UD-Q4_K_XL"
+  },
+  {
+   "id": "glm-5.3",
+   "name": "GLM-5.3",
+   "quant": "ud_q2_k_xl",
+   "quant_label": "UD-Q2_K_XL"
+  }
+ ],
+ "lanes": [
+  {
+   "id": "qwen3.8-27b__spark-1__llamacpp-gguf-cuda",
+   "side": "spark",
+   "machine_id": "spark-1",
+   "machine": {
+    "label": "DGX Spark",
+    "ram": "128 GB",
+    "nodes": 1,
+    "hw_id": "dgx-spark-128"
+   },
+   "stack": {
+    "id": "llamacpp-gguf-cuda",
+    "label": "llama.cpp GGUF"
+   },
+   "model": {
+    "id": "qwen3.8-27b",
+    "name": "Qwen3.8-27B",
+    "params_total_b": 27.78,
+    "params_active_b": 27.78
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 17.56
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 526.6309536301549,
+   "ttft_cold_s": 116.73259913083838,
+   "ttft_warm_s": 5.836629956541919,
+   "decode_tps": 134,
+   "decode_measured": true,
+   "decode_modelled_tps": 12.965772589217918,
+   "decode_source": "1\u00d7Spark bake-off (2026-08-28, llama.cpp MTP-2, p-min 0): 131.6-137.1",
+   "answer_s": 4.888059701492537,
+   "total_cold_s": 121.62065883233092,
+   "total_warm_s": 10.724689658034457,
+   "provenance": {
+    "stack_eff": 0.85,
+    "prefill_tflops_usable": 36,
+    "params_basis": "total",
+    "decode_basis": "measured: 1\u00d7Spark bake-off (2026-08-28, llama.cpp MTP-2, p-min 0): 131.6-137.1 = 134 t/s",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-27b__spark-1__vllm-tp",
+   "side": "spark",
+   "machine_id": "spark-1",
+   "machine": {
+    "label": "DGX Spark",
+    "ram": "128 GB",
+    "nodes": 1,
+    "hw_id": "dgx-spark-128"
+   },
+   "stack": {
+    "id": "vllm-tp",
+    "label": "vLLM TP (tuned)"
+   },
+   "model": {
+    "id": "qwen3.8-27b",
+    "name": "Qwen3.8-27B",
+    "params_total_b": 27.78,
+    "params_active_b": 27.78
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 17.56
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 377.9351549581111,
+   "ttft_cold_s": 162.660179116742,
+   "ttft_warm_s": 8.1330089558371,
+   "decode_tps": 134,
+   "decode_measured": true,
+   "decode_modelled_tps": 12.965772589217918,
+   "decode_source": "1\u00d7Spark bake-off (2026-08-28, llama.cpp MTP-2, p-min 0): 131.6-137.1",
+   "answer_s": 4.888059701492537,
+   "total_cold_s": 167.54823881823455,
+   "total_warm_s": 13.021068657329637,
+   "provenance": {
+    "stack_eff": 0.61,
+    "prefill_tflops_usable": 36,
+    "params_basis": "total",
+    "decode_basis": "measured: 1\u00d7Spark bake-off (2026-08-28, llama.cpp MTP-2, p-min 0): 131.6-137.1 = 134 t/s",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-27b__spark-2__llamacpp-gguf-cuda",
+   "side": "spark",
+   "machine_id": "spark-2",
+   "machine": {
+    "label": "DGX Spark",
+    "ram": "256 GB",
+    "nodes": 2,
+    "hw_id": "dgx-spark-128"
+   },
+   "stack": {
+    "id": "llamacpp-gguf-cuda",
+    "label": "llama.cpp GGUF"
+   },
+   "model": {
+    "id": "qwen3.8-27b",
+    "name": "Qwen3.8-27B",
+    "params_total_b": 27.78,
+    "params_active_b": 27.78
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 17.56
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 1053.2619072603097,
+   "ttft_cold_s": 58.36629956541919,
+   "ttft_warm_s": 2.9183149782709594,
+   "decode_tps": 23.98667929005315,
+   "decode_measured": false,
+   "decode_modelled_tps": 23.98667929005315,
+   "decode_source": null,
+   "answer_s": 27.306822761065426,
+   "total_cold_s": 85.67312232648462,
+   "total_warm_s": 30.225137739336386,
+   "provenance": {
+    "stack_eff": 0.85,
+    "prefill_tflops_usable": 36,
+    "params_basis": "total",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-27b__spark-2__vllm-tp",
+   "side": "spark",
+   "machine_id": "spark-2",
+   "machine": {
+    "label": "DGX Spark",
+    "ram": "256 GB",
+    "nodes": 2,
+    "hw_id": "dgx-spark-128"
+   },
+   "stack": {
+    "id": "vllm-tp",
+    "label": "vLLM TP (tuned)"
+   },
+   "model": {
+    "id": "qwen3.8-27b",
+    "name": "Qwen3.8-27B",
+    "params_total_b": 27.78,
+    "params_active_b": 27.78
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 17.56
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 755.8703099162223,
+   "ttft_cold_s": 81.330089558371,
+   "ttft_warm_s": 4.06650447791855,
+   "decode_tps": 23.98667929005315,
+   "decode_measured": false,
+   "decode_modelled_tps": 23.98667929005315,
+   "decode_source": null,
+   "answer_s": 27.306822761065426,
+   "total_cold_s": 108.63691231943642,
+   "total_warm_s": 31.373327238983975,
+   "provenance": {
+    "stack_eff": 0.61,
+    "prefill_tflops_usable": 36,
+    "params_basis": "total",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-27b__spark-4__llamacpp-gguf-cuda",
+   "side": "spark",
+   "machine_id": "spark-4",
+   "machine": {
+    "label": "DGX Spark",
+    "ram": "512 GB",
+    "nodes": 4,
+    "hw_id": "dgx-spark-128"
+   },
+   "stack": {
+    "id": "llamacpp-gguf-cuda",
+    "label": "llama.cpp GGUF"
+   },
+   "model": {
+    "id": "qwen3.8-27b",
+    "name": "Qwen3.8-27B",
+    "params_total_b": 27.78,
+    "params_active_b": 27.78
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 17.56
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 2106.5238145206195,
+   "ttft_cold_s": 29.183149782709595,
+   "ttft_warm_s": 1.4591574891354797,
+   "decode_tps": 26.190860630220197,
+   "decode_measured": false,
+   "decode_modelled_tps": 26.190860630220197,
+   "decode_source": null,
+   "answer_s": 25.008723815827246,
+   "total_cold_s": 54.191873598536844,
+   "total_warm_s": 26.467881304962724,
+   "provenance": {
+    "stack_eff": 0.85,
+    "prefill_tflops_usable": 36,
+    "params_basis": "total",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-27b__spark-4__vllm-tp",
+   "side": "spark",
+   "machine_id": "spark-4",
+   "machine": {
+    "label": "DGX Spark",
+    "ram": "512 GB",
+    "nodes": 4,
+    "hw_id": "dgx-spark-128"
+   },
+   "stack": {
+    "id": "vllm-tp",
+    "label": "vLLM TP (tuned)"
+   },
+   "model": {
+    "id": "qwen3.8-27b",
+    "name": "Qwen3.8-27B",
+    "params_total_b": 27.78,
+    "params_active_b": 27.78
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 17.56
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 1511.7406198324445,
+   "ttft_cold_s": 40.6650447791855,
+   "ttft_warm_s": 2.033252238959275,
+   "decode_tps": 26.190860630220197,
+   "decode_measured": false,
+   "decode_modelled_tps": 26.190860630220197,
+   "decode_source": null,
+   "answer_s": 25.008723815827246,
+   "total_cold_s": 65.67376859501275,
+   "total_warm_s": 27.04197605478652,
+   "provenance": {
+    "stack_eff": 0.61,
+    "prefill_tflops_usable": 36,
+    "params_basis": "total",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-27b__m3u-96__llamacpp-metal",
+   "side": "mac",
+   "machine_id": "m3u-96",
+   "machine": {
+    "label": "Mac Studio M3 Ultra",
+    "ram": "96 GB",
+    "nodes": 1,
+    "hw_id": "mac-m3-ultra-96"
+   },
+   "stack": {
+    "id": "llamacpp-metal",
+    "label": "llama.cpp Metal"
+   },
+   "model": {
+    "id": "qwen3.8-27b",
+    "name": "Qwen3.8-27B",
+    "params_total_b": 27.78,
+    "params_active_b": 27.78
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 17.56
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 520.4352953521532,
+   "ttft_cold_s": 118.122272930015,
+   "ttft_warm_s": 5.906113646500749,
+   "decode_tps": 21.920842824601365,
+   "decode_measured": false,
+   "decode_modelled_tps": 21.920842824601365,
+   "decode_source": null,
+   "answer_s": 29.88023796534435,
+   "total_cold_s": 148.00251089535936,
+   "total_warm_s": 35.7863516118451,
+   "provenance": {
+    "stack_eff": 0.56,
+    "prefill_tflops_usable": 54,
+    "params_basis": "total",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-27b__m3u-96__mlx",
+   "side": "mac",
+   "machine_id": "m3u-96",
+   "machine": {
+    "label": "Mac Studio M3 Ultra",
+    "ram": "96 GB",
+    "nodes": 1,
+    "hw_id": "mac-m3-ultra-96"
+   },
+   "stack": {
+    "id": "mlx",
+    "label": "MLX"
+   },
+   "model": {
+    "id": "qwen3.8-27b",
+    "name": "Qwen3.8-27B",
+    "params_total_b": 27.78,
+    "params_active_b": 27.78
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 17.56
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 371.7394966801093,
+   "ttft_cold_s": 165.37118210202104,
+   "ttft_warm_s": 8.268559105101051,
+   "decode_tps": 21.920842824601365,
+   "decode_measured": false,
+   "decode_modelled_tps": 21.920842824601365,
+   "decode_source": null,
+   "answer_s": 29.88023796534435,
+   "total_cold_s": 195.2514200673654,
+   "total_warm_s": 38.1487970704454,
+   "provenance": {
+    "stack_eff": 0.4,
+    "prefill_tflops_usable": 54,
+    "params_basis": "total",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-27b__m3u-256__llamacpp-metal",
+   "side": "mac",
+   "machine_id": "m3u-256",
+   "machine": {
+    "label": "Mac Studio M3 Ultra",
+    "ram": "256 GB",
+    "nodes": 1,
+    "hw_id": "mac-m3-ultra-256"
+   },
+   "stack": {
+    "id": "llamacpp-metal",
+    "label": "llama.cpp Metal"
+   },
+   "model": {
+    "id": "qwen3.8-27b",
+    "name": "Qwen3.8-27B",
+    "params_total_b": 27.78,
+    "params_active_b": 27.78
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 17.56
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 520.4352953521532,
+   "ttft_cold_s": 118.122272930015,
+   "ttft_warm_s": 5.906113646500749,
+   "decode_tps": 21.920842824601365,
+   "decode_measured": false,
+   "decode_modelled_tps": 21.920842824601365,
+   "decode_source": null,
+   "answer_s": 29.88023796534435,
+   "total_cold_s": 148.00251089535936,
+   "total_warm_s": 35.7863516118451,
+   "provenance": {
+    "stack_eff": 0.56,
+    "prefill_tflops_usable": 54,
+    "params_basis": "total",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-27b__m3u-256__mlx",
+   "side": "mac",
+   "machine_id": "m3u-256",
+   "machine": {
+    "label": "Mac Studio M3 Ultra",
+    "ram": "256 GB",
+    "nodes": 1,
+    "hw_id": "mac-m3-ultra-256"
+   },
+   "stack": {
+    "id": "mlx",
+    "label": "MLX"
+   },
+   "model": {
+    "id": "qwen3.8-27b",
+    "name": "Qwen3.8-27B",
+    "params_total_b": 27.78,
+    "params_active_b": 27.78
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 17.56
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 371.7394966801093,
+   "ttft_cold_s": 165.37118210202104,
+   "ttft_warm_s": 8.268559105101051,
+   "decode_tps": 21.920842824601365,
+   "decode_measured": false,
+   "decode_modelled_tps": 21.920842824601365,
+   "decode_source": null,
+   "answer_s": 29.88023796534435,
+   "total_cold_s": 195.2514200673654,
+   "total_warm_s": 38.1487970704454,
+   "provenance": {
+    "stack_eff": 0.4,
+    "prefill_tflops_usable": 54,
+    "params_basis": "total",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-27b__m3u-512__llamacpp-metal",
+   "side": "mac",
+   "machine_id": "m3u-512",
+   "machine": {
+    "label": "Mac Studio M3 Ultra",
+    "ram": "512 GB",
+    "nodes": 1,
+    "hw_id": "mac-m3-ultra-512"
+   },
+   "stack": {
+    "id": "llamacpp-metal",
+    "label": "llama.cpp Metal"
+   },
+   "model": {
+    "id": "qwen3.8-27b",
+    "name": "Qwen3.8-27B",
+    "params_total_b": 27.78,
+    "params_active_b": 27.78
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 17.56
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 520.4352953521532,
+   "ttft_cold_s": 118.122272930015,
+   "ttft_warm_s": 5.906113646500749,
+   "decode_tps": 24.252847380410024,
+   "decode_measured": false,
+   "decode_modelled_tps": 24.252847380410024,
+   "decode_source": null,
+   "answer_s": 27.00713816098431,
+   "total_cold_s": 145.12941109099933,
+   "total_warm_s": 32.91325180748506,
+   "provenance": {
+    "stack_eff": 0.56,
+    "prefill_tflops_usable": 54,
+    "params_basis": "total",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-27b__m3u-512__mlx",
+   "side": "mac",
+   "machine_id": "m3u-512",
+   "machine": {
+    "label": "Mac Studio M3 Ultra",
+    "ram": "512 GB",
+    "nodes": 1,
+    "hw_id": "mac-m3-ultra-512"
+   },
+   "stack": {
+    "id": "mlx",
+    "label": "MLX"
+   },
+   "model": {
+    "id": "qwen3.8-27b",
+    "name": "Qwen3.8-27B",
+    "params_total_b": 27.78,
+    "params_active_b": 27.78
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 17.56
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 371.7394966801093,
+   "ttft_cold_s": 165.37118210202104,
+   "ttft_warm_s": 8.268559105101051,
+   "decode_tps": 24.252847380410024,
+   "decode_measured": false,
+   "decode_modelled_tps": 24.252847380410024,
+   "decode_source": null,
+   "answer_s": 27.00713816098431,
+   "total_cold_s": 192.37832026300535,
+   "total_warm_s": 35.27569726608536,
+   "provenance": {
+    "stack_eff": 0.4,
+    "prefill_tflops_usable": 54,
+    "params_basis": "total",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-27b__m5max-128__llamacpp-metal",
+   "side": "mac",
+   "machine_id": "m5max-128",
+   "machine": {
+    "label": "Mac Studio M5 Max",
+    "ram": "128 GB",
+    "nodes": 1,
+    "hw_id": "mac-m5-max-128"
+   },
+   "stack": {
+    "id": "llamacpp-metal",
+    "label": "llama.cpp Metal"
+   },
+   "model": {
+    "id": "qwen3.8-27b",
+    "name": "Qwen3.8-27B",
+    "params_total_b": 27.78,
+    "params_active_b": 27.78
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 17.56
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 260.2176476760766,
+   "ttft_cold_s": 236.24454586003,
+   "ttft_warm_s": 11.812227293001499,
+   "decode_tps": 16.43394077448747,
+   "decode_measured": false,
+   "decode_modelled_tps": 16.43394077448747,
+   "decode_source": null,
+   "answer_s": 39.8565389146857,
+   "total_cold_s": 276.1010847747157,
+   "total_warm_s": 51.6687662076872,
+   "provenance": {
+    "stack_eff": 0.56,
+    "prefill_tflops_usable": 27,
+    "params_basis": "total",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-27b__m5max-128__mlx",
+   "side": "mac",
+   "machine_id": "m5max-128",
+   "machine": {
+    "label": "Mac Studio M5 Max",
+    "ram": "128 GB",
+    "nodes": 1,
+    "hw_id": "mac-m5-max-128"
+   },
+   "stack": {
+    "id": "mlx",
+    "label": "MLX"
+   },
+   "model": {
+    "id": "qwen3.8-27b",
+    "name": "Qwen3.8-27B",
+    "params_total_b": 27.78,
+    "params_active_b": 27.78
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 17.56
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 185.86974834005466,
+   "ttft_cold_s": 330.7423642040421,
+   "ttft_warm_s": 16.537118210202102,
+   "decode_tps": 16.43394077448747,
+   "decode_measured": false,
+   "decode_modelled_tps": 16.43394077448747,
+   "decode_source": null,
+   "answer_s": 39.8565389146857,
+   "total_cold_s": 370.5989031187278,
+   "total_warm_s": 56.3936571248878,
+   "provenance": {
+    "stack_eff": 0.4,
+    "prefill_tflops_usable": 27,
+    "params_basis": "total",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-27b__m5u-256__llamacpp-metal",
+   "side": "mac",
+   "machine_id": "m5u-256",
+   "machine": {
+    "label": "Mac Studio M5 Ultra",
+    "ram": "256 GB",
+    "nodes": 1,
+    "hw_id": "mac-m5-ultra-256"
+   },
+   "stack": {
+    "id": "llamacpp-metal",
+    "label": "llama.cpp Metal"
+   },
+   "model": {
+    "id": "qwen3.8-27b",
+    "name": "Qwen3.8-27B",
+    "params_total_b": 27.78,
+    "params_active_b": 27.78
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 17.56
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 520.4352953521532,
+   "ttft_cold_s": 118.122272930015,
+   "ttft_warm_s": 5.906113646500749,
+   "decode_tps": 35.535307517084284,
+   "decode_measured": false,
+   "decode_modelled_tps": 35.535307517084284,
+   "decode_source": null,
+   "answer_s": 18.432371794871795,
+   "total_cold_s": 136.5546447248868,
+   "total_warm_s": 24.338485441372544,
+   "provenance": {
+    "stack_eff": 0.56,
+    "prefill_tflops_usable": 54,
+    "params_basis": "total",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-27b__m5u-256__mlx",
+   "side": "mac",
+   "machine_id": "m5u-256",
+   "machine": {
+    "label": "Mac Studio M5 Ultra",
+    "ram": "256 GB",
+    "nodes": 1,
+    "hw_id": "mac-m5-ultra-256"
+   },
+   "stack": {
+    "id": "mlx",
+    "label": "MLX"
+   },
+   "model": {
+    "id": "qwen3.8-27b",
+    "name": "Qwen3.8-27B",
+    "params_total_b": 27.78,
+    "params_active_b": 27.78
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 17.56
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 371.7394966801093,
+   "ttft_cold_s": 165.37118210202104,
+   "ttft_warm_s": 8.268559105101051,
+   "decode_tps": 35.535307517084284,
+   "decode_measured": false,
+   "decode_modelled_tps": 35.535307517084284,
+   "decode_source": null,
+   "answer_s": 18.432371794871795,
+   "total_cold_s": 183.80355389689282,
+   "total_warm_s": 26.700930899972846,
+   "provenance": {
+    "stack_eff": 0.4,
+    "prefill_tflops_usable": 54,
+    "params_basis": "total",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-27b__m5u-512__llamacpp-metal",
+   "side": "mac",
+   "machine_id": "m5u-512",
+   "machine": {
+    "label": "Mac Studio M5 Ultra",
+    "ram": "512 GB",
+    "nodes": 1,
+    "hw_id": "mac-m5-ultra-512"
+   },
+   "stack": {
+    "id": "llamacpp-metal",
+    "label": "llama.cpp Metal"
+   },
+   "model": {
+    "id": "qwen3.8-27b",
+    "name": "Qwen3.8-27B",
+    "params_total_b": 27.78,
+    "params_active_b": 27.78
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 17.56
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 520.4352953521532,
+   "ttft_cold_s": 118.122272930015,
+   "ttft_warm_s": 5.906113646500749,
+   "decode_tps": 32.11845102505695,
+   "decode_measured": false,
+   "decode_modelled_tps": 32.11845102505695,
+   "decode_source": null,
+   "answer_s": 20.393262411347518,
+   "total_cold_s": 138.51553534136252,
+   "total_warm_s": 26.299376057848267,
+   "provenance": {
+    "stack_eff": 0.56,
+    "prefill_tflops_usable": 54,
+    "params_basis": "total",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-27b__m5u-512__mlx",
+   "side": "mac",
+   "machine_id": "m5u-512",
+   "machine": {
+    "label": "Mac Studio M5 Ultra",
+    "ram": "512 GB",
+    "nodes": 1,
+    "hw_id": "mac-m5-ultra-512"
+   },
+   "stack": {
+    "id": "mlx",
+    "label": "MLX"
+   },
+   "model": {
+    "id": "qwen3.8-27b",
+    "name": "Qwen3.8-27B",
+    "params_total_b": 27.78,
+    "params_active_b": 27.78
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 17.56
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 371.7394966801093,
+   "ttft_cold_s": 165.37118210202104,
+   "ttft_warm_s": 8.268559105101051,
+   "decode_tps": 32.11845102505695,
+   "decode_measured": false,
+   "decode_modelled_tps": 32.11845102505695,
+   "decode_source": null,
+   "answer_s": 20.393262411347518,
+   "total_cold_s": 185.76444451336855,
+   "total_warm_s": 28.66182151644857,
+   "provenance": {
+    "stack_eff": 0.4,
+    "prefill_tflops_usable": 54,
+    "params_basis": "total",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-flash-next__spark-1__llamacpp-gguf-cuda",
+   "side": "spark",
+   "machine_id": "spark-1",
+   "machine": {
+    "label": "DGX Spark",
+    "ram": "128 GB",
+    "nodes": 1,
+    "hw_id": "dgx-spark-128"
+   },
+   "stack": {
+    "id": "llamacpp-gguf-cuda",
+    "label": "llama.cpp GGUF"
+   },
+   "model": {
+    "id": "qwen3.8-flash-next",
+    "name": "Qwen3.8-Flash-Next",
+    "params_total_b": 176,
+    "params_active_b": 6
+   },
+   "quant": {
+    "id": "nvfp4-ple-offload",
+    "label": "NVFP4 + PLE-offload (blazux)",
+    "size_gb": 78
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 2438.301315307617,
+   "ttft_cold_s": 25.212224434306343,
+   "ttft_warm_s": 1.2606112217153171,
+   "decode_tps": 82.76787037037037,
+   "decode_measured": false,
+   "decode_modelled_tps": 82.76787037037037,
+   "decode_source": null,
+   "answer_s": 7.91369884315013,
+   "total_cold_s": 33.12592327745647,
+   "total_warm_s": 9.174310064865448,
+   "provenance": {
+    "stack_eff": 0.85,
+    "prefill_tflops_usable": 36,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-flash-next__spark-1__vllm-tp",
+   "side": "spark",
+   "machine_id": "spark-1",
+   "machine": {
+    "label": "DGX Spark",
+    "ram": "128 GB",
+    "nodes": 1,
+    "hw_id": "dgx-spark-128"
+   },
+   "stack": {
+    "id": "vllm-tp",
+    "label": "vLLM TP (tuned)"
+   },
+   "model": {
+    "id": "qwen3.8-flash-next",
+    "name": "Qwen3.8-Flash-Next",
+    "params_total_b": 176,
+    "params_active_b": 6
+   },
+   "quant": {
+    "id": "nvfp4-ple-offload",
+    "label": "NVFP4 + PLE-offload (blazux)",
+    "size_gb": 78
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 1749.8397674560545,
+   "ttft_cold_s": 35.13178814616458,
+   "ttft_warm_s": 1.756589407308229,
+   "decode_tps": 82.76787037037037,
+   "decode_measured": false,
+   "decode_modelled_tps": 82.76787037037037,
+   "decode_source": null,
+   "answer_s": 7.91369884315013,
+   "total_cold_s": 43.04548698931471,
+   "total_warm_s": 9.67028825045836,
+   "provenance": {
+    "stack_eff": 0.61,
+    "prefill_tflops_usable": 36,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-flash-next__spark-2__llamacpp-gguf-cuda",
+   "side": "spark",
+   "machine_id": "spark-2",
+   "machine": {
+    "label": "DGX Spark",
+    "ram": "256 GB",
+    "nodes": 2,
+    "hw_id": "dgx-spark-128"
+   },
+   "stack": {
+    "id": "llamacpp-gguf-cuda",
+    "label": "llama.cpp GGUF"
+   },
+   "model": {
+    "id": "qwen3.8-flash-next",
+    "name": "Qwen3.8-Flash-Next",
+    "params_total_b": 176,
+    "params_active_b": 6
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 111
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 4876.602630615234,
+   "ttft_cold_s": 12.606112217153171,
+   "ttft_warm_s": 0.6303056108576586,
+   "decode_tps": 51,
+   "decode_measured": true,
+   "decode_modelled_tps": 107.59823148148146,
+   "decode_source": "Mia 2x-Spark prose table (community-corroborated 2026-09-01)",
+   "answer_s": 12.843137254901961,
+   "total_cold_s": 25.449249472055133,
+   "total_warm_s": 13.473442865759619,
+   "provenance": {
+    "stack_eff": 0.85,
+    "prefill_tflops_usable": 36,
+    "params_basis": "active",
+    "decode_basis": "measured: Mia 2x-Spark prose table (community-corroborated 2026-09-01) = 51 t/s",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-flash-next__spark-2__vllm-tp",
+   "side": "spark",
+   "machine_id": "spark-2",
+   "machine": {
+    "label": "DGX Spark",
+    "ram": "256 GB",
+    "nodes": 2,
+    "hw_id": "dgx-spark-128"
+   },
+   "stack": {
+    "id": "vllm-tp",
+    "label": "vLLM TP (tuned)"
+   },
+   "model": {
+    "id": "qwen3.8-flash-next",
+    "name": "Qwen3.8-Flash-Next",
+    "params_total_b": 176,
+    "params_active_b": 6
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 111
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 3499.679534912109,
+   "ttft_cold_s": 17.56589407308229,
+   "ttft_warm_s": 0.8782947036541146,
+   "decode_tps": 51,
+   "decode_measured": true,
+   "decode_modelled_tps": 107.59823148148146,
+   "decode_source": "Mia 2x-Spark prose table (community-corroborated 2026-09-01)",
+   "answer_s": 12.843137254901961,
+   "total_cold_s": 30.409031327984252,
+   "total_warm_s": 13.721431958556076,
+   "provenance": {
+    "stack_eff": 0.61,
+    "prefill_tflops_usable": 36,
+    "params_basis": "active",
+    "decode_basis": "measured: Mia 2x-Spark prose table (community-corroborated 2026-09-01) = 51 t/s",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-flash-next__spark-4__llamacpp-gguf-cuda",
+   "side": "spark",
+   "machine_id": "spark-4",
+   "machine": {
+    "label": "DGX Spark",
+    "ram": "512 GB",
+    "nodes": 4,
+    "hw_id": "dgx-spark-128"
+   },
+   "stack": {
+    "id": "llamacpp-gguf-cuda",
+    "label": "llama.cpp GGUF"
+   },
+   "model": {
+    "id": "qwen3.8-flash-next",
+    "name": "Qwen3.8-Flash-Next",
+    "params_total_b": 176,
+    "params_active_b": 6
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 111
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 9753.205261230469,
+   "ttft_cold_s": 6.303056108576586,
+   "ttft_warm_s": 0.3151528054288293,
+   "decode_tps": 117.48563653653652,
+   "decode_measured": false,
+   "decode_modelled_tps": 117.48563653653652,
+   "decode_source": null,
+   "answer_s": 5.5751496038948,
+   "total_cold_s": 11.878205712471384,
+   "total_warm_s": 5.890302409323629,
+   "provenance": {
+    "stack_eff": 0.85,
+    "prefill_tflops_usable": 36,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-flash-next__spark-4__vllm-tp",
+   "side": "spark",
+   "machine_id": "spark-4",
+   "machine": {
+    "label": "DGX Spark",
+    "ram": "512 GB",
+    "nodes": 4,
+    "hw_id": "dgx-spark-128"
+   },
+   "stack": {
+    "id": "vllm-tp",
+    "label": "vLLM TP (tuned)"
+   },
+   "model": {
+    "id": "qwen3.8-flash-next",
+    "name": "Qwen3.8-Flash-Next",
+    "params_total_b": 176,
+    "params_active_b": 6
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 111
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 6999.359069824218,
+   "ttft_cold_s": 8.782947036541145,
+   "ttft_warm_s": 0.4391473518270573,
+   "decode_tps": 117.48563653653652,
+   "decode_measured": false,
+   "decode_modelled_tps": 117.48563653653652,
+   "decode_source": null,
+   "answer_s": 5.5751496038948,
+   "total_cold_s": 14.358096640435946,
+   "total_warm_s": 6.014296955721857,
+   "provenance": {
+    "stack_eff": 0.61,
+    "prefill_tflops_usable": 36,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-flash-next__m3u-96__llamacpp-metal",
+   "side": "mac",
+   "machine_id": "m3u-96",
+   "machine": {
+    "label": "Mac Studio M3 Ultra",
+    "ram": "96 GB",
+    "nodes": 1,
+    "hw_id": "mac-m3-ultra-96"
+   },
+   "stack": {
+    "id": "llamacpp-metal",
+    "label": "llama.cpp Metal"
+   },
+   "model": {
+    "id": "qwen3.8-flash-next",
+    "name": "Qwen3.8-Flash-Next",
+    "params_total_b": 176,
+    "params_active_b": 6
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 111
+   },
+   "fits": false,
+   "fit_detail": {
+    "needs_gb": 112.40705108642578
+   },
+   "prefill_tps": 2409.615417480469,
+   "ttft_cold_s": 25.512369963286176,
+   "ttft_warm_s": 1.2756184981643088,
+   "decode_tps": 101.72324324324323,
+   "decode_measured": false,
+   "decode_modelled_tps": 101.72324324324323,
+   "decode_source": null,
+   "answer_s": 6.4390396837205355,
+   "total_cold_s": 31.951409647006713,
+   "total_warm_s": 7.714658181884844,
+   "provenance": {
+    "stack_eff": 0.56,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-flash-next__m3u-96__mlx",
+   "side": "mac",
+   "machine_id": "m3u-96",
+   "machine": {
+    "label": "Mac Studio M3 Ultra",
+    "ram": "96 GB",
+    "nodes": 1,
+    "hw_id": "mac-m3-ultra-96"
+   },
+   "stack": {
+    "id": "mlx",
+    "label": "MLX"
+   },
+   "model": {
+    "id": "qwen3.8-flash-next",
+    "name": "Qwen3.8-Flash-Next",
+    "params_total_b": 176,
+    "params_active_b": 6
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 111
+   },
+   "fits": false,
+   "fit_detail": {
+    "needs_gb": 112.40705108642578
+   },
+   "prefill_tps": 1721.153869628906,
+   "ttft_cold_s": 35.71731794860066,
+   "ttft_warm_s": 1.7858658974300328,
+   "decode_tps": 101.72324324324323,
+   "decode_measured": false,
+   "decode_modelled_tps": 101.72324324324323,
+   "decode_source": null,
+   "answer_s": 6.4390396837205355,
+   "total_cold_s": 42.156357632321196,
+   "total_warm_s": 8.22490558115057,
+   "provenance": {
+    "stack_eff": 0.4,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-flash-next__m3u-256__llamacpp-metal",
+   "side": "mac",
+   "machine_id": "m3u-256",
+   "machine": {
+    "label": "Mac Studio M3 Ultra",
+    "ram": "256 GB",
+    "nodes": 1,
+    "hw_id": "mac-m3-ultra-256"
+   },
+   "stack": {
+    "id": "llamacpp-metal",
+    "label": "llama.cpp Metal"
+   },
+   "model": {
+    "id": "qwen3.8-flash-next",
+    "name": "Qwen3.8-Flash-Next",
+    "params_total_b": 176,
+    "params_active_b": 6
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 111
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 2409.615417480469,
+   "ttft_cold_s": 25.512369963286176,
+   "ttft_warm_s": 1.2756184981643088,
+   "decode_tps": 101.72324324324323,
+   "decode_measured": false,
+   "decode_modelled_tps": 101.72324324324323,
+   "decode_source": null,
+   "answer_s": 6.4390396837205355,
+   "total_cold_s": 31.951409647006713,
+   "total_warm_s": 7.714658181884844,
+   "provenance": {
+    "stack_eff": 0.56,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-flash-next__m3u-256__mlx",
+   "side": "mac",
+   "machine_id": "m3u-256",
+   "machine": {
+    "label": "Mac Studio M3 Ultra",
+    "ram": "256 GB",
+    "nodes": 1,
+    "hw_id": "mac-m3-ultra-256"
+   },
+   "stack": {
+    "id": "mlx",
+    "label": "MLX"
+   },
+   "model": {
+    "id": "qwen3.8-flash-next",
+    "name": "Qwen3.8-Flash-Next",
+    "params_total_b": 176,
+    "params_active_b": 6
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 111
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 1721.153869628906,
+   "ttft_cold_s": 35.71731794860066,
+   "ttft_warm_s": 1.7858658974300328,
+   "decode_tps": 101.72324324324323,
+   "decode_measured": false,
+   "decode_modelled_tps": 101.72324324324323,
+   "decode_source": null,
+   "answer_s": 6.4390396837205355,
+   "total_cold_s": 42.156357632321196,
+   "total_warm_s": 8.22490558115057,
+   "provenance": {
+    "stack_eff": 0.4,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-flash-next__m3u-512__llamacpp-metal",
+   "side": "mac",
+   "machine_id": "m3u-512",
+   "machine": {
+    "label": "Mac Studio M3 Ultra",
+    "ram": "512 GB",
+    "nodes": 1,
+    "hw_id": "mac-m3-ultra-512"
+   },
+   "stack": {
+    "id": "llamacpp-metal",
+    "label": "llama.cpp Metal"
+   },
+   "model": {
+    "id": "qwen3.8-flash-next",
+    "name": "Qwen3.8-Flash-Next",
+    "params_total_b": 176,
+    "params_active_b": 6
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 111
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 2409.615417480469,
+   "ttft_cold_s": 25.512369963286176,
+   "ttft_warm_s": 1.2756184981643088,
+   "decode_tps": 112.54486486486485,
+   "decode_measured": false,
+   "decode_modelled_tps": 112.54486486486485,
+   "decode_source": null,
+   "answer_s": 5.819901252593561,
+   "total_cold_s": 31.332271215879736,
+   "total_warm_s": 7.09551975075787,
+   "provenance": {
+    "stack_eff": 0.56,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-flash-next__m3u-512__mlx",
+   "side": "mac",
+   "machine_id": "m3u-512",
+   "machine": {
+    "label": "Mac Studio M3 Ultra",
+    "ram": "512 GB",
+    "nodes": 1,
+    "hw_id": "mac-m3-ultra-512"
+   },
+   "stack": {
+    "id": "mlx",
+    "label": "MLX"
+   },
+   "model": {
+    "id": "qwen3.8-flash-next",
+    "name": "Qwen3.8-Flash-Next",
+    "params_total_b": 176,
+    "params_active_b": 6
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 111
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 1721.153869628906,
+   "ttft_cold_s": 35.71731794860066,
+   "ttft_warm_s": 1.7858658974300328,
+   "decode_tps": 112.54486486486485,
+   "decode_measured": false,
+   "decode_modelled_tps": 112.54486486486485,
+   "decode_source": null,
+   "answer_s": 5.819901252593561,
+   "total_cold_s": 41.53721920119422,
+   "total_warm_s": 7.605767150023594,
+   "provenance": {
+    "stack_eff": 0.4,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-flash-next__m5max-128__llamacpp-metal",
+   "side": "mac",
+   "machine_id": "m5max-128",
+   "machine": {
+    "label": "Mac Studio M5 Max",
+    "ram": "128 GB",
+    "nodes": 1,
+    "hw_id": "mac-m5-max-128"
+   },
+   "stack": {
+    "id": "llamacpp-metal",
+    "label": "llama.cpp Metal"
+   },
+   "model": {
+    "id": "qwen3.8-flash-next",
+    "name": "Qwen3.8-Flash-Next",
+    "params_total_b": 176,
+    "params_active_b": 6
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 111
+   },
+   "fits": false,
+   "fit_detail": {
+    "needs_gb": 112.40705108642578
+   },
+   "prefill_tps": 1204.8077087402346,
+   "ttft_cold_s": 51.02473992657235,
+   "ttft_warm_s": 2.5512369963286177,
+   "decode_tps": 76.26138138138137,
+   "decode_measured": false,
+   "decode_modelled_tps": 76.26138138138137,
+   "decode_source": null,
+   "answer_s": 8.588881923399216,
+   "total_cold_s": 59.613621849971565,
+   "total_warm_s": 11.140118919727833,
+   "provenance": {
+    "stack_eff": 0.56,
+    "prefill_tflops_usable": 27,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-flash-next__m5max-128__mlx",
+   "side": "mac",
+   "machine_id": "m5max-128",
+   "machine": {
+    "label": "Mac Studio M5 Max",
+    "ram": "128 GB",
+    "nodes": 1,
+    "hw_id": "mac-m5-max-128"
+   },
+   "stack": {
+    "id": "mlx",
+    "label": "MLX"
+   },
+   "model": {
+    "id": "qwen3.8-flash-next",
+    "name": "Qwen3.8-Flash-Next",
+    "params_total_b": 176,
+    "params_active_b": 6
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 111
+   },
+   "fits": false,
+   "fit_detail": {
+    "needs_gb": 112.40705108642578
+   },
+   "prefill_tps": 860.576934814453,
+   "ttft_cold_s": 71.43463589720132,
+   "ttft_warm_s": 3.5717317948600655,
+   "decode_tps": 76.26138138138137,
+   "decode_measured": false,
+   "decode_modelled_tps": 76.26138138138137,
+   "decode_source": null,
+   "answer_s": 8.588881923399216,
+   "total_cold_s": 80.02351782060053,
+   "total_warm_s": 12.160613718259281,
+   "provenance": {
+    "stack_eff": 0.4,
+    "prefill_tflops_usable": 27,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-flash-next__m5u-256__llamacpp-metal",
+   "side": "mac",
+   "machine_id": "m5u-256",
+   "machine": {
+    "label": "Mac Studio M5 Ultra",
+    "ram": "256 GB",
+    "nodes": 1,
+    "hw_id": "mac-m5-ultra-256"
+   },
+   "stack": {
+    "id": "llamacpp-metal",
+    "label": "llama.cpp Metal"
+   },
+   "model": {
+    "id": "qwen3.8-flash-next",
+    "name": "Qwen3.8-Flash-Next",
+    "params_total_b": 176,
+    "params_active_b": 6
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 111
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 2409.615417480469,
+   "ttft_cold_s": 25.512369963286176,
+   "ttft_warm_s": 1.2756184981643088,
+   "decode_tps": 164.9009009009009,
+   "decode_measured": false,
+   "decode_modelled_tps": 164.9009009009009,
+   "decode_source": null,
+   "answer_s": 3.972082604895105,
+   "total_cold_s": 29.484452568181283,
+   "total_warm_s": 5.247701103059414,
+   "provenance": {
+    "stack_eff": 0.56,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-flash-next__m5u-256__mlx",
+   "side": "mac",
+   "machine_id": "m5u-256",
+   "machine": {
+    "label": "Mac Studio M5 Ultra",
+    "ram": "256 GB",
+    "nodes": 1,
+    "hw_id": "mac-m5-ultra-256"
+   },
+   "stack": {
+    "id": "mlx",
+    "label": "MLX"
+   },
+   "model": {
+    "id": "qwen3.8-flash-next",
+    "name": "Qwen3.8-Flash-Next",
+    "params_total_b": 176,
+    "params_active_b": 6
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 111
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 1721.153869628906,
+   "ttft_cold_s": 35.71731794860066,
+   "ttft_warm_s": 1.7858658974300328,
+   "decode_tps": 164.9009009009009,
+   "decode_measured": false,
+   "decode_modelled_tps": 164.9009009009009,
+   "decode_source": null,
+   "answer_s": 3.972082604895105,
+   "total_cold_s": 39.689400553495766,
+   "total_warm_s": 5.757948502325138,
+   "provenance": {
+    "stack_eff": 0.4,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-flash-next__m5u-512__llamacpp-metal",
+   "side": "mac",
+   "machine_id": "m5u-512",
+   "machine": {
+    "label": "Mac Studio M5 Ultra",
+    "ram": "512 GB",
+    "nodes": 1,
+    "hw_id": "mac-m5-ultra-512"
+   },
+   "stack": {
+    "id": "llamacpp-metal",
+    "label": "llama.cpp Metal"
+   },
+   "model": {
+    "id": "qwen3.8-flash-next",
+    "name": "Qwen3.8-Flash-Next",
+    "params_total_b": 176,
+    "params_active_b": 6
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 111
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 2409.615417480469,
+   "ttft_cold_s": 25.512369963286176,
+   "ttft_warm_s": 1.2756184981643088,
+   "decode_tps": 149.04504504504504,
+   "decode_measured": false,
+   "decode_modelled_tps": 149.04504504504504,
+   "decode_source": null,
+   "answer_s": 4.394644584139265,
+   "total_cold_s": 29.90701454742544,
+   "total_warm_s": 5.670263082303574,
+   "provenance": {
+    "stack_eff": 0.56,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "qwen3.8-flash-next__m5u-512__mlx",
+   "side": "mac",
+   "machine_id": "m5u-512",
+   "machine": {
+    "label": "Mac Studio M5 Ultra",
+    "ram": "512 GB",
+    "nodes": 1,
+    "hw_id": "mac-m5-ultra-512"
+   },
+   "stack": {
+    "id": "mlx",
+    "label": "MLX"
+   },
+   "model": {
+    "id": "qwen3.8-flash-next",
+    "name": "Qwen3.8-Flash-Next",
+    "params_total_b": 176,
+    "params_active_b": 6
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 111
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 1721.153869628906,
+   "ttft_cold_s": 35.71731794860066,
+   "ttft_warm_s": 1.7858658974300328,
+   "decode_tps": 149.04504504504504,
+   "decode_measured": false,
+   "decode_modelled_tps": 149.04504504504504,
+   "decode_source": null,
+   "answer_s": 4.394644584139265,
+   "total_cold_s": 40.11196253273992,
+   "total_warm_s": 6.180510481569298,
+   "provenance": {
+    "stack_eff": 0.4,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "dsv4-flash-vision-exp__spark-1__llamacpp-gguf-cuda",
+   "side": "spark",
+   "machine_id": "spark-1",
+   "machine": {
+    "label": "DGX Spark",
+    "ram": "128 GB",
+    "nodes": 1,
+    "hw_id": "dgx-spark-128"
+   },
+   "stack": {
+    "id": "llamacpp-gguf-cuda",
+    "label": "llama.cpp GGUF"
+   },
+   "model": {
+    "id": "dsv4-flash-vision-exp",
+    "name": "DeepSeek-V4-Flash-Vision-Exp",
+    "params_total_b": 305,
+    "params_active_b": 13
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 155
+   },
+   "fits": false,
+   "fit_detail": {
+    "needs_gb": 157.83608734607697
+   },
+   "prefill_tps": 1125.3698378342847,
+   "ttft_cold_s": 54.62648627433042,
+   "ttft_warm_s": 2.731324313716521,
+   "decode_tps": 32.196718279569886,
+   "decode_measured": false,
+   "decode_modelled_tps": 32.196718279569886,
+   "decode_source": null,
+   "answer_s": 20.343688270106206,
+   "total_cold_s": 74.97017454443662,
+   "total_warm_s": 23.075012583822726,
+   "provenance": {
+    "stack_eff": 0.85,
+    "prefill_tflops_usable": 36,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "dsv4-flash-vision-exp__spark-1__vllm-tp",
+   "side": "spark",
+   "machine_id": "spark-1",
+   "machine": {
+    "label": "DGX Spark",
+    "ram": "128 GB",
+    "nodes": 1,
+    "hw_id": "dgx-spark-128"
+   },
+   "stack": {
+    "id": "vllm-tp",
+    "label": "vLLM TP (tuned)"
+   },
+   "model": {
+    "id": "dsv4-flash-vision-exp",
+    "name": "DeepSeek-V4-Flash-Vision-Exp",
+    "params_total_b": 305,
+    "params_active_b": 13
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 155
+   },
+   "fits": false,
+   "fit_detail": {
+    "needs_gb": 157.83608734607697
+   },
+   "prefill_tps": 807.6183542104867,
+   "ttft_cold_s": 76.11887431668993,
+   "ttft_warm_s": 3.805943715834496,
+   "decode_tps": 32.196718279569886,
+   "decode_measured": false,
+   "decode_modelled_tps": 32.196718279569886,
+   "decode_source": null,
+   "answer_s": 20.343688270106206,
+   "total_cold_s": 96.46256258679614,
+   "total_warm_s": 24.1496319859407,
+   "provenance": {
+    "stack_eff": 0.61,
+    "prefill_tflops_usable": 36,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "dsv4-flash-vision-exp__spark-2__llamacpp-gguf-cuda",
+   "side": "spark",
+   "machine_id": "spark-2",
+   "machine": {
+    "label": "DGX Spark",
+    "ram": "256 GB",
+    "nodes": 2,
+    "hw_id": "dgx-spark-128"
+   },
+   "stack": {
+    "id": "llamacpp-gguf-cuda",
+    "label": "llama.cpp GGUF"
+   },
+   "model": {
+    "id": "dsv4-flash-vision-exp",
+    "name": "DeepSeek-V4-Flash-Vision-Exp",
+    "params_total_b": 305,
+    "params_active_b": 13
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 155
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 2250.7396756685694,
+   "ttft_cold_s": 27.31324313716521,
+   "ttft_warm_s": 1.3656621568582605,
+   "decode_tps": 40,
+   "decode_measured": true,
+   "decode_modelled_tps": 59.56392881720429,
+   "decode_source": "Mia 2x-Spark prose table (community-corroborated 2026-09-01)",
+   "answer_s": 16.375,
+   "total_cold_s": 43.68824313716521,
+   "total_warm_s": 17.74066215685826,
+   "provenance": {
+    "stack_eff": 0.85,
+    "prefill_tflops_usable": 36,
+    "params_basis": "active",
+    "decode_basis": "measured: Mia 2x-Spark prose table (community-corroborated 2026-09-01) = 40 t/s",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "dsv4-flash-vision-exp__spark-2__vllm-tp",
+   "side": "spark",
+   "machine_id": "spark-2",
+   "machine": {
+    "label": "DGX Spark",
+    "ram": "256 GB",
+    "nodes": 2,
+    "hw_id": "dgx-spark-128"
+   },
+   "stack": {
+    "id": "vllm-tp",
+    "label": "vLLM TP (tuned)"
+   },
+   "model": {
+    "id": "dsv4-flash-vision-exp",
+    "name": "DeepSeek-V4-Flash-Vision-Exp",
+    "params_total_b": 305,
+    "params_active_b": 13
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 155
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 1615.2367084209734,
+   "ttft_cold_s": 38.05943715834496,
+   "ttft_warm_s": 1.902971857917248,
+   "decode_tps": 40,
+   "decode_measured": true,
+   "decode_modelled_tps": 59.56392881720429,
+   "decode_source": "Mia 2x-Spark prose table (community-corroborated 2026-09-01)",
+   "answer_s": 16.375,
+   "total_cold_s": 54.43443715834496,
+   "total_warm_s": 18.277971857917247,
+   "provenance": {
+    "stack_eff": 0.61,
+    "prefill_tflops_usable": 36,
+    "params_basis": "active",
+    "decode_basis": "measured: Mia 2x-Spark prose table (community-corroborated 2026-09-01) = 40 t/s",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "dsv4-flash-vision-exp__spark-4__llamacpp-gguf-cuda",
+   "side": "spark",
+   "machine_id": "spark-4",
+   "machine": {
+    "label": "DGX Spark",
+    "ram": "512 GB",
+    "nodes": 4,
+    "hw_id": "dgx-spark-128"
+   },
+   "stack": {
+    "id": "llamacpp-gguf-cuda",
+    "label": "llama.cpp GGUF"
+   },
+   "model": {
+    "id": "dsv4-flash-vision-exp",
+    "name": "DeepSeek-V4-Flash-Vision-Exp",
+    "params_total_b": 305,
+    "params_active_b": 13
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 155
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 4501.479351337139,
+   "ttft_cold_s": 13.656621568582604,
+   "ttft_warm_s": 0.6828310784291303,
+   "decode_tps": 65.03737092473116,
+   "decode_measured": false,
+   "decode_modelled_tps": 65.03737092473116,
+   "decode_source": null,
+   "answer_s": 10.071132806983272,
+   "total_cold_s": 23.727754375565876,
+   "total_warm_s": 10.753963885412402,
+   "provenance": {
+    "stack_eff": 0.85,
+    "prefill_tflops_usable": 36,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "dsv4-flash-vision-exp__spark-4__vllm-tp",
+   "side": "spark",
+   "machine_id": "spark-4",
+   "machine": {
+    "label": "DGX Spark",
+    "ram": "512 GB",
+    "nodes": 4,
+    "hw_id": "dgx-spark-128"
+   },
+   "stack": {
+    "id": "vllm-tp",
+    "label": "vLLM TP (tuned)"
+   },
+   "model": {
+    "id": "dsv4-flash-vision-exp",
+    "name": "DeepSeek-V4-Flash-Vision-Exp",
+    "params_total_b": 305,
+    "params_active_b": 13
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 155
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 3230.473416841947,
+   "ttft_cold_s": 19.02971857917248,
+   "ttft_warm_s": 0.951485928958624,
+   "decode_tps": 65.03737092473116,
+   "decode_measured": false,
+   "decode_modelled_tps": 65.03737092473116,
+   "decode_source": null,
+   "answer_s": 10.071132806983272,
+   "total_cold_s": 29.100851386155753,
+   "total_warm_s": 11.022618735941895,
+   "provenance": {
+    "stack_eff": 0.61,
+    "prefill_tflops_usable": 36,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "dsv4-flash-vision-exp__m3u-96__llamacpp-metal",
+   "side": "mac",
+   "machine_id": "m3u-96",
+   "machine": {
+    "label": "Mac Studio M3 Ultra",
+    "ram": "96 GB",
+    "nodes": 1,
+    "hw_id": "mac-m3-ultra-96"
+   },
+   "stack": {
+    "id": "llamacpp-metal",
+    "label": "llama.cpp Metal"
+   },
+   "model": {
+    "id": "dsv4-flash-vision-exp",
+    "name": "DeepSeek-V4-Flash-Vision-Exp",
+    "params_total_b": 305,
+    "params_active_b": 13
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 155
+   },
+   "fits": false,
+   "fit_detail": {
+    "needs_gb": 157.83608734607697
+   },
+   "prefill_tps": 1112.1301926832934,
+   "ttft_cold_s": 55.27680158712005,
+   "ttft_warm_s": 2.7638400793560023,
+   "decode_tps": 58.26483870967742,
+   "decode_measured": false,
+   "decode_modelled_tps": 58.26483870967742,
+   "decode_source": null,
+   "answer_s": 11.241771444073501,
+   "total_cold_s": 66.51857303119355,
+   "total_warm_s": 14.005611523429504,
+   "provenance": {
+    "stack_eff": 0.56,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "dsv4-flash-vision-exp__m3u-96__mlx",
+   "side": "mac",
+   "machine_id": "m3u-96",
+   "machine": {
+    "label": "Mac Studio M3 Ultra",
+    "ram": "96 GB",
+    "nodes": 1,
+    "hw_id": "mac-m3-ultra-96"
+   },
+   "stack": {
+    "id": "mlx",
+    "label": "MLX"
+   },
+   "model": {
+    "id": "dsv4-flash-vision-exp",
+    "name": "DeepSeek-V4-Flash-Vision-Exp",
+    "params_total_b": 305,
+    "params_active_b": 13
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 155
+   },
+   "fits": false,
+   "fit_detail": {
+    "needs_gb": 157.83608734607697
+   },
+   "prefill_tps": 794.3787090594951,
+   "ttft_cold_s": 77.38752222196808,
+   "ttft_warm_s": 3.869376111098404,
+   "decode_tps": 58.26483870967742,
+   "decode_measured": false,
+   "decode_modelled_tps": 58.26483870967742,
+   "decode_source": null,
+   "answer_s": 11.241771444073501,
+   "total_cold_s": 88.62929366604159,
+   "total_warm_s": 15.111147555171906,
+   "provenance": {
+    "stack_eff": 0.4,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "dsv4-flash-vision-exp__m3u-256__llamacpp-metal",
+   "side": "mac",
+   "machine_id": "m3u-256",
+   "machine": {
+    "label": "Mac Studio M3 Ultra",
+    "ram": "256 GB",
+    "nodes": 1,
+    "hw_id": "mac-m3-ultra-256"
+   },
+   "stack": {
+    "id": "llamacpp-metal",
+    "label": "llama.cpp Metal"
+   },
+   "model": {
+    "id": "dsv4-flash-vision-exp",
+    "name": "DeepSeek-V4-Flash-Vision-Exp",
+    "params_total_b": 305,
+    "params_active_b": 13
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 155
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 1112.1301926832934,
+   "ttft_cold_s": 55.27680158712005,
+   "ttft_warm_s": 2.7638400793560023,
+   "decode_tps": 58.26483870967742,
+   "decode_measured": false,
+   "decode_modelled_tps": 58.26483870967742,
+   "decode_source": null,
+   "answer_s": 11.241771444073501,
+   "total_cold_s": 66.51857303119355,
+   "total_warm_s": 14.005611523429504,
+   "provenance": {
+    "stack_eff": 0.56,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "dsv4-flash-vision-exp__m3u-256__mlx",
+   "side": "mac",
+   "machine_id": "m3u-256",
+   "machine": {
+    "label": "Mac Studio M3 Ultra",
+    "ram": "256 GB",
+    "nodes": 1,
+    "hw_id": "mac-m3-ultra-256"
+   },
+   "stack": {
+    "id": "mlx",
+    "label": "MLX"
+   },
+   "model": {
+    "id": "dsv4-flash-vision-exp",
+    "name": "DeepSeek-V4-Flash-Vision-Exp",
+    "params_total_b": 305,
+    "params_active_b": 13
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 155
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 794.3787090594951,
+   "ttft_cold_s": 77.38752222196808,
+   "ttft_warm_s": 3.869376111098404,
+   "decode_tps": 58.26483870967742,
+   "decode_measured": false,
+   "decode_modelled_tps": 58.26483870967742,
+   "decode_source": null,
+   "answer_s": 11.241771444073501,
+   "total_cold_s": 88.62929366604159,
+   "total_warm_s": 15.111147555171906,
+   "provenance": {
+    "stack_eff": 0.4,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "dsv4-flash-vision-exp__m3u-512__llamacpp-metal",
+   "side": "mac",
+   "machine_id": "m3u-512",
+   "machine": {
+    "label": "Mac Studio M3 Ultra",
+    "ram": "512 GB",
+    "nodes": 1,
+    "hw_id": "mac-m3-ultra-512"
+   },
+   "stack": {
+    "id": "llamacpp-metal",
+    "label": "llama.cpp Metal"
+   },
+   "model": {
+    "id": "dsv4-flash-vision-exp",
+    "name": "DeepSeek-V4-Flash-Vision-Exp",
+    "params_total_b": 305,
+    "params_active_b": 13
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 155
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 1112.1301926832934,
+   "ttft_cold_s": 55.27680158712005,
+   "ttft_warm_s": 2.7638400793560023,
+   "decode_tps": 64.46322580645162,
+   "decode_measured": false,
+   "decode_modelled_tps": 64.46322580645162,
+   "decode_source": null,
+   "answer_s": 10.160831882143357,
+   "total_cold_s": 65.4376334692634,
+   "total_warm_s": 12.92467196149936,
+   "provenance": {
+    "stack_eff": 0.56,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "dsv4-flash-vision-exp__m3u-512__mlx",
+   "side": "mac",
+   "machine_id": "m3u-512",
+   "machine": {
+    "label": "Mac Studio M3 Ultra",
+    "ram": "512 GB",
+    "nodes": 1,
+    "hw_id": "mac-m3-ultra-512"
+   },
+   "stack": {
+    "id": "mlx",
+    "label": "MLX"
+   },
+   "model": {
+    "id": "dsv4-flash-vision-exp",
+    "name": "DeepSeek-V4-Flash-Vision-Exp",
+    "params_total_b": 305,
+    "params_active_b": 13
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 155
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 794.3787090594951,
+   "ttft_cold_s": 77.38752222196808,
+   "ttft_warm_s": 3.869376111098404,
+   "decode_tps": 64.46322580645162,
+   "decode_measured": false,
+   "decode_modelled_tps": 64.46322580645162,
+   "decode_source": null,
+   "answer_s": 10.160831882143357,
+   "total_cold_s": 87.54835410411144,
+   "total_warm_s": 14.030207993241762,
+   "provenance": {
+    "stack_eff": 0.4,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "dsv4-flash-vision-exp__m5max-128__llamacpp-metal",
+   "side": "mac",
+   "machine_id": "m5max-128",
+   "machine": {
+    "label": "Mac Studio M5 Max",
+    "ram": "128 GB",
+    "nodes": 1,
+    "hw_id": "mac-m5-max-128"
+   },
+   "stack": {
+    "id": "llamacpp-metal",
+    "label": "llama.cpp Metal"
+   },
+   "model": {
+    "id": "dsv4-flash-vision-exp",
+    "name": "DeepSeek-V4-Flash-Vision-Exp",
+    "params_total_b": 305,
+    "params_active_b": 13
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 155
+   },
+   "fits": false,
+   "fit_detail": {
+    "needs_gb": 157.83608734607697
+   },
+   "prefill_tps": 556.0650963416467,
+   "ttft_cold_s": 110.5536031742401,
+   "ttft_warm_s": 5.527680158712005,
+   "decode_tps": 43.680843672456575,
+   "decode_measured": false,
+   "decode_modelled_tps": 43.680843672456575,
+   "decode_source": null,
+   "answer_s": 14.995131616769052,
+   "total_cold_s": 125.54873479100915,
+   "total_warm_s": 20.522811775481056,
+   "provenance": {
+    "stack_eff": 0.56,
+    "prefill_tflops_usable": 27,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "dsv4-flash-vision-exp__m5max-128__mlx",
+   "side": "mac",
+   "machine_id": "m5max-128",
+   "machine": {
+    "label": "Mac Studio M5 Max",
+    "ram": "128 GB",
+    "nodes": 1,
+    "hw_id": "mac-m5-max-128"
+   },
+   "stack": {
+    "id": "mlx",
+    "label": "MLX"
+   },
+   "model": {
+    "id": "dsv4-flash-vision-exp",
+    "name": "DeepSeek-V4-Flash-Vision-Exp",
+    "params_total_b": 305,
+    "params_active_b": 13
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 155
+   },
+   "fits": false,
+   "fit_detail": {
+    "needs_gb": 157.83608734607697
+   },
+   "prefill_tps": 397.18935452974756,
+   "ttft_cold_s": 154.77504444393617,
+   "ttft_warm_s": 7.738752222196808,
+   "decode_tps": 43.680843672456575,
+   "decode_measured": false,
+   "decode_modelled_tps": 43.680843672456575,
+   "decode_source": null,
+   "answer_s": 14.995131616769052,
+   "total_cold_s": 169.7701760607052,
+   "total_warm_s": 22.73388383896586,
+   "provenance": {
+    "stack_eff": 0.4,
+    "prefill_tflops_usable": 27,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "dsv4-flash-vision-exp__m5u-256__llamacpp-metal",
+   "side": "mac",
+   "machine_id": "m5u-256",
+   "machine": {
+    "label": "Mac Studio M5 Ultra",
+    "ram": "256 GB",
+    "nodes": 1,
+    "hw_id": "mac-m5-ultra-256"
+   },
+   "stack": {
+    "id": "llamacpp-metal",
+    "label": "llama.cpp Metal"
+   },
+   "model": {
+    "id": "dsv4-flash-vision-exp",
+    "name": "DeepSeek-V4-Flash-Vision-Exp",
+    "params_total_b": 305,
+    "params_active_b": 13
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 155
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 1112.1301926832934,
+   "ttft_cold_s": 55.27680158712005,
+   "ttft_warm_s": 2.7638400793560023,
+   "decode_tps": 94.45161290322581,
+   "decode_measured": false,
+   "decode_modelled_tps": 94.45161290322581,
+   "decode_source": null,
+   "answer_s": 6.934767759562842,
+   "total_cold_s": 62.21156934668289,
+   "total_warm_s": 9.698607838918845,
+   "provenance": {
+    "stack_eff": 0.56,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "dsv4-flash-vision-exp__m5u-256__mlx",
+   "side": "mac",
+   "machine_id": "m5u-256",
+   "machine": {
+    "label": "Mac Studio M5 Ultra",
+    "ram": "256 GB",
+    "nodes": 1,
+    "hw_id": "mac-m5-ultra-256"
+   },
+   "stack": {
+    "id": "mlx",
+    "label": "MLX"
+   },
+   "model": {
+    "id": "dsv4-flash-vision-exp",
+    "name": "DeepSeek-V4-Flash-Vision-Exp",
+    "params_total_b": 305,
+    "params_active_b": 13
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 155
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 794.3787090594951,
+   "ttft_cold_s": 77.38752222196808,
+   "ttft_warm_s": 3.869376111098404,
+   "decode_tps": 94.45161290322581,
+   "decode_measured": false,
+   "decode_modelled_tps": 94.45161290322581,
+   "decode_source": null,
+   "answer_s": 6.934767759562842,
+   "total_cold_s": 84.32228998153093,
+   "total_warm_s": 10.804143870661246,
+   "provenance": {
+    "stack_eff": 0.4,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "dsv4-flash-vision-exp__m5u-512__llamacpp-metal",
+   "side": "mac",
+   "machine_id": "m5u-512",
+   "machine": {
+    "label": "Mac Studio M5 Ultra",
+    "ram": "512 GB",
+    "nodes": 1,
+    "hw_id": "mac-m5-ultra-512"
+   },
+   "stack": {
+    "id": "llamacpp-metal",
+    "label": "llama.cpp Metal"
+   },
+   "model": {
+    "id": "dsv4-flash-vision-exp",
+    "name": "DeepSeek-V4-Flash-Vision-Exp",
+    "params_total_b": 305,
+    "params_active_b": 13
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 155
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 1112.1301926832934,
+   "ttft_cold_s": 55.27680158712005,
+   "ttft_warm_s": 2.7638400793560023,
+   "decode_tps": 85.36972704714641,
+   "decode_measured": false,
+   "decode_modelled_tps": 85.36972704714641,
+   "decode_source": null,
+   "answer_s": 7.672509010580164,
+   "total_cold_s": 62.94931059770021,
+   "total_warm_s": 10.436349089936167,
+   "provenance": {
+    "stack_eff": 0.56,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "dsv4-flash-vision-exp__m5u-512__mlx",
+   "side": "mac",
+   "machine_id": "m5u-512",
+   "machine": {
+    "label": "Mac Studio M5 Ultra",
+    "ram": "512 GB",
+    "nodes": 1,
+    "hw_id": "mac-m5-ultra-512"
+   },
+   "stack": {
+    "id": "mlx",
+    "label": "MLX"
+   },
+   "model": {
+    "id": "dsv4-flash-vision-exp",
+    "name": "DeepSeek-V4-Flash-Vision-Exp",
+    "params_total_b": 305,
+    "params_active_b": 13
+   },
+   "quant": {
+    "id": "q4_k_m",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 155
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 794.3787090594951,
+   "ttft_cold_s": 77.38752222196808,
+   "ttft_warm_s": 3.869376111098404,
+   "decode_tps": 85.36972704714641,
+   "decode_measured": false,
+   "decode_modelled_tps": 85.36972704714641,
+   "decode_source": null,
+   "answer_s": 7.672509010580164,
+   "total_cold_s": 85.06003123254825,
+   "total_warm_s": 11.541885121678568,
+   "provenance": {
+    "stack_eff": 0.4,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3-flash__spark-1__llamacpp-gguf-cuda",
+   "side": "spark",
+   "machine_id": "spark-1",
+   "machine": {
+    "label": "DGX Spark",
+    "ram": "128 GB",
+    "nodes": 1,
+    "hw_id": "dgx-spark-128"
+   },
+   "stack": {
+    "id": "llamacpp-gguf-cuda",
+    "label": "llama.cpp GGUF"
+   },
+   "model": {
+    "id": "glm-5.3-flash",
+    "name": "GLM-5.3-Flash",
+    "params_total_b": 320,
+    "params_active_b": 18
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 199.71
+   },
+   "fits": false,
+   "fit_detail": {
+    "needs_gb": 200.4355107164383
+   },
+   "prefill_tps": 812.7671051025391,
+   "ttft_cold_s": 75.63667330291902,
+   "ttft_warm_s": 3.7818336651459514,
+   "decode_tps": 11.421895081201075,
+   "decode_measured": false,
+   "decode_modelled_tps": 11.421895081201075,
+   "decode_source": null,
+   "answer_s": 57.3460004091653,
+   "total_cold_s": 132.9826737120843,
+   "total_warm_s": 61.12783407431125,
+   "provenance": {
+    "stack_eff": 0.85,
+    "prefill_tflops_usable": 36,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3-flash__spark-1__vllm-tp",
+   "side": "spark",
+   "machine_id": "spark-1",
+   "machine": {
+    "label": "DGX Spark",
+    "ram": "128 GB",
+    "nodes": 1,
+    "hw_id": "dgx-spark-128"
+   },
+   "stack": {
+    "id": "vllm-tp",
+    "label": "vLLM TP (tuned)"
+   },
+   "model": {
+    "id": "glm-5.3-flash",
+    "name": "GLM-5.3-Flash",
+    "params_total_b": 320,
+    "params_active_b": 18
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 199.71
+   },
+   "fits": false,
+   "fit_detail": {
+    "needs_gb": 200.4355107164383
+   },
+   "prefill_tps": 583.2799224853516,
+   "ttft_cold_s": 105.39536443849373,
+   "ttft_warm_s": 5.269768221924687,
+   "decode_tps": 11.421895081201075,
+   "decode_measured": false,
+   "decode_modelled_tps": 11.421895081201075,
+   "decode_source": null,
+   "answer_s": 57.3460004091653,
+   "total_cold_s": 162.74136484765904,
+   "total_warm_s": 62.615768631089985,
+   "provenance": {
+    "stack_eff": 0.61,
+    "prefill_tflops_usable": 36,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3-flash__spark-2__llamacpp-gguf-cuda",
+   "side": "spark",
+   "machine_id": "spark-2",
+   "machine": {
+    "label": "DGX Spark",
+    "ram": "256 GB",
+    "nodes": 2,
+    "hw_id": "dgx-spark-128"
+   },
+   "stack": {
+    "id": "llamacpp-gguf-cuda",
+    "label": "llama.cpp GGUF"
+   },
+   "model": {
+    "id": "glm-5.3-flash",
+    "name": "GLM-5.3-Flash",
+    "params_total_b": 320,
+    "params_active_b": 18
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 199.71
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 1625.5342102050781,
+   "ttft_cold_s": 37.81833665145951,
+   "ttft_warm_s": 1.8909168325729757,
+   "decode_tps": 25,
+   "decode_measured": true,
+   "decode_modelled_tps": 21.13050590022199,
+   "decode_source": "Mia 2x-Spark prose table (community-corroborated 2026-09-01)",
+   "answer_s": 26.2,
+   "total_cold_s": 64.0183366514595,
+   "total_warm_s": 28.090916832572976,
+   "provenance": {
+    "stack_eff": 0.85,
+    "prefill_tflops_usable": 36,
+    "params_basis": "active",
+    "decode_basis": "measured: Mia 2x-Spark prose table (community-corroborated 2026-09-01) = 25 t/s",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3-flash__spark-2__vllm-tp",
+   "side": "spark",
+   "machine_id": "spark-2",
+   "machine": {
+    "label": "DGX Spark",
+    "ram": "256 GB",
+    "nodes": 2,
+    "hw_id": "dgx-spark-128"
+   },
+   "stack": {
+    "id": "vllm-tp",
+    "label": "vLLM TP (tuned)"
+   },
+   "model": {
+    "id": "glm-5.3-flash",
+    "name": "GLM-5.3-Flash",
+    "params_total_b": 320,
+    "params_active_b": 18
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 199.71
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 1166.5598449707031,
+   "ttft_cold_s": 52.697682219246865,
+   "ttft_warm_s": 2.6348841109623433,
+   "decode_tps": 25,
+   "decode_measured": true,
+   "decode_modelled_tps": 21.13050590022199,
+   "decode_source": "Mia 2x-Spark prose table (community-corroborated 2026-09-01)",
+   "answer_s": 26.2,
+   "total_cold_s": 78.89768221924686,
+   "total_warm_s": 28.834884110962342,
+   "provenance": {
+    "stack_eff": 0.61,
+    "prefill_tflops_usable": 36,
+    "params_basis": "active",
+    "decode_basis": "measured: Mia 2x-Spark prose table (community-corroborated 2026-09-01) = 25 t/s",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3-flash__spark-4__llamacpp-gguf-cuda",
+   "side": "spark",
+   "machine_id": "spark-4",
+   "machine": {
+    "label": "DGX Spark",
+    "ram": "512 GB",
+    "nodes": 4,
+    "hw_id": "dgx-spark-128"
+   },
+   "stack": {
+    "id": "llamacpp-gguf-cuda",
+    "label": "llama.cpp GGUF"
+   },
+   "model": {
+    "id": "glm-5.3-flash",
+    "name": "GLM-5.3-Flash",
+    "params_total_b": 320,
+    "params_active_b": 18
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 199.71
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 3251.0684204101562,
+   "ttft_cold_s": 18.909168325729755,
+   "ttft_warm_s": 0.9454584162864879,
+   "decode_tps": 23.072228064026174,
+   "decode_measured": false,
+   "decode_modelled_tps": 23.072228064026174,
+   "decode_source": null,
+   "answer_s": 28.389109113448168,
+   "total_cold_s": 47.29827743917792,
+   "total_warm_s": 29.334567529734656,
+   "provenance": {
+    "stack_eff": 0.85,
+    "prefill_tflops_usable": 36,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3-flash__spark-4__vllm-tp",
+   "side": "spark",
+   "machine_id": "spark-4",
+   "machine": {
+    "label": "DGX Spark",
+    "ram": "512 GB",
+    "nodes": 4,
+    "hw_id": "dgx-spark-128"
+   },
+   "stack": {
+    "id": "vllm-tp",
+    "label": "vLLM TP (tuned)"
+   },
+   "model": {
+    "id": "glm-5.3-flash",
+    "name": "GLM-5.3-Flash",
+    "params_total_b": 320,
+    "params_active_b": 18
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 199.71
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 2333.1196899414062,
+   "ttft_cold_s": 26.348841109623432,
+   "ttft_warm_s": 1.3174420554811717,
+   "decode_tps": 23.072228064026174,
+   "decode_measured": false,
+   "decode_modelled_tps": 23.072228064026174,
+   "decode_source": null,
+   "answer_s": 28.389109113448168,
+   "total_cold_s": 54.7379502230716,
+   "total_warm_s": 29.70655116892934,
+   "provenance": {
+    "stack_eff": 0.61,
+    "prefill_tflops_usable": 36,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3-flash__m3u-96__llamacpp-metal",
+   "side": "mac",
+   "machine_id": "m3u-96",
+   "machine": {
+    "label": "Mac Studio M3 Ultra",
+    "ram": "96 GB",
+    "nodes": 1,
+    "hw_id": "mac-m3-ultra-96"
+   },
+   "stack": {
+    "id": "llamacpp-metal",
+    "label": "llama.cpp Metal"
+   },
+   "model": {
+    "id": "glm-5.3-flash",
+    "name": "GLM-5.3-Flash",
+    "params_total_b": 320,
+    "params_active_b": 18
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 199.71
+   },
+   "fits": false,
+   "fit_detail": {
+    "needs_gb": 200.4355107164383
+   },
+   "prefill_tps": 803.2051391601562,
+   "ttft_cold_s": 76.53710988985854,
+   "ttft_warm_s": 3.826855494492927,
+   "decode_tps": 34.26568524360322,
+   "decode_measured": false,
+   "decode_modelled_tps": 34.26568524360322,
+   "decode_source": null,
+   "answer_s": 19.11533346972177,
+   "total_cold_s": 95.6524433595803,
+   "total_warm_s": 22.942188964214697,
+   "provenance": {
+    "stack_eff": 0.56,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3-flash__m3u-96__mlx",
+   "side": "mac",
+   "machine_id": "m3u-96",
+   "machine": {
+    "label": "Mac Studio M3 Ultra",
+    "ram": "96 GB",
+    "nodes": 1,
+    "hw_id": "mac-m3-ultra-96"
+   },
+   "stack": {
+    "id": "mlx",
+    "label": "MLX"
+   },
+   "model": {
+    "id": "glm-5.3-flash",
+    "name": "GLM-5.3-Flash",
+    "params_total_b": 320,
+    "params_active_b": 18
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 199.71
+   },
+   "fits": false,
+   "fit_detail": {
+    "needs_gb": 200.4355107164383
+   },
+   "prefill_tps": 573.7179565429688,
+   "ttft_cold_s": 107.15195384580196,
+   "ttft_warm_s": 5.357597692290097,
+   "decode_tps": 34.26568524360322,
+   "decode_measured": false,
+   "decode_modelled_tps": 34.26568524360322,
+   "decode_source": null,
+   "answer_s": 19.11533346972177,
+   "total_cold_s": 126.26728731552373,
+   "total_warm_s": 24.472931162011868,
+   "provenance": {
+    "stack_eff": 0.4,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3-flash__m3u-256__llamacpp-metal",
+   "side": "mac",
+   "machine_id": "m3u-256",
+   "machine": {
+    "label": "Mac Studio M3 Ultra",
+    "ram": "256 GB",
+    "nodes": 1,
+    "hw_id": "mac-m3-ultra-256"
+   },
+   "stack": {
+    "id": "llamacpp-metal",
+    "label": "llama.cpp Metal"
+   },
+   "model": {
+    "id": "glm-5.3-flash",
+    "name": "GLM-5.3-Flash",
+    "params_total_b": 320,
+    "params_active_b": 18
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 199.71
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 803.2051391601562,
+   "ttft_cold_s": 76.53710988985854,
+   "ttft_warm_s": 3.826855494492927,
+   "decode_tps": 34.26568524360322,
+   "decode_measured": false,
+   "decode_modelled_tps": 34.26568524360322,
+   "decode_source": null,
+   "answer_s": 19.11533346972177,
+   "total_cold_s": 95.6524433595803,
+   "total_warm_s": 22.942188964214697,
+   "provenance": {
+    "stack_eff": 0.56,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3-flash__m3u-256__mlx",
+   "side": "mac",
+   "machine_id": "m3u-256",
+   "machine": {
+    "label": "Mac Studio M3 Ultra",
+    "ram": "256 GB",
+    "nodes": 1,
+    "hw_id": "mac-m3-ultra-256"
+   },
+   "stack": {
+    "id": "mlx",
+    "label": "MLX"
+   },
+   "model": {
+    "id": "glm-5.3-flash",
+    "name": "GLM-5.3-Flash",
+    "params_total_b": 320,
+    "params_active_b": 18
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 199.71
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 573.7179565429688,
+   "ttft_cold_s": 107.15195384580196,
+   "ttft_warm_s": 5.357597692290097,
+   "decode_tps": 34.26568524360322,
+   "decode_measured": false,
+   "decode_modelled_tps": 34.26568524360322,
+   "decode_source": null,
+   "answer_s": 19.11533346972177,
+   "total_cold_s": 126.26728731552373,
+   "total_warm_s": 24.472931162011868,
+   "provenance": {
+    "stack_eff": 0.4,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3-flash__m3u-512__llamacpp-metal",
+   "side": "mac",
+   "machine_id": "m3u-512",
+   "machine": {
+    "label": "Mac Studio M3 Ultra",
+    "ram": "512 GB",
+    "nodes": 1,
+    "hw_id": "mac-m3-ultra-512"
+   },
+   "stack": {
+    "id": "llamacpp-metal",
+    "label": "llama.cpp Metal"
+   },
+   "model": {
+    "id": "glm-5.3-flash",
+    "name": "GLM-5.3-Flash",
+    "params_total_b": 320,
+    "params_active_b": 18
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 199.71
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 803.2051391601562,
+   "ttft_cold_s": 76.53710988985854,
+   "ttft_warm_s": 3.826855494492927,
+   "decode_tps": 37.910970907816335,
+   "decode_measured": false,
+   "decode_modelled_tps": 37.910970907816335,
+   "decode_source": null,
+   "answer_s": 17.277320636094675,
+   "total_cold_s": 93.81443052595321,
+   "total_warm_s": 21.104176130587604,
+   "provenance": {
+    "stack_eff": 0.56,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3-flash__m3u-512__mlx",
+   "side": "mac",
+   "machine_id": "m3u-512",
+   "machine": {
+    "label": "Mac Studio M3 Ultra",
+    "ram": "512 GB",
+    "nodes": 1,
+    "hw_id": "mac-m3-ultra-512"
+   },
+   "stack": {
+    "id": "mlx",
+    "label": "MLX"
+   },
+   "model": {
+    "id": "glm-5.3-flash",
+    "name": "GLM-5.3-Flash",
+    "params_total_b": 320,
+    "params_active_b": 18
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 199.71
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 573.7179565429688,
+   "ttft_cold_s": 107.15195384580196,
+   "ttft_warm_s": 5.357597692290097,
+   "decode_tps": 37.910970907816335,
+   "decode_measured": false,
+   "decode_modelled_tps": 37.910970907816335,
+   "decode_source": null,
+   "answer_s": 17.277320636094675,
+   "total_cold_s": 124.42927448189663,
+   "total_warm_s": 22.63491832838477,
+   "provenance": {
+    "stack_eff": 0.4,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3-flash__m5max-128__llamacpp-metal",
+   "side": "mac",
+   "machine_id": "m5max-128",
+   "machine": {
+    "label": "Mac Studio M5 Max",
+    "ram": "128 GB",
+    "nodes": 1,
+    "hw_id": "mac-m5-max-128"
+   },
+   "stack": {
+    "id": "llamacpp-metal",
+    "label": "llama.cpp Metal"
+   },
+   "model": {
+    "id": "glm-5.3-flash",
+    "name": "GLM-5.3-Flash",
+    "params_total_b": 320,
+    "params_active_b": 18
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 199.71
+   },
+   "fits": false,
+   "fit_detail": {
+    "needs_gb": 200.4355107164383
+   },
+   "prefill_tps": 401.6025695800781,
+   "ttft_cold_s": 153.07421977971708,
+   "ttft_warm_s": 7.653710988985854,
+   "decode_tps": 25.688804321822197,
+   "decode_measured": false,
+   "decode_modelled_tps": 25.688804321822197,
+   "decode_source": null,
+   "answer_s": 25.497488781273823,
+   "total_cold_s": 178.5717085609909,
+   "total_warm_s": 33.15119977025968,
+   "provenance": {
+    "stack_eff": 0.56,
+    "prefill_tflops_usable": 27,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3-flash__m5max-128__mlx",
+   "side": "mac",
+   "machine_id": "m5max-128",
+   "machine": {
+    "label": "Mac Studio M5 Max",
+    "ram": "128 GB",
+    "nodes": 1,
+    "hw_id": "mac-m5-max-128"
+   },
+   "stack": {
+    "id": "mlx",
+    "label": "MLX"
+   },
+   "model": {
+    "id": "glm-5.3-flash",
+    "name": "GLM-5.3-Flash",
+    "params_total_b": 320,
+    "params_active_b": 18
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 199.71
+   },
+   "fits": false,
+   "fit_detail": {
+    "needs_gb": 200.4355107164383
+   },
+   "prefill_tps": 286.8589782714844,
+   "ttft_cold_s": 214.3039076916039,
+   "ttft_warm_s": 10.715195384580195,
+   "decode_tps": 25.688804321822197,
+   "decode_measured": false,
+   "decode_modelled_tps": 25.688804321822197,
+   "decode_source": null,
+   "answer_s": 25.497488781273823,
+   "total_cold_s": 239.80139647287774,
+   "total_warm_s": 36.212684165854014,
+   "provenance": {
+    "stack_eff": 0.4,
+    "prefill_tflops_usable": 27,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3-flash__m5u-256__llamacpp-metal",
+   "side": "mac",
+   "machine_id": "m5u-256",
+   "machine": {
+    "label": "Mac Studio M5 Ultra",
+    "ram": "256 GB",
+    "nodes": 1,
+    "hw_id": "mac-m5-ultra-256"
+   },
+   "stack": {
+    "id": "llamacpp-metal",
+    "label": "llama.cpp Metal"
+   },
+   "model": {
+    "id": "glm-5.3-flash",
+    "name": "GLM-5.3-Flash",
+    "params_total_b": 320,
+    "params_active_b": 18
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 199.71
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 803.2051391601562,
+   "ttft_cold_s": 76.53710988985854,
+   "ttft_warm_s": 3.826855494492927,
+   "decode_tps": 55.547210121342616,
+   "decode_measured": false,
+   "decode_modelled_tps": 55.547210121342616,
+   "decode_source": null,
+   "answer_s": 11.791771334134616,
+   "total_cold_s": 88.32888122399316,
+   "total_warm_s": 15.618626828627542,
+   "provenance": {
+    "stack_eff": 0.56,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3-flash__m5u-256__mlx",
+   "side": "mac",
+   "machine_id": "m5u-256",
+   "machine": {
+    "label": "Mac Studio M5 Ultra",
+    "ram": "256 GB",
+    "nodes": 1,
+    "hw_id": "mac-m5-ultra-256"
+   },
+   "stack": {
+    "id": "mlx",
+    "label": "MLX"
+   },
+   "model": {
+    "id": "glm-5.3-flash",
+    "name": "GLM-5.3-Flash",
+    "params_total_b": 320,
+    "params_active_b": 18
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 199.71
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 573.7179565429688,
+   "ttft_cold_s": 107.15195384580196,
+   "ttft_warm_s": 5.357597692290097,
+   "decode_tps": 55.547210121342616,
+   "decode_measured": false,
+   "decode_modelled_tps": 55.547210121342616,
+   "decode_source": null,
+   "answer_s": 11.791771334134616,
+   "total_cold_s": 118.94372517993656,
+   "total_warm_s": 17.149369026424715,
+   "provenance": {
+    "stack_eff": 0.4,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3-flash__m5u-512__llamacpp-metal",
+   "side": "mac",
+   "machine_id": "m5u-512",
+   "machine": {
+    "label": "Mac Studio M5 Ultra",
+    "ram": "512 GB",
+    "nodes": 1,
+    "hw_id": "mac-m5-ultra-512"
+   },
+   "stack": {
+    "id": "llamacpp-metal",
+    "label": "llama.cpp Metal"
+   },
+   "model": {
+    "id": "glm-5.3-flash",
+    "name": "GLM-5.3-Flash",
+    "params_total_b": 320,
+    "params_active_b": 18
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 199.71
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 803.2051391601562,
+   "ttft_cold_s": 76.53710988985854,
+   "ttft_warm_s": 3.826855494492927,
+   "decode_tps": 50.20613222505967,
+   "decode_measured": false,
+   "decode_modelled_tps": 50.20613222505967,
+   "decode_source": null,
+   "answer_s": 13.046215093085106,
+   "total_cold_s": 89.58332498294365,
+   "total_warm_s": 16.873070587578034,
+   "provenance": {
+    "stack_eff": 0.56,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3-flash__m5u-512__mlx",
+   "side": "mac",
+   "machine_id": "m5u-512",
+   "machine": {
+    "label": "Mac Studio M5 Ultra",
+    "ram": "512 GB",
+    "nodes": 1,
+    "hw_id": "mac-m5-ultra-512"
+   },
+   "stack": {
+    "id": "mlx",
+    "label": "MLX"
+   },
+   "model": {
+    "id": "glm-5.3-flash",
+    "name": "GLM-5.3-Flash",
+    "params_total_b": 320,
+    "params_active_b": 18
+   },
+   "quant": {
+    "id": "ud_q4_k_xl",
+    "label": "UD-Q4_K_XL",
+    "size_gb": 199.71
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 573.7179565429688,
+   "ttft_cold_s": 107.15195384580196,
+   "ttft_warm_s": 5.357597692290097,
+   "decode_tps": 50.20613222505967,
+   "decode_measured": false,
+   "decode_modelled_tps": 50.20613222505967,
+   "decode_source": null,
+   "answer_s": 13.046215093085106,
+   "total_cold_s": 120.19816893888706,
+   "total_warm_s": 18.4038127853752,
+   "provenance": {
+    "stack_eff": 0.4,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3__spark-1__llamacpp-gguf-cuda",
+   "side": "spark",
+   "machine_id": "spark-1",
+   "machine": {
+    "label": "DGX Spark",
+    "ram": "128 GB",
+    "nodes": 1,
+    "hw_id": "dgx-spark-128"
+   },
+   "stack": {
+    "id": "llamacpp-gguf-cuda",
+    "label": "llama.cpp GGUF"
+   },
+   "model": {
+    "id": "glm-5.3",
+    "name": "GLM-5.3",
+    "params_total_b": 744,
+    "params_active_b": 40
+   },
+   "quant": {
+    "id": "ud_q2_k_xl",
+    "label": "UD-Q2_K_XL",
+    "size_gb": 253.88
+   },
+   "fits": false,
+   "fit_detail": {
+    "needs_gb": 259.02453053474426
+   },
+   "prefill_tps": 365.7451972961426,
+   "ttft_cold_s": 168.08149622870894,
+   "ttft_warm_s": 8.404074811435448,
+   "decode_tps": 9.400370253663148,
+   "decode_measured": false,
+   "decode_modelled_tps": 9.400370253663148,
+   "decode_source": null,
+   "answer_s": 69.6781065346611,
+   "total_cold_s": 237.75960276337003,
+   "total_warm_s": 78.08218134609655,
+   "provenance": {
+    "stack_eff": 0.85,
+    "prefill_tflops_usable": 36,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3__spark-1__vllm-tp",
+   "side": "spark",
+   "machine_id": "spark-1",
+   "machine": {
+    "label": "DGX Spark",
+    "ram": "128 GB",
+    "nodes": 1,
+    "hw_id": "dgx-spark-128"
+   },
+   "stack": {
+    "id": "vllm-tp",
+    "label": "vLLM TP (tuned)"
+   },
+   "model": {
+    "id": "glm-5.3",
+    "name": "GLM-5.3",
+    "params_total_b": 744,
+    "params_active_b": 40
+   },
+   "quant": {
+    "id": "ud_q2_k_xl",
+    "label": "UD-Q2_K_XL",
+    "size_gb": 253.88
+   },
+   "fits": false,
+   "fit_detail": {
+    "needs_gb": 259.02453053474426
+   },
+   "prefill_tps": 262.47596511840817,
+   "ttft_cold_s": 234.21192097443054,
+   "ttft_warm_s": 11.710596048721527,
+   "decode_tps": 9.400370253663148,
+   "decode_measured": false,
+   "decode_modelled_tps": 9.400370253663148,
+   "decode_source": null,
+   "answer_s": 69.6781065346611,
+   "total_cold_s": 303.8900275090916,
+   "total_warm_s": 81.38870258338262,
+   "provenance": {
+    "stack_eff": 0.61,
+    "prefill_tflops_usable": 36,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3__spark-2__llamacpp-gguf-cuda",
+   "side": "spark",
+   "machine_id": "spark-2",
+   "machine": {
+    "label": "DGX Spark",
+    "ram": "256 GB",
+    "nodes": 2,
+    "hw_id": "dgx-spark-128"
+   },
+   "stack": {
+    "id": "llamacpp-gguf-cuda",
+    "label": "llama.cpp GGUF"
+   },
+   "model": {
+    "id": "glm-5.3",
+    "name": "GLM-5.3",
+    "params_total_b": 744,
+    "params_active_b": 40
+   },
+   "quant": {
+    "id": "ud_q2_k_xl",
+    "label": "UD-Q2_K_XL",
+    "size_gb": 253.88
+   },
+   "fits": false,
+   "fit_detail": {
+    "needs_gb": 259.02453053474426
+   },
+   "prefill_tps": 731.4903945922852,
+   "ttft_cold_s": 84.04074811435447,
+   "ttft_warm_s": 4.202037405717724,
+   "decode_tps": 17.390684969276826,
+   "decode_measured": false,
+   "decode_modelled_tps": 17.390684969276826,
+   "decode_source": null,
+   "answer_s": 37.66384137008708,
+   "total_cold_s": 121.70458948444156,
+   "total_warm_s": 41.8658787758048,
+   "provenance": {
+    "stack_eff": 0.85,
+    "prefill_tflops_usable": 36,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3__spark-2__vllm-tp",
+   "side": "spark",
+   "machine_id": "spark-2",
+   "machine": {
+    "label": "DGX Spark",
+    "ram": "256 GB",
+    "nodes": 2,
+    "hw_id": "dgx-spark-128"
+   },
+   "stack": {
+    "id": "vllm-tp",
+    "label": "vLLM TP (tuned)"
+   },
+   "model": {
+    "id": "glm-5.3",
+    "name": "GLM-5.3",
+    "params_total_b": 744,
+    "params_active_b": 40
+   },
+   "quant": {
+    "id": "ud_q2_k_xl",
+    "label": "UD-Q2_K_XL",
+    "size_gb": 253.88
+   },
+   "fits": false,
+   "fit_detail": {
+    "needs_gb": 259.02453053474426
+   },
+   "prefill_tps": 524.9519302368163,
+   "ttft_cold_s": 117.10596048721527,
+   "ttft_warm_s": 5.8552980243607635,
+   "decode_tps": 17.390684969276826,
+   "decode_measured": false,
+   "decode_modelled_tps": 17.390684969276826,
+   "decode_source": null,
+   "answer_s": 37.66384137008708,
+   "total_cold_s": 154.76980185730235,
+   "total_warm_s": 43.51913939444784,
+   "provenance": {
+    "stack_eff": 0.61,
+    "prefill_tflops_usable": 36,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3__spark-4__llamacpp-gguf-cuda",
+   "side": "spark",
+   "machine_id": "spark-4",
+   "machine": {
+    "label": "DGX Spark",
+    "ram": "512 GB",
+    "nodes": 4,
+    "hw_id": "dgx-spark-128"
+   },
+   "stack": {
+    "id": "llamacpp-gguf-cuda",
+    "label": "llama.cpp GGUF"
+   },
+   "model": {
+    "id": "glm-5.3",
+    "name": "GLM-5.3",
+    "params_total_b": 744,
+    "params_active_b": 40
+   },
+   "quant": {
+    "id": "ud_q2_k_xl",
+    "label": "UD-Q2_K_XL",
+    "size_gb": 253.88
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 1462.9807891845703,
+   "ttft_cold_s": 42.020374057177236,
+   "ttft_warm_s": 2.101018702858862,
+   "decode_tps": 18.98874791239956,
+   "decode_measured": false,
+   "decode_modelled_tps": 18.98874791239956,
+   "decode_source": null,
+   "answer_s": 34.49411214587183,
+   "total_cold_s": 76.51448620304907,
+   "total_warm_s": 36.59513084873069,
+   "provenance": {
+    "stack_eff": 0.85,
+    "prefill_tflops_usable": 36,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3__spark-4__vllm-tp",
+   "side": "spark",
+   "machine_id": "spark-4",
+   "machine": {
+    "label": "DGX Spark",
+    "ram": "512 GB",
+    "nodes": 4,
+    "hw_id": "dgx-spark-128"
+   },
+   "stack": {
+    "id": "vllm-tp",
+    "label": "vLLM TP (tuned)"
+   },
+   "model": {
+    "id": "glm-5.3",
+    "name": "GLM-5.3",
+    "params_total_b": 744,
+    "params_active_b": 40
+   },
+   "quant": {
+    "id": "ud_q2_k_xl",
+    "label": "UD-Q2_K_XL",
+    "size_gb": 253.88
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 1049.9038604736327,
+   "ttft_cold_s": 58.552980243607635,
+   "ttft_warm_s": 2.9276490121803818,
+   "decode_tps": 18.98874791239956,
+   "decode_measured": false,
+   "decode_modelled_tps": 18.98874791239956,
+   "decode_source": null,
+   "answer_s": 34.49411214587183,
+   "total_cold_s": 93.04709238947947,
+   "total_warm_s": 37.42176115805221,
+   "provenance": {
+    "stack_eff": 0.61,
+    "prefill_tflops_usable": 36,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3__m3u-96__llamacpp-metal",
+   "side": "mac",
+   "machine_id": "m3u-96",
+   "machine": {
+    "label": "Mac Studio M3 Ultra",
+    "ram": "96 GB",
+    "nodes": 1,
+    "hw_id": "mac-m3-ultra-96"
+   },
+   "stack": {
+    "id": "llamacpp-metal",
+    "label": "llama.cpp Metal"
+   },
+   "model": {
+    "id": "glm-5.3",
+    "name": "GLM-5.3",
+    "params_total_b": 744,
+    "params_active_b": 40
+   },
+   "quant": {
+    "id": "ud_q2_k_xl",
+    "label": "UD-Q2_K_XL",
+    "size_gb": 253.88
+   },
+   "fits": false,
+   "fit_detail": {
+    "needs_gb": 259.02453053474426
+   },
+   "prefill_tps": 361.44231262207035,
+   "ttft_cold_s": 170.08246642190784,
+   "ttft_warm_s": 8.504123321095392,
+   "decode_tps": 28.201110760989444,
+   "decode_measured": false,
+   "decode_modelled_tps": 28.201110760989444,
+   "decode_source": null,
+   "answer_s": 23.2260355115537,
+   "total_cold_s": 193.30850193346154,
+   "total_warm_s": 31.730158832649092,
+   "provenance": {
+    "stack_eff": 0.56,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3__m3u-96__mlx",
+   "side": "mac",
+   "machine_id": "m3u-96",
+   "machine": {
+    "label": "Mac Studio M3 Ultra",
+    "ram": "96 GB",
+    "nodes": 1,
+    "hw_id": "mac-m3-ultra-96"
+   },
+   "stack": {
+    "id": "mlx",
+    "label": "MLX"
+   },
+   "model": {
+    "id": "glm-5.3",
+    "name": "GLM-5.3",
+    "params_total_b": 744,
+    "params_active_b": 40
+   },
+   "quant": {
+    "id": "ud_q2_k_xl",
+    "label": "UD-Q2_K_XL",
+    "size_gb": 253.88
+   },
+   "fits": false,
+   "fit_detail": {
+    "needs_gb": 259.02453053474426
+   },
+   "prefill_tps": 258.17308044433594,
+   "ttft_cold_s": 238.115452990671,
+   "ttft_warm_s": 11.905772649533551,
+   "decode_tps": 28.201110760989444,
+   "decode_measured": false,
+   "decode_modelled_tps": 28.201110760989444,
+   "decode_source": null,
+   "answer_s": 23.2260355115537,
+   "total_cold_s": 261.3414885022247,
+   "total_warm_s": 35.13180816108725,
+   "provenance": {
+    "stack_eff": 0.4,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3__m3u-256__llamacpp-metal",
+   "side": "mac",
+   "machine_id": "m3u-256",
+   "machine": {
+    "label": "Mac Studio M3 Ultra",
+    "ram": "256 GB",
+    "nodes": 1,
+    "hw_id": "mac-m3-ultra-256"
+   },
+   "stack": {
+    "id": "llamacpp-metal",
+    "label": "llama.cpp Metal"
+   },
+   "model": {
+    "id": "glm-5.3",
+    "name": "GLM-5.3",
+    "params_total_b": 744,
+    "params_active_b": 40
+   },
+   "quant": {
+    "id": "ud_q2_k_xl",
+    "label": "UD-Q2_K_XL",
+    "size_gb": 253.88
+   },
+   "fits": false,
+   "fit_detail": {
+    "needs_gb": 259.02453053474426
+   },
+   "prefill_tps": 361.44231262207035,
+   "ttft_cold_s": 170.08246642190784,
+   "ttft_warm_s": 8.504123321095392,
+   "decode_tps": 28.201110760989444,
+   "decode_measured": false,
+   "decode_modelled_tps": 28.201110760989444,
+   "decode_source": null,
+   "answer_s": 23.2260355115537,
+   "total_cold_s": 193.30850193346154,
+   "total_warm_s": 31.730158832649092,
+   "provenance": {
+    "stack_eff": 0.56,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3__m3u-256__mlx",
+   "side": "mac",
+   "machine_id": "m3u-256",
+   "machine": {
+    "label": "Mac Studio M3 Ultra",
+    "ram": "256 GB",
+    "nodes": 1,
+    "hw_id": "mac-m3-ultra-256"
+   },
+   "stack": {
+    "id": "mlx",
+    "label": "MLX"
+   },
+   "model": {
+    "id": "glm-5.3",
+    "name": "GLM-5.3",
+    "params_total_b": 744,
+    "params_active_b": 40
+   },
+   "quant": {
+    "id": "ud_q2_k_xl",
+    "label": "UD-Q2_K_XL",
+    "size_gb": 253.88
+   },
+   "fits": false,
+   "fit_detail": {
+    "needs_gb": 259.02453053474426
+   },
+   "prefill_tps": 258.17308044433594,
+   "ttft_cold_s": 238.115452990671,
+   "ttft_warm_s": 11.905772649533551,
+   "decode_tps": 28.201110760989444,
+   "decode_measured": false,
+   "decode_modelled_tps": 28.201110760989444,
+   "decode_source": null,
+   "answer_s": 23.2260355115537,
+   "total_cold_s": 261.3414885022247,
+   "total_warm_s": 35.13180816108725,
+   "provenance": {
+    "stack_eff": 0.4,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3__m3u-512__llamacpp-metal",
+   "side": "mac",
+   "machine_id": "m3u-512",
+   "machine": {
+    "label": "Mac Studio M3 Ultra",
+    "ram": "512 GB",
+    "nodes": 1,
+    "hw_id": "mac-m3-ultra-512"
+   },
+   "stack": {
+    "id": "llamacpp-metal",
+    "label": "llama.cpp Metal"
+   },
+   "model": {
+    "id": "glm-5.3",
+    "name": "GLM-5.3",
+    "params_total_b": 744,
+    "params_active_b": 40
+   },
+   "quant": {
+    "id": "ud_q2_k_xl",
+    "label": "UD-Q2_K_XL",
+    "size_gb": 253.88
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 361.44231262207035,
+   "ttft_cold_s": 170.08246642190784,
+   "ttft_warm_s": 8.504123321095392,
+   "decode_tps": 17.3,
+   "decode_measured": true,
+   "decode_modelled_tps": 31.20122892705215,
+   "decode_source": "omarshabab.com measured \u2014 GLM-5.1 (=5.3 base) IQ2 on M3U-512 llama.cpp, tuned config",
+   "answer_s": 37.861271676300575,
+   "total_cold_s": 207.94373809820843,
+   "total_warm_s": 46.36539499739597,
+   "provenance": {
+    "stack_eff": 0.56,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "measured: omarshabab.com measured \u2014 GLM-5.1 (=5.3 base) IQ2 on M3U-512 llama.cpp, tuned config = 17.3 t/s",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3__m3u-512__mlx",
+   "side": "mac",
+   "machine_id": "m3u-512",
+   "machine": {
+    "label": "Mac Studio M3 Ultra",
+    "ram": "512 GB",
+    "nodes": 1,
+    "hw_id": "mac-m3-ultra-512"
+   },
+   "stack": {
+    "id": "mlx",
+    "label": "MLX"
+   },
+   "model": {
+    "id": "glm-5.3",
+    "name": "GLM-5.3",
+    "params_total_b": 744,
+    "params_active_b": 40
+   },
+   "quant": {
+    "id": "ud_q2_k_xl",
+    "label": "UD-Q2_K_XL",
+    "size_gb": 253.88
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 258.17308044433594,
+   "ttft_cold_s": 238.115452990671,
+   "ttft_warm_s": 11.905772649533551,
+   "decode_tps": 17.3,
+   "decode_measured": true,
+   "decode_modelled_tps": 31.20122892705215,
+   "decode_source": "omarshabab.com measured \u2014 GLM-5.1 (=5.3 base) IQ2 on M3U-512 llama.cpp, tuned config",
+   "answer_s": 37.861271676300575,
+   "total_cold_s": 275.97672466697156,
+   "total_warm_s": 49.76704432583413,
+   "provenance": {
+    "stack_eff": 0.4,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "measured: omarshabab.com measured \u2014 GLM-5.1 (=5.3 base) IQ2 on M3U-512 llama.cpp, tuned config = 17.3 t/s",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3__m5max-128__llamacpp-metal",
+   "side": "mac",
+   "machine_id": "m5max-128",
+   "machine": {
+    "label": "Mac Studio M5 Max",
+    "ram": "128 GB",
+    "nodes": 1,
+    "hw_id": "mac-m5-max-128"
+   },
+   "stack": {
+    "id": "llamacpp-metal",
+    "label": "llama.cpp Metal"
+   },
+   "model": {
+    "id": "glm-5.3",
+    "name": "GLM-5.3",
+    "params_total_b": 744,
+    "params_active_b": 40
+   },
+   "quant": {
+    "id": "ud_q2_k_xl",
+    "label": "UD-Q2_K_XL",
+    "size_gb": 253.88
+   },
+   "fits": false,
+   "fit_detail": {
+    "needs_gb": 259.02453053474426
+   },
+   "prefill_tps": 180.72115631103517,
+   "ttft_cold_s": 340.1649328438157,
+   "ttft_warm_s": 17.008246642190784,
+   "decode_tps": 21.142224673073894,
+   "decode_measured": false,
+   "decode_modelled_tps": 21.142224673073894,
+   "decode_source": null,
+   "answer_s": 30.98065648853824,
+   "total_cold_s": 371.1455893323539,
+   "total_warm_s": 47.98890313072903,
+   "provenance": {
+    "stack_eff": 0.56,
+    "prefill_tflops_usable": 27,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3__m5max-128__mlx",
+   "side": "mac",
+   "machine_id": "m5max-128",
+   "machine": {
+    "label": "Mac Studio M5 Max",
+    "ram": "128 GB",
+    "nodes": 1,
+    "hw_id": "mac-m5-max-128"
+   },
+   "stack": {
+    "id": "mlx",
+    "label": "MLX"
+   },
+   "model": {
+    "id": "glm-5.3",
+    "name": "GLM-5.3",
+    "params_total_b": 744,
+    "params_active_b": 40
+   },
+   "quant": {
+    "id": "ud_q2_k_xl",
+    "label": "UD-Q2_K_XL",
+    "size_gb": 253.88
+   },
+   "fits": false,
+   "fit_detail": {
+    "needs_gb": 259.02453053474426
+   },
+   "prefill_tps": 129.08654022216797,
+   "ttft_cold_s": 476.230905981342,
+   "ttft_warm_s": 23.811545299067102,
+   "decode_tps": 21.142224673073894,
+   "decode_measured": false,
+   "decode_modelled_tps": 21.142224673073894,
+   "decode_source": null,
+   "answer_s": 30.98065648853824,
+   "total_cold_s": 507.2115624698802,
+   "total_warm_s": 54.79220178760534,
+   "provenance": {
+    "stack_eff": 0.4,
+    "prefill_tflops_usable": 27,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3__m5u-256__llamacpp-metal",
+   "side": "mac",
+   "machine_id": "m5u-256",
+   "machine": {
+    "label": "Mac Studio M5 Ultra",
+    "ram": "256 GB",
+    "nodes": 1,
+    "hw_id": "mac-m5-ultra-256"
+   },
+   "stack": {
+    "id": "llamacpp-metal",
+    "label": "llama.cpp Metal"
+   },
+   "model": {
+    "id": "glm-5.3",
+    "name": "GLM-5.3",
+    "params_total_b": 744,
+    "params_active_b": 40
+   },
+   "quant": {
+    "id": "ud_q2_k_xl",
+    "label": "UD-Q2_K_XL",
+    "size_gb": 253.88
+   },
+   "fits": false,
+   "fit_detail": {
+    "needs_gb": 259.02453053474426
+   },
+   "prefill_tps": 361.44231262207035,
+   "ttft_cold_s": 170.08246642190784,
+   "ttft_warm_s": 8.504123321095392,
+   "decode_tps": 45.71608634000315,
+   "decode_measured": false,
+   "decode_modelled_tps": 45.71608634000315,
+   "decode_source": null,
+   "answer_s": 14.327560656189688,
+   "total_cold_s": 184.41002707809753,
+   "total_warm_s": 22.83168397728508,
+   "provenance": {
+    "stack_eff": 0.56,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3__m5u-256__mlx",
+   "side": "mac",
+   "machine_id": "m5u-256",
+   "machine": {
+    "label": "Mac Studio M5 Ultra",
+    "ram": "256 GB",
+    "nodes": 1,
+    "hw_id": "mac-m5-ultra-256"
+   },
+   "stack": {
+    "id": "mlx",
+    "label": "MLX"
+   },
+   "model": {
+    "id": "glm-5.3",
+    "name": "GLM-5.3",
+    "params_total_b": 744,
+    "params_active_b": 40
+   },
+   "quant": {
+    "id": "ud_q2_k_xl",
+    "label": "UD-Q2_K_XL",
+    "size_gb": 253.88
+   },
+   "fits": false,
+   "fit_detail": {
+    "needs_gb": 259.02453053474426
+   },
+   "prefill_tps": 258.17308044433594,
+   "ttft_cold_s": 238.115452990671,
+   "ttft_warm_s": 11.905772649533551,
+   "decode_tps": 45.71608634000315,
+   "decode_measured": false,
+   "decode_modelled_tps": 45.71608634000315,
+   "decode_source": null,
+   "answer_s": 14.327560656189688,
+   "total_cold_s": 252.4430136468607,
+   "total_warm_s": 26.23333330572324,
+   "provenance": {
+    "stack_eff": 0.4,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3__m5u-512__llamacpp-metal",
+   "side": "mac",
+   "machine_id": "m5u-512",
+   "machine": {
+    "label": "Mac Studio M5 Ultra",
+    "ram": "512 GB",
+    "nodes": 1,
+    "hw_id": "mac-m5-ultra-512"
+   },
+   "stack": {
+    "id": "llamacpp-metal",
+    "label": "llama.cpp Metal"
+   },
+   "model": {
+    "id": "glm-5.3",
+    "name": "GLM-5.3",
+    "params_total_b": 744,
+    "params_active_b": 40
+   },
+   "quant": {
+    "id": "ud_q2_k_xl",
+    "label": "UD-Q2_K_XL",
+    "size_gb": 253.88
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 361.44231262207035,
+   "ttft_cold_s": 170.08246642190784,
+   "ttft_warm_s": 8.504123321095392,
+   "decode_tps": 41.32030880731054,
+   "decode_measured": false,
+   "decode_modelled_tps": 41.32030880731054,
+   "decode_source": null,
+   "answer_s": 15.8517692366354,
+   "total_cold_s": 185.93423565854323,
+   "total_warm_s": 24.35589255773079,
+   "provenance": {
+    "stack_eff": 0.56,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  },
+  {
+   "id": "glm-5.3__m5u-512__mlx",
+   "side": "mac",
+   "machine_id": "m5u-512",
+   "machine": {
+    "label": "Mac Studio M5 Ultra",
+    "ram": "512 GB",
+    "nodes": 1,
+    "hw_id": "mac-m5-ultra-512"
+   },
+   "stack": {
+    "id": "mlx",
+    "label": "MLX"
+   },
+   "model": {
+    "id": "glm-5.3",
+    "name": "GLM-5.3",
+    "params_total_b": 744,
+    "params_active_b": 40
+   },
+   "quant": {
+    "id": "ud_q2_k_xl",
+    "label": "UD-Q2_K_XL",
+    "size_gb": 253.88
+   },
+   "fits": true,
+   "fit_detail": null,
+   "prefill_tps": 258.17308044433594,
+   "ttft_cold_s": 238.115452990671,
+   "ttft_warm_s": 11.905772649533551,
+   "decode_tps": 41.32030880731054,
+   "decode_measured": false,
+   "decode_modelled_tps": 41.32030880731054,
+   "decode_source": null,
+   "answer_s": 15.8517692366354,
+   "total_cold_s": 253.9672222273064,
+   "total_warm_s": 27.75754188616895,
+   "provenance": {
+    "stack_eff": 0.4,
+    "prefill_tflops_usable": 54,
+    "params_basis": "active",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
+    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+   }
+  }
+ ]
+}

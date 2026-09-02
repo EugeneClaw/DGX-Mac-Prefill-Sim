@@ -1,0 +1,21 @@
+{
+ "final": "Final Report \u2013 Grafana Deployment Recovery\n\nWhat broke:\nAfter the helm upgrade completed at ~02:14 UTC, the grafana deployment in the monitoring namespace came up with zero environment variables. All data sources (Prometheus, Loki, InfluxDB) were unreachable, so every dashboard rendered blank. The pod itself was healthy (1/1 Ready) because the container didn't require env vars to start, but Grafana's provisioning could not resolve any datasource URLs.\n\nRoot cause:\nThe values.yaml rewrite I scripted for the upgrade accidentally dropped the `envFrom` block that references the `grafana-secrets` ConfigMap and the `grafana-env` Secret. The generated Chart.yaml and rendered template no longer carried the `envFrom` stanza under `spec.containers[0]`, so k8s injected nothing. The old revision (rev 14) still had the correct spec; rev 15 (the broken one) did not.\n\nWhat I changed:\n- Restored the `envFrom` block in `charts/grafana/values.yaml` (two entries: configMapRef `grafana-secrets`, secretRef `grafana-env`).\n- Ran `helm rollback grafana 14 --namespace monitoring` to get a known-good pod spec immediately.\n- Re-applied the corrected values with `helm upgrade grafana ./charts/grafana -f values.yaml -n monitoring`, producing rev 16.\n- Committed the values.yaml fix to the infra repo: commit 4a7f2e1 \"grafana: restore envFrom block dropped in upgrade rewrite\".\n- Tagged the broken rev 15 pod spec in a note file `ops-notes/2025-07-11-grafana-envdrop.md` for the post-mortem.\n\nVerification evidence:\n- `kubectl get pods -n monitoring -l app=grafana` shows 1/1 Ready, 0 restarts, running rev 16.\n- `kubectl exec grafana-7d4f9c8b6-xk2lp -- env | grep -c DS_` returns 4 (all four datasource env vars present).\n- Hit the Grafana API: `curl -s -u admin:*** http://grafana.monitoring.svc:3000/api/datasources` returns 200 with all four sources listed and \"Success\" health checks.\n- Opened the \"K8s \u2013 Overview\" dashboard in the browser; panels are populating from Prometheus and Loki with no red error banners.\n- `helm history grafana -n monitoring` confirms rev 16 is the current release and rev 15 is marked superseded.\n\nPreventive suggestion:\nAdd a lightweight CI check (a GitHub Actions job or a pre-push hook) that runs `helm template` against the chart and asserts the rendered Deployment YAML contains the expected `envFrom` keys. A simple `grep -q 'envFrom' <(helm template ...)` guard would have caught this before the upgrade ever hit the cluster.\n\nStatus: resolved. No further action needed.",
+ "final_tokens": 655,
+ "file_names": [
+  "values.yaml",
+  "deploy.py",
+  "alerts.md",
+  "trace.log",
+  "ingress.yaml",
+  "metrics.log",
+  "helm-diff.txt",
+  "deploy.py.v2",
+  "runbook-db.md",
+  "kube-events.json",
+  "grafana-provisioning.yaml",
+  "shell-history.txt",
+  "audit-rules.yaml",
+  "gpu-metrics.log",
+  "backup-manifest.txt"
+ ]
+}

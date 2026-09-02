@@ -1,0 +1,234 @@
+/* Prefill Race v3 — pickers, strict 1v1 layout, M/~ badges.
+   (v1 lane styles + v2 themes remain as base) */
+
+/* ---------- picker section ---------- */
+.pickers {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 12px;
+  align-items: start;
+  margin: 20px 0 4px;
+}
+.picker-title {
+  font: 600 12px/1 var(--sans);
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--ink-dim); margin-bottom: 8px;
+}
+.side-a .picker-title { color: var(--green); }
+.side-b .picker-title { color: var(--cyan); }
+.picker-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.pick {
+  appearance: none; cursor: pointer; text-align: left;
+  background: var(--panel); color: var(--ink-dim);
+  border: 1px solid var(--line); border-radius: 8px;
+  padding: 8px 10px;
+  transition: border-color .15s, color .15s;
+}
+.pick .pk-label { display: block; font: 600 12px/1.25 var(--sans); color: var(--ink); }
+.pick .pk-ram { display: block; font: 400 11px/1.4 var(--mono); color: var(--ink-faint); }
+.pick:hover { border-color: var(--ink-faint); }
+.pick.active { border-color: var(--amber); }
+.pick.active .pk-label { color: var(--amber); }
+
+.picker-mid { align-self: center; padding: 0 2px; }
+.vs-badge {
+  font: 700 13px/1 var(--mono); letter-spacing: .25em;
+  color: var(--ink-faint);
+  border: 1px solid var(--line); border-radius: 999px;
+  padding: 8px 10px 8px 12px;
+}
+
+.stack-row { display: flex; gap: 6px; margin-top: 8px; }
+.stack-chip {
+  appearance: none; cursor: pointer;
+  background: transparent; color: var(--ink-faint);
+  border: 1px solid var(--line-soft); border-radius: 6px;
+  padding: 4px 9px; font: 500 11px/1 var(--mono);
+}
+.stack-chip.active { border-color: var(--amber); color: var(--amber); }
+
+/* ---------- model row ---------- */
+.model-row { display: flex; align-items: center; gap: 10px; margin: 14px 0; flex-wrap: wrap; }
+.model-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.model-chip {
+  appearance: none; cursor: pointer; text-align: left;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
+  padding: 6px 10px;
+}
+.model-chip .pc-model { display: block; font: 600 12.5px/1.2 var(--sans); color: var(--ink); }
+.model-chip .pc-sub { display: block; font: 400 10.5px/1.4 var(--mono); color: var(--ink-faint); }
+.model-chip.active { border-color: var(--amber); }
+.model-chip.active .pc-model { color: var(--amber); }
+
+/* race clock */
+.clock {
+  font: 700 15px/1 var(--mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--amber);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 12px;
+  min-width: 64px;
+  text-align: center;
+}
+
+/* cache links in the lede — each phrase IS a toggle for its mode.
+   Reversible: remove the links in index.html, the .cache-link styles here,
+   and the #warm-link/#cold-link handlers in race.js. */
+a.cache-link {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  transition: text-decoration-style .15s, filter .15s;
+}
+a.cache-link:hover { text-decoration-style: solid; filter: brightness(1.2); }
+a.warm-link { color: var(--amber); }
+a.cold-link { color: #7cd3f0; }
+
+/* persistent glow on the WARM/COLD button (stronger pulse for 2s on toggle-by-link) */
+@keyframes callAttention {
+  0%   { transform: scale(1); }
+  20%  { transform: scale(1.22); }
+  45%  { transform: scale(0.96); }
+  65%  { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+.call-attention {
+  animation: callAttention 0.9s cubic-bezier(.34,1.56,.64,1) 2;
+}
+
+
+#warm-btn {
+  font: 700 13px/1 var(--mono);
+  letter-spacing: 0.12em;
+  padding: 9px 18px;
+  border-radius: 6px;
+  transition: background .25s, color .25s, border-color .25s, box-shadow .25s;
+}
+#warm-btn.cache-warm {
+  color: #1a1206;
+  background: linear-gradient(180deg, #ffcf6e, #e8a23a);
+  border-color: #ffcf6e;
+  box-shadow: 0 0 14px rgba(232, 180, 90, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+#warm-btn.cache-cold {
+  color: #06121c;
+  background: linear-gradient(180deg, #8fd8f2, #4a9cc9);
+  border-color: #8fd8f2;
+  box-shadow: 0 0 14px rgba(111, 200, 230, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+@media (prefers-reduced-motion: no-preference) {
+  #warm-btn.cache-warm { animation: warmPulse 2.6s ease-in-out infinite; }
+  #warm-btn.cache-cold { animation: coldPulse 2.6s ease-in-out infinite; }
+  @keyframes warmPulse {
+    0%, 100% { box-shadow: 0 0 10px rgba(232, 180, 90, 0.35), inset 0 1px 0 rgba(255,255,255,.35); }
+    50%      { box-shadow: 0 0 20px rgba(232, 180, 90, 0.65), inset 0 1px 0 rgba(255,255,255,.35); }
+  }
+  @keyframes coldPulse {
+    0%, 100% { box-shadow: 0 0 10px rgba(111, 200, 230, 0.35), inset 0 1px 0 rgba(255,255,255,.35); }
+    50%      { box-shadow: 0 0 20px rgba(111, 200, 230, 0.65), inset 0 1px 0 rgba(255,255,255,.35); }
+  }
+}
+
+/* ---------- device stage (outline art) ---------- */
+.device-stage {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 12px;
+  align-items: end;
+  margin: 18px 0 6px;
+}
+.stage {
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  border: 1px dashed var(--line-soft);
+  border-radius: 10px;
+  padding: 12px 10px 8px;
+}
+.stage-mid { width: 40px; }
+.device-art {
+  color: var(--amber);             /* mode-driven: amber warm / cyan cold */
+  transition: color .4s;
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  min-height: 78px;
+}
+.device-art svg { display: block; width: auto; height: auto; overflow: visible; }
+.stack-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 2px 18px;
+}
+.stage-label {
+  font: 500 11.5px/1 var(--mono);
+  color: var(--ink-dim);
+  letter-spacing: 0.06em;
+}
+body[data-mode="cold"] .device-art { color: #7cd3f0; }
+@media (max-width: 720px) {
+  .device-stage { grid-template-columns: 1fr; }
+  .stage-mid { display: none; }
+}
+
+/* cold-default nudge — shown after a completed COLD race; one tap flips to WARM */
+.warm-nudge {
+  appearance: none; cursor: pointer;
+  margin-top: 14px;
+  background: transparent;
+  color: var(--amber);
+  border: 1px solid var(--amber);
+  border-radius: 8px;
+  padding: 10px 16px;
+  font: 600 13.5px/1 var(--sans);
+  transition: background .2s, color .2s, box-shadow .2s;
+}
+.warm-nudge:hover {
+  background: rgba(232, 180, 90, 0.12);
+  box-shadow: 0 0 16px rgba(232, 180, 90, 0.3);
+}
+.warm-nudge .wn-arrow { font-family: var(--mono); }
+
+/* ---------- STRICT 1v1: exactly two lanes, one per column ---------- */
+.lanes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-items: start;
+}
+.lane.side-spark { border-left: 3px solid var(--green); }
+.lane.side-mac   { border-left: 3px solid var(--cyan); }
+.lane.side-spark .lane-name { color: var(--ink); }
+.ram-tag {
+  font: 500 10.5px/1 var(--mono); color: var(--ink-faint);
+  border: 1px solid var(--line-soft); border-radius: 4px;
+  padding: 2px 5px; margin-left: 4px; vertical-align: 1px;
+}
+
+/* M / ~ badges */
+.mbadge {
+  display: inline-block;
+  font: 700 9px/1 var(--mono);
+  color: var(--green);
+  border: 1px solid currentColor; border-radius: 3px;
+  padding: 2px 3px; margin-left: 2px; vertical-align: 2px;
+}
+.mbadge.mod { color: var(--ink-faint); font-weight: 400; }
+
+/* phones: stack the duel vertically (still exactly 1+1) */
+@media (max-width: 720px) {
+  .pickers { grid-template-columns: 1fr; }
+  .picker-mid { justify-self: center; padding: 0; }
+  .lanes { grid-template-columns: 1fr; }
+  .picker-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* wide: give each lane a bit more room */
+@media (min-width: 1100px) {
+  .page { max-width: 1100px; }
+}

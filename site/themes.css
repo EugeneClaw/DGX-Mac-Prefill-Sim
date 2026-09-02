@@ -1,0 +1,106 @@
+/* Prefill Race v2 — pair layout, theme switch, side identity.
+   Appended to styles.css (v1 lane/panel styles remain the base). */
+
+/* ---------- pair picker ---------- */
+.pair-picker { margin: 18px 0 6px; }
+.pair-heading {
+  font: 600 13px/1 var(--sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  margin-bottom: 10px;
+}
+.pair-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.pair-chip {
+  appearance: none; cursor: pointer;
+  background: var(--panel); color: var(--ink-dim);
+  border: 1px solid var(--line); border-radius: 8px;
+  padding: 8px 12px; text-align: left;
+  transition: border-color .15s, color .15s;
+}
+.pair-chip .pc-model { display: block; font: 600 14px/1.2 var(--sans); color: var(--ink); }
+.pair-chip .pc-sub { display: block; font: 400 11px/1.4 var(--mono); color: var(--ink-faint); margin-top: 2px; }
+.pair-chip:hover { border-color: var(--ink-faint); }
+.pair-chip.active { border-color: var(--amber); color: var(--amber); }
+.pair-chip.active .pc-model { color: var(--amber); }
+
+/* ---------- theme switch ---------- */
+.theme-switch { display: inline-flex; gap: 4px; }
+.theme-switch button {
+  appearance: none; cursor: pointer;
+  background: var(--panel); color: var(--ink-dim);
+  border: 1px solid var(--line); border-radius: 6px;
+  padding: 5px 10px; font: 500 12px/1 var(--mono);
+}
+.theme-switch button.active { border-color: var(--cyan); color: var(--cyan); }
+
+/* ---------- side identity: spark vs mac ---------- */
+.lane.side-spark { border-left: 3px solid var(--green); }
+.lane.side-mac   { border-left: 3px solid var(--cyan); }
+.lane.side-spark .lane-name::after { content: " · SPARK"; color: var(--green); font-size: 0.72em; letter-spacing: .1em; }
+.lane.side-mac   .lane-name::after { content: " · MAC"; color: var(--cyan); font-size: 0.72em; letter-spacing: .1em; }
+
+/* VS divider between the two sides (lanes render spark,spark,mac,mac) */
+.lanes { position: relative; }
+.lane.side-mac:not(.nofit) { margin-top: 18px; }
+.lanes.has-both .lane.side-mac:first-of-type::before {
+  content: "VS";
+  position: absolute; left: 50%; transform: translate(-50%, -160%);
+  font: 700 12px/1 var(--mono); letter-spacing: .3em;
+  color: var(--ink-faint);
+}
+
+/* pair view: 2-up on wide screens so the duel is visible at once */
+@media (min-width: 880px) {
+  .lanes.has-both { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: start; }
+  .lanes.has-both .lane.side-mac { margin-top: 0; }
+  .lanes.has-both .lane.side-spark:nth-of-type(2) { grid-column: 1; }
+  .lanes.has-both .lane.side-mac:nth-of-type(3) { grid-column: 2; }
+}
+
+/* ---------- THEME 2: Blueprint (technical drawing on paper) ---------- */
+body[data-theme="blueprint"] {
+  --bg: #0e1626;
+  --panel: #12203a;
+  --panel-2: #16294a;
+  --line: #2a4a7a;
+  --line-soft: #1d3355;
+  --ink: #dbe7f7;
+  --ink-dim: #7f9cc4;
+  --ink-faint: #516a91;
+  --amber: #ffd166;
+  --cyan: #7cc4ff;
+  --green: #8fd6a0;
+  --red: #ff7b72;
+  --gold: #ffd166;
+  --mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, monospace;
+}
+body[data-theme="blueprint"] .lane,
+body[data-theme="blueprint"] .prov,
+body[data-theme="blueprint"] .controls button,
+body[data-theme="blueprint"] .pair-chip { border-style: dashed; }
+body[data-theme="blueprint"] .lane { border-left-style: solid; }
+body[data-theme="blueprint"] h1,
+body[data-theme="blueprint"] .kicker { letter-spacing: 0.14em; }
+
+/* ---------- THEME 3: Broadcast (high-contrast TV graphics) ---------- */
+body[data-theme="broadcast"] {
+  --bg: #05060a;
+  --panel: #0d1017;
+  --panel-2: #131722;
+  --line: #3a4152;
+  --line-soft: #232936;
+  --ink: #ffffff;
+  --ink-dim: #b8c0cf;
+  --ink-faint: #737d90;
+  --amber: #ffb020;
+  --cyan: #35d0ff;
+  --green: #2fe07a;
+  --red: #ff4d42;
+  --gold: #ffe08a;
+}
+body[data-theme="broadcast"] .lane { border-radius: 4px; box-shadow: 0 2px 0 0 rgba(0,0,0,.6); }
+body[data-theme="broadcast"] .lane-name { font-weight: 800; letter-spacing: .02em; text-transform: uppercase; }
+body[data-theme="broadcast"] .phase-tag { text-transform: uppercase; font-weight: 800; }
+body[data-theme="broadcast"] h1 { font-weight: 900; letter-spacing: -0.01em; }
+body[data-theme="broadcast"] .metric .v { font-weight: 700; }
