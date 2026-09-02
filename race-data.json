@@ -1,5 +1,5 @@
 {
- "frozen_at": "2026-09-02T19:53:50.838Z",
+ "frozen_at": "2026-09-02T20:00:27.813Z",
  "engine_law": "v3 (race-4) + measured decode receipts (race-6): docs/RECEIPTS-PREFILL-2026-09.md",
  "scenario": {
   "label": "Agentic harness \u2014 real 61k-token transcript",
@@ -175,18 +175,18 @@
    "prefill_tps": 526.6309536301549,
    "ttft_cold_s": 116.73259913083838,
    "ttft_warm_s": 5.836629956541919,
-   "decode_tps": 134,
-   "decode_measured": true,
+   "decode_tps": 12.965772589217918,
+   "decode_measured": false,
    "decode_modelled_tps": 12.965772589217918,
-   "decode_source": "owner's 1\u00d7Spark bake-off (2026-08-28, llama.cpp MTP-2, p-min 0): 131.6-137.1",
-   "answer_s": 4.888059701492537,
-   "total_cold_s": 121.62065883233092,
-   "total_warm_s": 10.724689658034457,
+   "decode_source": null,
+   "answer_s": 50.517622107971036,
+   "total_cold_s": 167.25022123880942,
+   "total_warm_s": 56.354252064512956,
    "provenance": {
     "stack_eff": 0.85,
     "prefill_tflops_usable": 36,
     "params_basis": "total",
-    "decode_basis": "measured: owner's 1\u00d7Spark bake-off (2026-08-28, llama.cpp MTP-2, p-min 0): 131.6-137.1 = 134 t/s",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
     "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
    }
   },
@@ -220,18 +220,18 @@
    "prefill_tps": 377.9351549581111,
    "ttft_cold_s": 162.660179116742,
    "ttft_warm_s": 8.1330089558371,
-   "decode_tps": 134,
-   "decode_measured": true,
+   "decode_tps": 12.965772589217918,
+   "decode_measured": false,
    "decode_modelled_tps": 12.965772589217918,
-   "decode_source": "owner's 1\u00d7Spark bake-off (2026-08-28, llama.cpp MTP-2, p-min 0): 131.6-137.1",
-   "answer_s": 4.888059701492537,
-   "total_cold_s": 167.54823881823455,
-   "total_warm_s": 13.021068657329637,
+   "decode_source": null,
+   "answer_s": 50.517622107971036,
+   "total_cold_s": 213.17780122471305,
+   "total_warm_s": 58.650631063808135,
    "provenance": {
     "stack_eff": 0.61,
     "prefill_tflops_usable": 36,
     "params_basis": "total",
-    "decode_basis": "measured: owner's 1\u00d7Spark bake-off (2026-08-28, llama.cpp MTP-2, p-min 0): 131.6-137.1 = 134 t/s",
+    "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
     "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
    }
   },
