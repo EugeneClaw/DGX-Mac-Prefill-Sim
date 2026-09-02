@@ -255,8 +255,10 @@ button:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
   white-space: pre-wrap;
   word-break: break-word;
   position: relative;
-  mask-image: linear-gradient(180deg, transparent 0, #000 22px);
-  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 22px);
+  /* clear the top fade: text starts BELOW the gradient, first line readable */
+  padding-top: 24px;
+  mask-image: linear-gradient(180deg, transparent 0, #000 24px);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 24px);
 }
 .decode-box::-webkit-scrollbar { display: none; }
 .decode-box .caret {
