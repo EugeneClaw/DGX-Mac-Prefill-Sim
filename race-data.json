@@ -1,5 +1,5 @@
 {
- "frozen_at": "2026-09-02T13:40:02.363Z",
+ "frozen_at": "2026-09-02T19:53:50.838Z",
  "engine_law": "v3 (race-4) + measured decode receipts (race-6): docs/RECEIPTS-PREFILL-2026-09.md",
  "scenario": {
   "label": "Agentic harness \u2014 real 61k-token transcript",
@@ -1246,24 +1246,22 @@
     "params_active_b": 6
    },
    "quant": {
-    "id": "q4_k_m",
-    "label": "UD-Q4_K_XL",
-    "size_gb": 111
+    "id": "nvfp4-ple-offload",
+    "label": "NVFP4 + PLE-offload (blazux)",
+    "size_gb": 78
    },
-   "fits": false,
-   "fit_detail": {
-    "needs_gb": 112.40705108642578
-   },
+   "fits": true,
+   "fit_detail": null,
    "prefill_tps": 2409.615417480469,
    "ttft_cold_s": 25.512369963286176,
    "ttft_warm_s": 1.2756184981643088,
-   "decode_tps": 101.72324324324323,
+   "decode_tps": 144.76,
    "decode_measured": false,
-   "decode_modelled_tps": 101.72324324324323,
+   "decode_modelled_tps": 144.76,
    "decode_source": null,
-   "answer_s": 6.4390396837205355,
-   "total_cold_s": 31.951409647006713,
-   "total_warm_s": 7.714658181884844,
+   "answer_s": 4.524730588560376,
+   "total_cold_s": 30.037100551846553,
+   "total_warm_s": 5.800349086724685,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 54,
@@ -1293,24 +1291,22 @@
     "params_active_b": 6
    },
    "quant": {
-    "id": "q4_k_m",
-    "label": "UD-Q4_K_XL",
-    "size_gb": 111
+    "id": "nvfp4-ple-offload",
+    "label": "NVFP4 + PLE-offload (blazux)",
+    "size_gb": 78
    },
-   "fits": false,
-   "fit_detail": {
-    "needs_gb": 112.40705108642578
-   },
+   "fits": true,
+   "fit_detail": null,
    "prefill_tps": 1721.153869628906,
    "ttft_cold_s": 35.71731794860066,
    "ttft_warm_s": 1.7858658974300328,
-   "decode_tps": 101.72324324324323,
+   "decode_tps": 144.76,
    "decode_measured": false,
-   "decode_modelled_tps": 101.72324324324323,
+   "decode_modelled_tps": 144.76,
    "decode_source": null,
-   "answer_s": 6.4390396837205355,
-   "total_cold_s": 42.156357632321196,
-   "total_warm_s": 8.22490558115057,
+   "answer_s": 4.524730588560376,
+   "total_cold_s": 40.24204853716103,
+   "total_warm_s": 6.310596485990409,
    "provenance": {
     "stack_eff": 0.4,
     "prefill_tflops_usable": 54,
@@ -1520,24 +1516,22 @@
     "params_active_b": 6
    },
    "quant": {
-    "id": "q4_k_m",
-    "label": "UD-Q4_K_XL",
-    "size_gb": 111
+    "id": "nvfp4-ple-offload",
+    "label": "NVFP4 + PLE-offload (blazux)",
+    "size_gb": 78
    },
-   "fits": false,
-   "fit_detail": {
-    "needs_gb": 112.40705108642578
-   },
+   "fits": true,
+   "fit_detail": null,
    "prefill_tps": 1204.8077087402346,
    "ttft_cold_s": 51.02473992657235,
    "ttft_warm_s": 2.5512369963286177,
-   "decode_tps": 76.26138138138137,
+   "decode_tps": 108.52581196581197,
    "decode_measured": false,
-   "decode_modelled_tps": 76.26138138138137,
+   "decode_modelled_tps": 108.52581196581197,
    "decode_source": null,
-   "answer_s": 8.588881923399216,
-   "total_cold_s": 59.613621849971565,
-   "total_warm_s": 11.140118919727833,
+   "answer_s": 6.035430540767016,
+   "total_cold_s": 57.06017046733937,
+   "total_warm_s": 8.586667537095634,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 27,
@@ -1567,24 +1561,22 @@
     "params_active_b": 6
    },
    "quant": {
-    "id": "q4_k_m",
-    "label": "UD-Q4_K_XL",
-    "size_gb": 111
+    "id": "nvfp4-ple-offload",
+    "label": "NVFP4 + PLE-offload (blazux)",
+    "size_gb": 78
    },
-   "fits": false,
-   "fit_detail": {
-    "needs_gb": 112.40705108642578
-   },
+   "fits": true,
+   "fit_detail": null,
    "prefill_tps": 860.576934814453,
    "ttft_cold_s": 71.43463589720132,
    "ttft_warm_s": 3.5717317948600655,
-   "decode_tps": 76.26138138138137,
+   "decode_tps": 108.52581196581197,
    "decode_measured": false,
-   "decode_modelled_tps": 76.26138138138137,
+   "decode_modelled_tps": 108.52581196581197,
    "decode_source": null,
-   "answer_s": 8.588881923399216,
-   "total_cold_s": 80.02351782060053,
-   "total_warm_s": 12.160613718259281,
+   "answer_s": 6.035430540767016,
+   "total_cold_s": 77.47006643796833,
+   "total_warm_s": 9.60716233562708,
    "provenance": {
     "stack_eff": 0.4,
     "prefill_tflops_usable": 27,
