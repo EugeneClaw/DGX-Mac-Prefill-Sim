@@ -10,8 +10,7 @@ A token speed simulator for local LLM hardware. Pick a DGX Spark cluster configu
 
 **https://eugeneclaw.github.io/DGX-Mac-Prefill-Sim/**
 
-Nothing to install, nothing to run — it's a static page, served by GitHub
-Pages. Works on desktop and phone.
+Works on desktop and phone.
 
 ## The numbers
 
