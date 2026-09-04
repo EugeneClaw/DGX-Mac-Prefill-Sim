@@ -64,6 +64,11 @@ function laneName(l) {
   return `${l.machine.nodes > 1 ? l.machine.nodes + "× " : ""}${base}`;
 }
 
+// Owner fix race-35: a lane that can't fit the model shows NO speed numbers.
+// Rendering modelled TTFT/decode/total on a machine that refuses the model
+// is a phantom claim — the one thing that erodes confidence in every other
+// number on the page. Refusal is stated once in the results panel instead.
+const fmtOrDash = (v, suffix) => (v == null || !isFinite(v)) ? "—" : `${fmt1(v)}${suffix}`;
 function buildLanes(lanes) {
   const wrap = $("#lanes");
   wrap.innerHTML = "";
@@ -73,30 +78,33 @@ function buildLanes(lanes) {
     const el = document.createElement("article");
     el.className = `lane side-${l.side}`;
     el.dataset.id = l.id;
-    const decMark = l.decode_measured ? '<span class="mbadge" title="measured receipt">M</span>' : '<span class="mbadge mod" title="modelled">~</span>';
+    const nofit = !l.fits;
+    const decMark = nofit ? "" : (l.decode_measured ? '<span class="mbadge" title="measured receipt">M</span>' : '<span class="mbadge mod" title="modelled">~</span>');
+    const cTtft = nofit ? null : (warmMode() ? l.ttft_warm_s : l.ttft_cold_s);
+    const cTot  = nofit ? null : (warmMode() ? l.total_warm_s : l.total_cold_s);
     el.innerHTML = `
       <div class="lane-head">
         <div>
           <div class="lane-name">${laneName(l)} <span class="ram-tag">${l.machine.ram}</span></div>
           <div class="lane-sub">${l.model.name} ${l.quant.label}</div>
         </div>
-        <span class="phase-tag" data-phase>PREFILL</span>
+        <span class="phase-tag" data-phase>${nofit ? "CAN'T RUN" : "PREFILL"}</span>
       </div>
       <div class="lane-metrics">
-        <div class="metric"><span class="k">TTFT ${warmMode() ? "warm" : "cold"}</span><span class="v amber" data-m-cold>${fmt1(warmMode() ? l.ttft_warm_s : l.ttft_cold_s)}s</span></div>
-        <div class="metric"><span class="k">Decode</span><span class="v cyan" data-m-dec>${fmt1(l.decode_tps)} t/s ${decMark}</span></div>
-        <div class="metric"><span class="k">Total</span><span class="v" data-total>${fmt1(warmMode() ? l.total_warm_s : l.total_cold_s)}s</span></div>
+        <div class="metric"><span class="k">TTFT ${warmMode() ? "warm" : "cold"}</span><span class="v amber" data-m-cold>${fmtOrDash(cTtft, "s")}</span></div>
+        <div class="metric"><span class="k">Decode</span><span class="v cyan" data-m-dec>${fmtOrDash(nofit ? null : l.decode_tps, " t/s")} ${decMark}</span></div>
+        <div class="metric"><span class="k">Total</span><span class="v" data-total>${fmtOrDash(cTot, "s")}</span></div>
       </div>
       <div class="bar-wrap">
         <div class="bar"><div class="fill"></div></div>
         <div class="bar-labels">
           <span class="tok" data-tok>0 / ${fmtInt(DATA.scenario.context_tokens)} tok</span>
-          <span>${fmt1(l.prefill_tps)} tok/s prefill</span>
+          <span>${nofit ? "won't fit — no numbers shown" : fmt1(l.prefill_tps) + " tok/s prefill"}</span>
         </div>
       </div>
       <div class="decode-box" hidden></div>`;
     wrap.appendChild(el);
-    RACE.lanes.push({ data: l, el, prefillDone: false, decodeDone: false, words: [] });
+    RACE.lanes.push({ data: l, el, prefillDone: false, decodeDone: false, words: [], blocked: nofit });
   }
 }
 
