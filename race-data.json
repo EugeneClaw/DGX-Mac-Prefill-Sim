@@ -1,8 +1,8 @@
 {
- "frozen_at": "2026-09-04T10:47:43.498Z",
+ "frozen_at": "2026-09-04T13:39:56.124Z",
  "engine_law": "v3 (race-4) + measured decode receipts (race-6): docs/RECEIPTS-PREFILL-2026-09.md",
  "scenario": {
-  "label": "Agentic harness \u2014 real 61k-token transcript",
+  "label": "Agentic harness — real 61k-token transcript",
   "context_tokens": 61475,
   "answer_tokens": 655,
   "cache_share_warm": 0.95,
@@ -19,7 +19,7 @@
     "vllm-tp"
    ],
    "nodes": 1,
-   "button": "1\u00d7 DGX Spark"
+   "button": "1× DGX Spark"
   },
   {
    "id": "spark-2",
@@ -31,7 +31,7 @@
     "vllm-tp"
    ],
    "nodes": 2,
-   "button": "2\u00d7 DGX Spark"
+   "button": "2× DGX Spark"
   },
   {
    "id": "spark-4",
@@ -43,7 +43,7 @@
     "vllm-tp"
    ],
    "nodes": 4,
-   "button": "4\u00d7 DGX Spark"
+   "button": "4× DGX Spark"
   },
   {
    "id": "m3u-96",
@@ -187,7 +187,7 @@
     "prefill_tflops_usable": 36,
     "params_basis": "total",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-gguf-cuda.efficiency ÷ (2 × params_total_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: default (CUDA-anchored)"
    }
   },
   {
@@ -232,7 +232,7 @@
     "prefill_tflops_usable": 36,
     "params_basis": "total",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.vllm-tp.efficiency ÷ (2 × params_total_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: default (CUDA-anchored)"
    }
   },
   {
@@ -277,7 +277,7 @@
     "prefill_tflops_usable": 36,
     "params_basis": "total",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-gguf-cuda.efficiency ÷ (2 × params_total_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: default (CUDA-anchored)"
    }
   },
   {
@@ -322,7 +322,7 @@
     "prefill_tflops_usable": 36,
     "params_basis": "total",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.vllm-tp.efficiency ÷ (2 × params_total_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: default (CUDA-anchored)"
    }
   },
   {
@@ -367,7 +367,7 @@
     "prefill_tflops_usable": 36,
     "params_basis": "total",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-gguf-cuda.efficiency ÷ (2 × params_total_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: default (CUDA-anchored)"
    }
   },
   {
@@ -412,7 +412,7 @@
     "prefill_tflops_usable": 36,
     "params_basis": "total",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.vllm-tp.efficiency ÷ (2 × params_total_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: default (CUDA-anchored)"
    }
   },
   {
@@ -442,22 +442,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 520.4352953521532,
-   "ttft_cold_s": 118.122272930015,
-   "ttft_warm_s": 5.906113646500749,
-   "decode_tps": 21.920842824601365,
+   "prefill_tps": 219.64116337489878,
+   "ttft_cold_s": 279.8883372105902,
+   "ttft_warm_s": 13.994416860529508,
+   "decode_tps": 24.252847380410024,
    "decode_measured": false,
-   "decode_modelled_tps": 21.920842824601365,
+   "decode_modelled_tps": 24.252847380410024,
    "decode_source": null,
-   "answer_s": 29.88023796534435,
-   "total_cold_s": 148.00251089535936,
-   "total_warm_s": 35.7863516118451,
+   "answer_s": 27.00713816098431,
+   "total_cold_s": 306.8954753715745,
+   "total_warm_s": 41.00155502151382,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 54,
     "params_basis": "total",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-metal.efficiency ÷ (2 × params_total_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: llamacpp-metal (receipt-anchored)"
    }
   },
   {
@@ -487,22 +487,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 371.7394966801093,
-   "ttft_cold_s": 165.37118210202104,
-   "ttft_warm_s": 8.268559105101051,
-   "decode_tps": 21.920842824601365,
+   "prefill_tps": 125.50923621422787,
+   "ttft_cold_s": 489.8045901185328,
+   "ttft_warm_s": 24.490229505926642,
+   "decode_tps": 24.252847380410024,
    "decode_measured": false,
-   "decode_modelled_tps": 21.920842824601365,
+   "decode_modelled_tps": 24.252847380410024,
    "decode_source": null,
-   "answer_s": 29.88023796534435,
-   "total_cold_s": 195.2514200673654,
-   "total_warm_s": 38.1487970704454,
+   "answer_s": 27.00713816098431,
+   "total_cold_s": 516.8117282795172,
+   "total_warm_s": 51.497367666910954,
    "provenance": {
-    "stack_eff": 0.4,
+    "stack_eff": 0.32,
     "prefill_tflops_usable": 54,
     "params_basis": "total",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.mlx.efficiency ÷ (2 × params_total_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: mlx (receipt-anchored)"
    }
   },
   {
@@ -532,22 +532,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 520.4352953521532,
-   "ttft_cold_s": 118.122272930015,
-   "ttft_warm_s": 5.906113646500749,
-   "decode_tps": 21.920842824601365,
+   "prefill_tps": 219.64116337489878,
+   "ttft_cold_s": 279.8883372105902,
+   "ttft_warm_s": 13.994416860529508,
+   "decode_tps": 24.252847380410024,
    "decode_measured": false,
-   "decode_modelled_tps": 21.920842824601365,
+   "decode_modelled_tps": 24.252847380410024,
    "decode_source": null,
-   "answer_s": 29.88023796534435,
-   "total_cold_s": 148.00251089535936,
-   "total_warm_s": 35.7863516118451,
+   "answer_s": 27.00713816098431,
+   "total_cold_s": 306.8954753715745,
+   "total_warm_s": 41.00155502151382,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 54,
     "params_basis": "total",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-metal.efficiency ÷ (2 × params_total_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: llamacpp-metal (receipt-anchored)"
    }
   },
   {
@@ -577,22 +577,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 371.7394966801093,
-   "ttft_cold_s": 165.37118210202104,
-   "ttft_warm_s": 8.268559105101051,
-   "decode_tps": 21.920842824601365,
+   "prefill_tps": 125.50923621422787,
+   "ttft_cold_s": 489.8045901185328,
+   "ttft_warm_s": 24.490229505926642,
+   "decode_tps": 24.252847380410024,
    "decode_measured": false,
-   "decode_modelled_tps": 21.920842824601365,
+   "decode_modelled_tps": 24.252847380410024,
    "decode_source": null,
-   "answer_s": 29.88023796534435,
-   "total_cold_s": 195.2514200673654,
-   "total_warm_s": 38.1487970704454,
+   "answer_s": 27.00713816098431,
+   "total_cold_s": 516.8117282795172,
+   "total_warm_s": 51.497367666910954,
    "provenance": {
-    "stack_eff": 0.4,
+    "stack_eff": 0.32,
     "prefill_tflops_usable": 54,
     "params_basis": "total",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.mlx.efficiency ÷ (2 × params_total_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: mlx (receipt-anchored)"
    }
   },
   {
@@ -622,22 +622,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 520.4352953521532,
-   "ttft_cold_s": 118.122272930015,
-   "ttft_warm_s": 5.906113646500749,
+   "prefill_tps": 219.64116337489878,
+   "ttft_cold_s": 279.8883372105902,
+   "ttft_warm_s": 13.994416860529508,
    "decode_tps": 24.252847380410024,
    "decode_measured": false,
    "decode_modelled_tps": 24.252847380410024,
    "decode_source": null,
    "answer_s": 27.00713816098431,
-   "total_cold_s": 145.12941109099933,
-   "total_warm_s": 32.91325180748506,
+   "total_cold_s": 306.8954753715745,
+   "total_warm_s": 41.00155502151382,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 54,
     "params_basis": "total",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-metal.efficiency ÷ (2 × params_total_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: llamacpp-metal (receipt-anchored)"
    }
   },
   {
@@ -667,22 +667,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 371.7394966801093,
-   "ttft_cold_s": 165.37118210202104,
-   "ttft_warm_s": 8.268559105101051,
+   "prefill_tps": 125.50923621422787,
+   "ttft_cold_s": 489.8045901185328,
+   "ttft_warm_s": 24.490229505926642,
    "decode_tps": 24.252847380410024,
    "decode_measured": false,
    "decode_modelled_tps": 24.252847380410024,
    "decode_source": null,
    "answer_s": 27.00713816098431,
-   "total_cold_s": 192.37832026300535,
-   "total_warm_s": 35.27569726608536,
+   "total_cold_s": 516.8117282795172,
+   "total_warm_s": 51.497367666910954,
    "provenance": {
-    "stack_eff": 0.4,
+    "stack_eff": 0.32,
     "prefill_tflops_usable": 54,
     "params_basis": "total",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.mlx.efficiency ÷ (2 × params_total_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: mlx (receipt-anchored)"
    }
   },
   {
@@ -712,22 +712,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 1040.8705907043063,
-   "ttft_cold_s": 59.0611364650075,
-   "ttft_warm_s": 2.9530568232503747,
-   "decode_tps": 16.43394077448747,
+   "prefill_tps": 439.28232674979756,
+   "ttft_cold_s": 139.9441686052951,
+   "ttft_warm_s": 6.997208430264754,
+   "decode_tps": 17.482915717539864,
    "decode_measured": false,
-   "decode_modelled_tps": 16.43394077448747,
+   "decode_modelled_tps": 17.482915717539864,
    "decode_source": null,
-   "answer_s": 39.8565389146857,
-   "total_cold_s": 98.91767537969321,
-   "total_warm_s": 42.80959573793608,
+   "answer_s": 37.46514657980456,
+   "total_cold_s": 177.40931518509964,
+   "total_warm_s": 44.46235501006932,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 108,
     "params_basis": "total",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-metal.efficiency ÷ (2 × params_total_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: llamacpp-metal (receipt-anchored)"
    }
   },
   {
@@ -757,22 +757,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 743.4789933602186,
-   "ttft_cold_s": 82.68559105101052,
-   "ttft_warm_s": 4.134279552550526,
-   "decode_tps": 16.43394077448747,
+   "prefill_tps": 251.01847242845574,
+   "ttft_cold_s": 244.9022950592664,
+   "ttft_warm_s": 12.245114752963321,
+   "decode_tps": 17.482915717539864,
    "decode_measured": false,
-   "decode_modelled_tps": 16.43394077448747,
+   "decode_modelled_tps": 17.482915717539864,
    "decode_source": null,
-   "answer_s": 39.8565389146857,
-   "total_cold_s": 122.54212996569622,
-   "total_warm_s": 43.990818467236224,
+   "answer_s": 37.46514657980456,
+   "total_cold_s": 282.367441639071,
+   "total_warm_s": 49.710261332767885,
    "provenance": {
-    "stack_eff": 0.4,
+    "stack_eff": 0.32,
     "prefill_tflops_usable": 108,
     "params_basis": "total",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.mlx.efficiency ÷ (2 × params_total_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: mlx (receipt-anchored)"
    }
   },
   {
@@ -802,22 +802,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 2081.7411814086126,
-   "ttft_cold_s": 29.53056823250375,
-   "ttft_warm_s": 1.4765284116251873,
+   "prefill_tps": 878.5646534995951,
+   "ttft_cold_s": 69.97208430264754,
+   "ttft_warm_s": 3.498604215132377,
    "decode_tps": 35.535307517084284,
    "decode_measured": false,
    "decode_modelled_tps": 35.535307517084284,
    "decode_source": null,
    "answer_s": 18.432371794871795,
-   "total_cold_s": 47.962940027375545,
-   "total_warm_s": 19.90890020649698,
+   "total_cold_s": 88.40445609751934,
+   "total_warm_s": 21.930976010004173,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 216,
     "params_basis": "total",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-metal.efficiency ÷ (2 × params_total_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: llamacpp-metal (receipt-anchored)"
    }
   },
   {
@@ -847,22 +847,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 1486.9579867204372,
-   "ttft_cold_s": 41.34279552550526,
-   "ttft_warm_s": 2.067139776275263,
+   "prefill_tps": 502.0369448569115,
+   "ttft_cold_s": 122.4511475296332,
+   "ttft_warm_s": 6.1225573764816605,
    "decode_tps": 35.535307517084284,
    "decode_measured": false,
    "decode_modelled_tps": 35.535307517084284,
    "decode_source": null,
    "answer_s": 18.432371794871795,
-   "total_cold_s": 59.77516732037705,
-   "total_warm_s": 20.499511571147057,
+   "total_cold_s": 140.883519324505,
+   "total_warm_s": 24.554929171353457,
    "provenance": {
-    "stack_eff": 0.4,
+    "stack_eff": 0.32,
     "prefill_tflops_usable": 216,
     "params_basis": "total",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.mlx.efficiency ÷ (2 × params_total_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: mlx (receipt-anchored)"
    }
   },
   {
@@ -892,22 +892,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 2081.7411814086126,
-   "ttft_cold_s": 29.53056823250375,
-   "ttft_warm_s": 1.4765284116251873,
-   "decode_tps": 32.11845102505695,
+   "prefill_tps": 878.5646534995951,
+   "ttft_cold_s": 69.97208430264754,
+   "ttft_warm_s": 3.498604215132377,
+   "decode_tps": 35.535307517084284,
    "decode_measured": false,
-   "decode_modelled_tps": 32.11845102505695,
+   "decode_modelled_tps": 35.535307517084284,
    "decode_source": null,
-   "answer_s": 20.393262411347518,
-   "total_cold_s": 49.92383064385127,
-   "total_warm_s": 21.869790822972703,
+   "answer_s": 18.432371794871795,
+   "total_cold_s": 88.40445609751934,
+   "total_warm_s": 21.930976010004173,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 216,
     "params_basis": "total",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-metal.efficiency ÷ (2 × params_total_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: llamacpp-metal (receipt-anchored)"
    }
   },
   {
@@ -937,22 +937,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 1486.9579867204372,
-   "ttft_cold_s": 41.34279552550526,
-   "ttft_warm_s": 2.067139776275263,
-   "decode_tps": 32.11845102505695,
+   "prefill_tps": 502.0369448569115,
+   "ttft_cold_s": 122.4511475296332,
+   "ttft_warm_s": 6.1225573764816605,
+   "decode_tps": 35.535307517084284,
    "decode_measured": false,
-   "decode_modelled_tps": 32.11845102505695,
+   "decode_modelled_tps": 35.535307517084284,
    "decode_source": null,
-   "answer_s": 20.393262411347518,
-   "total_cold_s": 61.736057936852774,
-   "total_warm_s": 22.46040218762278,
+   "answer_s": 18.432371794871795,
+   "total_cold_s": 140.883519324505,
+   "total_warm_s": 24.554929171353457,
    "provenance": {
-    "stack_eff": 0.4,
+    "stack_eff": 0.32,
     "prefill_tflops_usable": 216,
     "params_basis": "total",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_total_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.mlx.efficiency ÷ (2 × params_total_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: mlx (receipt-anchored)"
    }
   },
   {
@@ -997,7 +997,7 @@
     "prefill_tflops_usable": 36,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-gguf-cuda.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: default (CUDA-anchored)"
    }
   },
   {
@@ -1042,7 +1042,7 @@
     "prefill_tflops_usable": 36,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.vllm-tp.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: default (CUDA-anchored)"
    }
   },
   {
@@ -1087,7 +1087,7 @@
     "prefill_tflops_usable": 36,
     "params_basis": "active",
     "decode_basis": "measured: Mia 2x-Spark prose table (owner-corroborated 2026-09-01) = 51 t/s",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-gguf-cuda.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: default (CUDA-anchored)"
    }
   },
   {
@@ -1132,7 +1132,7 @@
     "prefill_tflops_usable": 36,
     "params_basis": "active",
     "decode_basis": "measured: Mia 2x-Spark prose table (owner-corroborated 2026-09-01) = 51 t/s",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.vllm-tp.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: default (CUDA-anchored)"
    }
   },
   {
@@ -1177,7 +1177,7 @@
     "prefill_tflops_usable": 36,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-gguf-cuda.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: default (CUDA-anchored)"
    }
   },
   {
@@ -1222,7 +1222,7 @@
     "prefill_tflops_usable": 36,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.vllm-tp.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: default (CUDA-anchored)"
    }
   },
   {
@@ -1252,22 +1252,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 2409.615417480469,
-   "ttft_cold_s": 25.512369963286176,
-   "ttft_warm_s": 1.2756184981643088,
-   "decode_tps": 144.76,
+   "prefill_tps": 1016.9385864257814,
+   "ttft_cold_s": 60.45104475390716,
+   "ttft_warm_s": 3.022552237695358,
+   "decode_tps": 160.16,
    "decode_measured": false,
-   "decode_modelled_tps": 144.76,
+   "decode_modelled_tps": 160.16,
    "decode_source": null,
-   "answer_s": 4.524730588560376,
-   "total_cold_s": 30.037100551846553,
-   "total_warm_s": 5.800349086724685,
+   "answer_s": 4.08966033966034,
+   "total_cold_s": 64.5407050935675,
+   "total_warm_s": 7.112212577355699,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 54,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-metal.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: llamacpp-metal (receipt-anchored)"
    }
   },
   {
@@ -1297,22 +1297,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 1721.153869628906,
-   "ttft_cold_s": 35.71731794860066,
-   "ttft_warm_s": 1.7858658974300328,
-   "decode_tps": 144.76,
+   "prefill_tps": 581.107763671875,
+   "ttft_cold_s": 105.78932831933756,
+   "ttft_warm_s": 5.289466415966878,
+   "decode_tps": 160.16,
    "decode_measured": false,
-   "decode_modelled_tps": 144.76,
+   "decode_modelled_tps": 160.16,
    "decode_source": null,
-   "answer_s": 4.524730588560376,
-   "total_cold_s": 40.24204853716103,
-   "total_warm_s": 6.310596485990409,
+   "answer_s": 4.08966033966034,
+   "total_cold_s": 109.8789886589979,
+   "total_warm_s": 9.379126755627219,
    "provenance": {
-    "stack_eff": 0.4,
+    "stack_eff": 0.32,
     "prefill_tflops_usable": 54,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.mlx.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: mlx (receipt-anchored)"
    }
   },
   {
@@ -1342,22 +1342,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 2409.615417480469,
-   "ttft_cold_s": 25.512369963286176,
-   "ttft_warm_s": 1.2756184981643088,
-   "decode_tps": 101.72324324324323,
+   "prefill_tps": 1016.9385864257814,
+   "ttft_cold_s": 60.45104475390716,
+   "ttft_warm_s": 3.022552237695358,
+   "decode_tps": 112.54486486486485,
    "decode_measured": false,
-   "decode_modelled_tps": 101.72324324324323,
+   "decode_modelled_tps": 112.54486486486485,
    "decode_source": null,
-   "answer_s": 6.4390396837205355,
-   "total_cold_s": 31.951409647006713,
-   "total_warm_s": 7.714658181884844,
+   "answer_s": 5.819901252593561,
+   "total_cold_s": 66.27094600650072,
+   "total_warm_s": 8.84245349028892,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 54,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-metal.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: llamacpp-metal (receipt-anchored)"
    }
   },
   {
@@ -1387,22 +1387,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 1721.153869628906,
-   "ttft_cold_s": 35.71731794860066,
-   "ttft_warm_s": 1.7858658974300328,
-   "decode_tps": 101.72324324324323,
+   "prefill_tps": 581.107763671875,
+   "ttft_cold_s": 105.78932831933756,
+   "ttft_warm_s": 5.289466415966878,
+   "decode_tps": 112.54486486486485,
    "decode_measured": false,
-   "decode_modelled_tps": 101.72324324324323,
+   "decode_modelled_tps": 112.54486486486485,
    "decode_source": null,
-   "answer_s": 6.4390396837205355,
-   "total_cold_s": 42.156357632321196,
-   "total_warm_s": 8.22490558115057,
+   "answer_s": 5.819901252593561,
+   "total_cold_s": 111.60922957193112,
+   "total_warm_s": 11.109367668560438,
    "provenance": {
-    "stack_eff": 0.4,
+    "stack_eff": 0.32,
     "prefill_tflops_usable": 54,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.mlx.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: mlx (receipt-anchored)"
    }
   },
   {
@@ -1432,22 +1432,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 2409.615417480469,
-   "ttft_cold_s": 25.512369963286176,
-   "ttft_warm_s": 1.2756184981643088,
+   "prefill_tps": 1016.9385864257814,
+   "ttft_cold_s": 60.45104475390716,
+   "ttft_warm_s": 3.022552237695358,
    "decode_tps": 112.54486486486485,
    "decode_measured": false,
    "decode_modelled_tps": 112.54486486486485,
    "decode_source": null,
    "answer_s": 5.819901252593561,
-   "total_cold_s": 31.332271215879736,
-   "total_warm_s": 7.09551975075787,
+   "total_cold_s": 66.27094600650072,
+   "total_warm_s": 8.84245349028892,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 54,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-metal.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: llamacpp-metal (receipt-anchored)"
    }
   },
   {
@@ -1477,22 +1477,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 1721.153869628906,
-   "ttft_cold_s": 35.71731794860066,
-   "ttft_warm_s": 1.7858658974300328,
+   "prefill_tps": 581.107763671875,
+   "ttft_cold_s": 105.78932831933756,
+   "ttft_warm_s": 5.289466415966878,
    "decode_tps": 112.54486486486485,
    "decode_measured": false,
    "decode_modelled_tps": 112.54486486486485,
    "decode_source": null,
    "answer_s": 5.819901252593561,
-   "total_cold_s": 41.53721920119422,
-   "total_warm_s": 7.605767150023594,
+   "total_cold_s": 111.60922957193112,
+   "total_warm_s": 11.109367668560438,
    "provenance": {
-    "stack_eff": 0.4,
+    "stack_eff": 0.32,
     "prefill_tflops_usable": 54,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.mlx.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: mlx (receipt-anchored)"
    }
   },
   {
@@ -1522,22 +1522,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 4819.230834960938,
-   "ttft_cold_s": 12.756184981643088,
-   "ttft_warm_s": 0.6378092490821544,
-   "decode_tps": 108.52581196581197,
+   "prefill_tps": 2033.8771728515628,
+   "ttft_cold_s": 30.22552237695358,
+   "ttft_warm_s": 1.511276118847679,
+   "decode_tps": 115.45299145299145,
    "decode_measured": false,
-   "decode_modelled_tps": 108.52581196581197,
+   "decode_modelled_tps": 115.45299145299145,
    "decode_source": null,
-   "answer_s": 6.035430540767016,
-   "total_cold_s": 18.791615522410105,
-   "total_warm_s": 6.673239789849171,
+   "answer_s": 5.673304708320995,
+   "total_cold_s": 35.898827085274576,
+   "total_warm_s": 7.1845808271686735,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 108,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-metal.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: llamacpp-metal (receipt-anchored)"
    }
   },
   {
@@ -1567,22 +1567,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 3442.307739257812,
-   "ttft_cold_s": 17.85865897430033,
-   "ttft_warm_s": 0.8929329487150164,
-   "decode_tps": 108.52581196581197,
+   "prefill_tps": 1162.21552734375,
+   "ttft_cold_s": 52.89466415966878,
+   "ttft_warm_s": 2.644733207983439,
+   "decode_tps": 115.45299145299145,
    "decode_measured": false,
-   "decode_modelled_tps": 108.52581196581197,
+   "decode_modelled_tps": 115.45299145299145,
    "decode_source": null,
-   "answer_s": 6.035430540767016,
-   "total_cold_s": 23.894089515067346,
-   "total_warm_s": 6.928363489482033,
+   "answer_s": 5.673304708320995,
+   "total_cold_s": 58.56796886798978,
+   "total_warm_s": 8.318037916304434,
    "provenance": {
-    "stack_eff": 0.4,
+    "stack_eff": 0.32,
     "prefill_tflops_usable": 108,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.mlx.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: mlx (receipt-anchored)"
    }
   },
   {
@@ -1612,22 +1612,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 9638.461669921877,
-   "ttft_cold_s": 6.378092490821544,
-   "ttft_warm_s": 0.3189046245410772,
+   "prefill_tps": 4067.7543457031256,
+   "ttft_cold_s": 15.11276118847679,
+   "ttft_warm_s": 0.7556380594238395,
    "decode_tps": 164.9009009009009,
    "decode_measured": false,
    "decode_modelled_tps": 164.9009009009009,
    "decode_source": null,
    "answer_s": 3.972082604895105,
-   "total_cold_s": 10.350175095716649,
-   "total_warm_s": 4.290987229436182,
+   "total_cold_s": 19.084843793371896,
+   "total_warm_s": 4.727720664318944,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 216,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-metal.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: llamacpp-metal (receipt-anchored)"
    }
   },
   {
@@ -1657,22 +1657,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 6884.615478515624,
-   "ttft_cold_s": 8.929329487150165,
-   "ttft_warm_s": 0.4464664743575082,
+   "prefill_tps": 2324.4310546875,
+   "ttft_cold_s": 26.44733207983439,
+   "ttft_warm_s": 1.3223666039917195,
    "decode_tps": 164.9009009009009,
    "decode_measured": false,
    "decode_modelled_tps": 164.9009009009009,
    "decode_source": null,
    "answer_s": 3.972082604895105,
-   "total_cold_s": 12.90141209204527,
-   "total_warm_s": 4.418549079252613,
+   "total_cold_s": 30.419414684729496,
+   "total_warm_s": 5.2944492088868245,
    "provenance": {
-    "stack_eff": 0.4,
+    "stack_eff": 0.32,
     "prefill_tflops_usable": 216,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.mlx.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: mlx (receipt-anchored)"
    }
   },
   {
@@ -1702,22 +1702,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 9638.461669921877,
-   "ttft_cold_s": 6.378092490821544,
-   "ttft_warm_s": 0.3189046245410772,
-   "decode_tps": 149.04504504504504,
+   "prefill_tps": 4067.7543457031256,
+   "ttft_cold_s": 15.11276118847679,
+   "ttft_warm_s": 0.7556380594238395,
+   "decode_tps": 164.9009009009009,
    "decode_measured": false,
-   "decode_modelled_tps": 149.04504504504504,
+   "decode_modelled_tps": 164.9009009009009,
    "decode_source": null,
-   "answer_s": 4.394644584139265,
-   "total_cold_s": 10.772737074960808,
-   "total_warm_s": 4.713549208680343,
+   "answer_s": 3.972082604895105,
+   "total_cold_s": 19.084843793371896,
+   "total_warm_s": 4.727720664318944,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 216,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-metal.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: llamacpp-metal (receipt-anchored)"
    }
   },
   {
@@ -1747,22 +1747,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 6884.615478515624,
-   "ttft_cold_s": 8.929329487150165,
-   "ttft_warm_s": 0.4464664743575082,
-   "decode_tps": 149.04504504504504,
+   "prefill_tps": 2324.4310546875,
+   "ttft_cold_s": 26.44733207983439,
+   "ttft_warm_s": 1.3223666039917195,
+   "decode_tps": 164.9009009009009,
    "decode_measured": false,
-   "decode_modelled_tps": 149.04504504504504,
+   "decode_modelled_tps": 164.9009009009009,
    "decode_source": null,
-   "answer_s": 4.394644584139265,
-   "total_cold_s": 13.323974071289431,
-   "total_warm_s": 4.841111058496773,
+   "answer_s": 3.972082604895105,
+   "total_cold_s": 30.419414684729496,
+   "total_warm_s": 5.2944492088868245,
    "provenance": {
-    "stack_eff": 0.4,
+    "stack_eff": 0.32,
     "prefill_tflops_usable": 216,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.mlx.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: mlx (receipt-anchored)"
    }
   },
   {
@@ -1809,7 +1809,7 @@
     "prefill_tflops_usable": 36,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-gguf-cuda.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: default (CUDA-anchored)"
    }
   },
   {
@@ -1856,7 +1856,7 @@
     "prefill_tflops_usable": 36,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.vllm-tp.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: default (CUDA-anchored)"
    }
   },
   {
@@ -1901,7 +1901,7 @@
     "prefill_tflops_usable": 36,
     "params_basis": "active",
     "decode_basis": "measured: Mia 2x-Spark prose table (owner-corroborated 2026-09-01) = 40 t/s",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-gguf-cuda.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: default (CUDA-anchored)"
    }
   },
   {
@@ -1946,7 +1946,7 @@
     "prefill_tflops_usable": 36,
     "params_basis": "active",
     "decode_basis": "measured: Mia 2x-Spark prose table (owner-corroborated 2026-09-01) = 40 t/s",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.vllm-tp.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: default (CUDA-anchored)"
    }
   },
   {
@@ -1991,7 +1991,7 @@
     "prefill_tflops_usable": 36,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-gguf-cuda.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: default (CUDA-anchored)"
    }
   },
   {
@@ -2036,7 +2036,7 @@
     "prefill_tflops_usable": 36,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.vllm-tp.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: default (CUDA-anchored)"
    }
   },
   {
@@ -2068,22 +2068,22 @@
    "fit_detail": {
     "needs_gb": 157.83608734607697
    },
-   "prefill_tps": 1112.1301926832934,
-   "ttft_cold_s": 55.27680158712005,
-   "ttft_warm_s": 2.7638400793560023,
-   "decode_tps": 58.26483870967742,
+   "prefill_tps": 469.356270658053,
+   "ttft_cold_s": 130.9772636334655,
+   "ttft_warm_s": 6.548863181673275,
+   "decode_tps": 64.46322580645162,
    "decode_measured": false,
-   "decode_modelled_tps": 58.26483870967742,
+   "decode_modelled_tps": 64.46322580645162,
    "decode_source": null,
-   "answer_s": 11.241771444073501,
-   "total_cold_s": 66.51857303119355,
-   "total_warm_s": 14.005611523429504,
+   "answer_s": 10.160831882143357,
+   "total_cold_s": 141.13809551560885,
+   "total_warm_s": 16.709695063816632,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 54,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-metal.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: llamacpp-metal (receipt-anchored)"
    }
   },
   {
@@ -2115,22 +2115,22 @@
    "fit_detail": {
     "needs_gb": 157.83608734607697
    },
-   "prefill_tps": 794.3787090594951,
-   "ttft_cold_s": 77.38752222196808,
-   "ttft_warm_s": 3.869376111098404,
-   "decode_tps": 58.26483870967742,
+   "prefill_tps": 268.2035832331731,
+   "ttft_cold_s": 229.21021135856466,
+   "ttft_warm_s": 11.460510567928234,
+   "decode_tps": 64.46322580645162,
    "decode_measured": false,
-   "decode_modelled_tps": 58.26483870967742,
+   "decode_modelled_tps": 64.46322580645162,
    "decode_source": null,
-   "answer_s": 11.241771444073501,
-   "total_cold_s": 88.62929366604159,
-   "total_warm_s": 15.111147555171906,
+   "answer_s": 10.160831882143357,
+   "total_cold_s": 239.37104324070802,
+   "total_warm_s": 21.62134245007159,
    "provenance": {
-    "stack_eff": 0.4,
+    "stack_eff": 0.32,
     "prefill_tflops_usable": 54,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.mlx.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: mlx (receipt-anchored)"
    }
   },
   {
@@ -2160,22 +2160,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 1112.1301926832934,
-   "ttft_cold_s": 55.27680158712005,
-   "ttft_warm_s": 2.7638400793560023,
-   "decode_tps": 58.26483870967742,
+   "prefill_tps": 469.356270658053,
+   "ttft_cold_s": 130.9772636334655,
+   "ttft_warm_s": 6.548863181673275,
+   "decode_tps": 64.46322580645162,
    "decode_measured": false,
-   "decode_modelled_tps": 58.26483870967742,
+   "decode_modelled_tps": 64.46322580645162,
    "decode_source": null,
-   "answer_s": 11.241771444073501,
-   "total_cold_s": 66.51857303119355,
-   "total_warm_s": 14.005611523429504,
+   "answer_s": 10.160831882143357,
+   "total_cold_s": 141.13809551560885,
+   "total_warm_s": 16.709695063816632,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 54,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-metal.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: llamacpp-metal (receipt-anchored)"
    }
   },
   {
@@ -2205,22 +2205,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 794.3787090594951,
-   "ttft_cold_s": 77.38752222196808,
-   "ttft_warm_s": 3.869376111098404,
-   "decode_tps": 58.26483870967742,
+   "prefill_tps": 268.2035832331731,
+   "ttft_cold_s": 229.21021135856466,
+   "ttft_warm_s": 11.460510567928234,
+   "decode_tps": 64.46322580645162,
    "decode_measured": false,
-   "decode_modelled_tps": 58.26483870967742,
+   "decode_modelled_tps": 64.46322580645162,
    "decode_source": null,
-   "answer_s": 11.241771444073501,
-   "total_cold_s": 88.62929366604159,
-   "total_warm_s": 15.111147555171906,
+   "answer_s": 10.160831882143357,
+   "total_cold_s": 239.37104324070802,
+   "total_warm_s": 21.62134245007159,
    "provenance": {
-    "stack_eff": 0.4,
+    "stack_eff": 0.32,
     "prefill_tflops_usable": 54,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.mlx.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: mlx (receipt-anchored)"
    }
   },
   {
@@ -2250,22 +2250,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 1112.1301926832934,
-   "ttft_cold_s": 55.27680158712005,
-   "ttft_warm_s": 2.7638400793560023,
+   "prefill_tps": 469.356270658053,
+   "ttft_cold_s": 130.9772636334655,
+   "ttft_warm_s": 6.548863181673275,
    "decode_tps": 64.46322580645162,
    "decode_measured": false,
    "decode_modelled_tps": 64.46322580645162,
    "decode_source": null,
    "answer_s": 10.160831882143357,
-   "total_cold_s": 65.4376334692634,
-   "total_warm_s": 12.92467196149936,
+   "total_cold_s": 141.13809551560885,
+   "total_warm_s": 16.709695063816632,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 54,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-metal.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: llamacpp-metal (receipt-anchored)"
    }
   },
   {
@@ -2295,22 +2295,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 794.3787090594951,
-   "ttft_cold_s": 77.38752222196808,
-   "ttft_warm_s": 3.869376111098404,
+   "prefill_tps": 268.2035832331731,
+   "ttft_cold_s": 229.21021135856466,
+   "ttft_warm_s": 11.460510567928234,
    "decode_tps": 64.46322580645162,
    "decode_measured": false,
    "decode_modelled_tps": 64.46322580645162,
    "decode_source": null,
    "answer_s": 10.160831882143357,
-   "total_cold_s": 87.54835410411144,
-   "total_warm_s": 14.030207993241762,
+   "total_cold_s": 239.37104324070802,
+   "total_warm_s": 21.62134245007159,
    "provenance": {
-    "stack_eff": 0.4,
+    "stack_eff": 0.32,
     "prefill_tflops_usable": 54,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.mlx.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: mlx (receipt-anchored)"
    }
   },
   {
@@ -2342,22 +2342,22 @@
    "fit_detail": {
     "needs_gb": 157.83608734607697
    },
-   "prefill_tps": 2224.260385366587,
-   "ttft_cold_s": 27.638400793560024,
-   "ttft_warm_s": 1.3819200396780011,
-   "decode_tps": 43.680843672456575,
+   "prefill_tps": 938.712541316106,
+   "ttft_cold_s": 65.48863181673275,
+   "ttft_warm_s": 3.2744315908366377,
+   "decode_tps": 46.468982630272954,
    "decode_measured": false,
-   "decode_modelled_tps": 43.680843672456575,
+   "decode_modelled_tps": 46.468982630272954,
    "decode_source": null,
-   "answer_s": 14.995131616769052,
-   "total_cold_s": 42.633532410329074,
-   "total_warm_s": 16.377051656447055,
+   "answer_s": 14.095423719762909,
+   "total_cold_s": 79.58405553649565,
+   "total_warm_s": 17.369855310599547,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 108,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-metal.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: llamacpp-metal (receipt-anchored)"
    }
   },
   {
@@ -2389,22 +2389,22 @@
    "fit_detail": {
     "needs_gb": 157.83608734607697
    },
-   "prefill_tps": 1588.7574181189902,
-   "ttft_cold_s": 38.69376111098404,
-   "ttft_warm_s": 1.934688055549202,
-   "decode_tps": 43.680843672456575,
+   "prefill_tps": 536.4071664663462,
+   "ttft_cold_s": 114.60510567928233,
+   "ttft_warm_s": 5.730255283964117,
+   "decode_tps": 46.468982630272954,
    "decode_measured": false,
-   "decode_modelled_tps": 43.680843672456575,
+   "decode_modelled_tps": 46.468982630272954,
    "decode_source": null,
-   "answer_s": 14.995131616769052,
-   "total_cold_s": 53.68889272775309,
-   "total_warm_s": 16.929819672318253,
+   "answer_s": 14.095423719762909,
+   "total_cold_s": 128.70052939904525,
+   "total_warm_s": 19.825679003727025,
    "provenance": {
-    "stack_eff": 0.4,
+    "stack_eff": 0.32,
     "prefill_tflops_usable": 108,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.mlx.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: mlx (receipt-anchored)"
    }
   },
   {
@@ -2434,22 +2434,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 4448.520770733174,
-   "ttft_cold_s": 13.819200396780012,
-   "ttft_warm_s": 0.6909600198390006,
+   "prefill_tps": 1877.425082632212,
+   "ttft_cold_s": 32.744315908366374,
+   "ttft_warm_s": 1.6372157954183189,
    "decode_tps": 94.45161290322581,
    "decode_measured": false,
    "decode_modelled_tps": 94.45161290322581,
    "decode_source": null,
    "answer_s": 6.934767759562842,
-   "total_cold_s": 20.753968156342854,
-   "total_warm_s": 7.625727779401842,
+   "total_cold_s": 39.67908366792922,
+   "total_warm_s": 8.571983554981161,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 216,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-metal.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: llamacpp-metal (receipt-anchored)"
    }
   },
   {
@@ -2479,22 +2479,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 3177.5148362379805,
-   "ttft_cold_s": 19.34688055549202,
-   "ttft_warm_s": 0.967344027774601,
+   "prefill_tps": 1072.8143329326924,
+   "ttft_cold_s": 57.302552839641166,
+   "ttft_warm_s": 2.8651276419820584,
    "decode_tps": 94.45161290322581,
    "decode_measured": false,
    "decode_modelled_tps": 94.45161290322581,
    "decode_source": null,
    "answer_s": 6.934767759562842,
-   "total_cold_s": 26.281648315054863,
-   "total_warm_s": 7.902111787337443,
+   "total_cold_s": 64.23732059920401,
+   "total_warm_s": 9.7998954015449,
    "provenance": {
-    "stack_eff": 0.4,
+    "stack_eff": 0.32,
     "prefill_tflops_usable": 216,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.mlx.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: mlx (receipt-anchored)"
    }
   },
   {
@@ -2524,22 +2524,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 4448.520770733174,
-   "ttft_cold_s": 13.819200396780012,
-   "ttft_warm_s": 0.6909600198390006,
-   "decode_tps": 85.36972704714641,
+   "prefill_tps": 1877.425082632212,
+   "ttft_cold_s": 32.744315908366374,
+   "ttft_warm_s": 1.6372157954183189,
+   "decode_tps": 94.45161290322581,
    "decode_measured": false,
-   "decode_modelled_tps": 85.36972704714641,
+   "decode_modelled_tps": 94.45161290322581,
    "decode_source": null,
-   "answer_s": 7.672509010580164,
-   "total_cold_s": 21.491709407360176,
-   "total_warm_s": 8.363469030419164,
+   "answer_s": 6.934767759562842,
+   "total_cold_s": 39.67908366792922,
+   "total_warm_s": 8.571983554981161,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 216,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-metal.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: llamacpp-metal (receipt-anchored)"
    }
   },
   {
@@ -2569,22 +2569,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 3177.5148362379805,
-   "ttft_cold_s": 19.34688055549202,
-   "ttft_warm_s": 0.967344027774601,
-   "decode_tps": 85.36972704714641,
+   "prefill_tps": 1072.8143329326924,
+   "ttft_cold_s": 57.302552839641166,
+   "ttft_warm_s": 2.8651276419820584,
+   "decode_tps": 94.45161290322581,
    "decode_measured": false,
-   "decode_modelled_tps": 85.36972704714641,
+   "decode_modelled_tps": 94.45161290322581,
    "decode_source": null,
-   "answer_s": 7.672509010580164,
-   "total_cold_s": 27.019389566072185,
-   "total_warm_s": 8.639853038354765,
+   "answer_s": 6.934767759562842,
+   "total_cold_s": 64.23732059920401,
+   "total_warm_s": 9.7998954015449,
    "provenance": {
-    "stack_eff": 0.4,
+    "stack_eff": 0.32,
     "prefill_tflops_usable": 216,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.mlx.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: mlx (receipt-anchored)"
    }
   },
   {
@@ -2631,7 +2631,7 @@
     "prefill_tflops_usable": 36,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-gguf-cuda.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: default (CUDA-anchored)"
    }
   },
   {
@@ -2678,7 +2678,7 @@
     "prefill_tflops_usable": 36,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.vllm-tp.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: default (CUDA-anchored)"
    }
   },
   {
@@ -2723,7 +2723,7 @@
     "prefill_tflops_usable": 36,
     "params_basis": "active",
     "decode_basis": "measured: Mia 2x-Spark prose table (owner-corroborated 2026-09-01) = 25 t/s",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-gguf-cuda.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: default (CUDA-anchored)"
    }
   },
   {
@@ -2768,7 +2768,7 @@
     "prefill_tflops_usable": 36,
     "params_basis": "active",
     "decode_basis": "measured: Mia 2x-Spark prose table (owner-corroborated 2026-09-01) = 25 t/s",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.vllm-tp.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: default (CUDA-anchored)"
    }
   },
   {
@@ -2813,7 +2813,7 @@
     "prefill_tflops_usable": 36,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-gguf-cuda.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: default (CUDA-anchored)"
    }
   },
   {
@@ -2858,7 +2858,7 @@
     "prefill_tflops_usable": 36,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.vllm-tp.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: default (CUDA-anchored)"
    }
   },
   {
@@ -2890,22 +2890,22 @@
    "fit_detail": {
     "needs_gb": 200.4355107164383
    },
-   "prefill_tps": 803.2051391601562,
-   "ttft_cold_s": 76.53710988985854,
-   "ttft_warm_s": 3.826855494492927,
-   "decode_tps": 34.26568524360322,
+   "prefill_tps": 338.9795288085938,
+   "ttft_cold_s": 181.3531342617215,
+   "ttft_warm_s": 9.067656713086075,
+   "decode_tps": 37.910970907816335,
    "decode_measured": false,
-   "decode_modelled_tps": 34.26568524360322,
+   "decode_modelled_tps": 37.910970907816335,
    "decode_source": null,
-   "answer_s": 19.11533346972177,
-   "total_cold_s": 95.6524433595803,
-   "total_warm_s": 22.942188964214697,
+   "answer_s": 17.277320636094675,
+   "total_cold_s": 198.63045489781618,
+   "total_warm_s": 26.344977349180752,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 54,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-metal.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: llamacpp-metal (receipt-anchored)"
    }
   },
   {
@@ -2937,22 +2937,22 @@
    "fit_detail": {
     "needs_gb": 200.4355107164383
    },
-   "prefill_tps": 573.7179565429688,
-   "ttft_cold_s": 107.15195384580196,
-   "ttft_warm_s": 5.357597692290097,
-   "decode_tps": 34.26568524360322,
+   "prefill_tps": 193.702587890625,
+   "ttft_cold_s": 317.36798495801264,
+   "ttft_warm_s": 15.868399247900632,
+   "decode_tps": 37.910970907816335,
    "decode_measured": false,
-   "decode_modelled_tps": 34.26568524360322,
+   "decode_modelled_tps": 37.910970907816335,
    "decode_source": null,
-   "answer_s": 19.11533346972177,
-   "total_cold_s": 126.26728731552373,
-   "total_warm_s": 24.472931162011868,
+   "answer_s": 17.277320636094675,
+   "total_cold_s": 334.6453055941073,
+   "total_warm_s": 33.145719883995305,
    "provenance": {
-    "stack_eff": 0.4,
+    "stack_eff": 0.32,
     "prefill_tflops_usable": 54,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.mlx.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: mlx (receipt-anchored)"
    }
   },
   {
@@ -2982,22 +2982,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 803.2051391601562,
-   "ttft_cold_s": 76.53710988985854,
-   "ttft_warm_s": 3.826855494492927,
-   "decode_tps": 34.26568524360322,
+   "prefill_tps": 338.9795288085938,
+   "ttft_cold_s": 181.3531342617215,
+   "ttft_warm_s": 9.067656713086075,
+   "decode_tps": 37.910970907816335,
    "decode_measured": false,
-   "decode_modelled_tps": 34.26568524360322,
+   "decode_modelled_tps": 37.910970907816335,
    "decode_source": null,
-   "answer_s": 19.11533346972177,
-   "total_cold_s": 95.6524433595803,
-   "total_warm_s": 22.942188964214697,
+   "answer_s": 17.277320636094675,
+   "total_cold_s": 198.63045489781618,
+   "total_warm_s": 26.344977349180752,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 54,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-metal.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: llamacpp-metal (receipt-anchored)"
    }
   },
   {
@@ -3027,22 +3027,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 573.7179565429688,
-   "ttft_cold_s": 107.15195384580196,
-   "ttft_warm_s": 5.357597692290097,
-   "decode_tps": 34.26568524360322,
+   "prefill_tps": 193.702587890625,
+   "ttft_cold_s": 317.36798495801264,
+   "ttft_warm_s": 15.868399247900632,
+   "decode_tps": 37.910970907816335,
    "decode_measured": false,
-   "decode_modelled_tps": 34.26568524360322,
+   "decode_modelled_tps": 37.910970907816335,
    "decode_source": null,
-   "answer_s": 19.11533346972177,
-   "total_cold_s": 126.26728731552373,
-   "total_warm_s": 24.472931162011868,
+   "answer_s": 17.277320636094675,
+   "total_cold_s": 334.6453055941073,
+   "total_warm_s": 33.145719883995305,
    "provenance": {
-    "stack_eff": 0.4,
+    "stack_eff": 0.32,
     "prefill_tflops_usable": 54,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.mlx.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: mlx (receipt-anchored)"
    }
   },
   {
@@ -3072,22 +3072,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 803.2051391601562,
-   "ttft_cold_s": 76.53710988985854,
-   "ttft_warm_s": 3.826855494492927,
+   "prefill_tps": 338.9795288085938,
+   "ttft_cold_s": 181.3531342617215,
+   "ttft_warm_s": 9.067656713086075,
    "decode_tps": 37.910970907816335,
    "decode_measured": false,
    "decode_modelled_tps": 37.910970907816335,
    "decode_source": null,
    "answer_s": 17.277320636094675,
-   "total_cold_s": 93.81443052595321,
-   "total_warm_s": 21.104176130587604,
+   "total_cold_s": 198.63045489781618,
+   "total_warm_s": 26.344977349180752,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 54,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-metal.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: llamacpp-metal (receipt-anchored)"
    }
   },
   {
@@ -3117,22 +3117,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 573.7179565429688,
-   "ttft_cold_s": 107.15195384580196,
-   "ttft_warm_s": 5.357597692290097,
+   "prefill_tps": 193.702587890625,
+   "ttft_cold_s": 317.36798495801264,
+   "ttft_warm_s": 15.868399247900632,
    "decode_tps": 37.910970907816335,
    "decode_measured": false,
    "decode_modelled_tps": 37.910970907816335,
    "decode_source": null,
    "answer_s": 17.277320636094675,
-   "total_cold_s": 124.42927448189663,
-   "total_warm_s": 22.63491832838477,
+   "total_cold_s": 334.6453055941073,
+   "total_warm_s": 33.145719883995305,
    "provenance": {
-    "stack_eff": 0.4,
+    "stack_eff": 0.32,
     "prefill_tflops_usable": 54,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.mlx.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: mlx (receipt-anchored)"
    }
   },
   {
@@ -3164,22 +3164,22 @@
    "fit_detail": {
     "needs_gb": 200.4355107164383
    },
-   "prefill_tps": 1606.4102783203125,
-   "ttft_cold_s": 38.26855494492927,
-   "ttft_warm_s": 1.9134277472464636,
-   "decode_tps": 25.688804321822197,
+   "prefill_tps": 677.9590576171876,
+   "ttft_cold_s": 90.67656713086075,
+   "ttft_warm_s": 4.5338283565430375,
+   "decode_tps": 27.32851523598106,
    "decode_measured": false,
-   "decode_modelled_tps": 25.688804321822197,
+   "decode_modelled_tps": 27.32851523598106,
    "decode_source": null,
-   "answer_s": 25.497488781273823,
-   "total_cold_s": 63.766043726203094,
-   "total_warm_s": 27.410916528520286,
+   "answer_s": 23.967639454397393,
+   "total_cold_s": 114.64420658525813,
+   "total_warm_s": 28.50146781094043,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 108,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-metal.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: llamacpp-metal (receipt-anchored)"
    }
   },
   {
@@ -3211,22 +3211,22 @@
    "fit_detail": {
     "needs_gb": 200.4355107164383
    },
-   "prefill_tps": 1147.4359130859375,
-   "ttft_cold_s": 53.57597692290098,
-   "ttft_warm_s": 2.6787988461450487,
-   "decode_tps": 25.688804321822197,
+   "prefill_tps": 387.40517578125,
+   "ttft_cold_s": 158.68399247900632,
+   "ttft_warm_s": 7.934199623950316,
+   "decode_tps": 27.32851523598106,
    "decode_measured": false,
-   "decode_modelled_tps": 25.688804321822197,
+   "decode_modelled_tps": 27.32851523598106,
    "decode_source": null,
-   "answer_s": 25.497488781273823,
-   "total_cold_s": 79.0734657041748,
-   "total_warm_s": 28.176287627418873,
+   "answer_s": 23.967639454397393,
+   "total_cold_s": 182.6516319334037,
+   "total_warm_s": 31.90183907834771,
    "provenance": {
-    "stack_eff": 0.4,
+    "stack_eff": 0.32,
     "prefill_tflops_usable": 108,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.mlx.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: mlx (receipt-anchored)"
    }
   },
   {
@@ -3256,22 +3256,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 3212.820556640625,
-   "ttft_cold_s": 19.134277472464635,
-   "ttft_warm_s": 0.9567138736232318,
+   "prefill_tps": 1355.9181152343751,
+   "ttft_cold_s": 45.33828356543037,
+   "ttft_warm_s": 2.2669141782715188,
    "decode_tps": 55.547210121342616,
    "decode_measured": false,
    "decode_modelled_tps": 55.547210121342616,
    "decode_source": null,
    "answer_s": 11.791771334134616,
-   "total_cold_s": 30.92604880659925,
-   "total_warm_s": 12.748485207757847,
+   "total_cold_s": 57.13005489956499,
+   "total_warm_s": 14.058685512406134,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 216,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-metal.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: llamacpp-metal (receipt-anchored)"
    }
   },
   {
@@ -3301,22 +3301,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 2294.871826171875,
-   "ttft_cold_s": 26.78798846145049,
-   "ttft_warm_s": 1.3393994230725244,
+   "prefill_tps": 774.8103515625,
+   "ttft_cold_s": 79.34199623950316,
+   "ttft_warm_s": 3.967099811975158,
    "decode_tps": 55.547210121342616,
    "decode_measured": false,
    "decode_modelled_tps": 55.547210121342616,
    "decode_source": null,
    "answer_s": 11.791771334134616,
-   "total_cold_s": 38.579759795585105,
-   "total_warm_s": 13.13117075720714,
+   "total_cold_s": 91.13376757363778,
+   "total_warm_s": 15.758871146109774,
    "provenance": {
-    "stack_eff": 0.4,
+    "stack_eff": 0.32,
     "prefill_tflops_usable": 216,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.mlx.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: mlx (receipt-anchored)"
    }
   },
   {
@@ -3346,22 +3346,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 3212.820556640625,
-   "ttft_cold_s": 19.134277472464635,
-   "ttft_warm_s": 0.9567138736232318,
-   "decode_tps": 50.20613222505967,
+   "prefill_tps": 1355.9181152343751,
+   "ttft_cold_s": 45.33828356543037,
+   "ttft_warm_s": 2.2669141782715188,
+   "decode_tps": 55.547210121342616,
    "decode_measured": false,
-   "decode_modelled_tps": 50.20613222505967,
+   "decode_modelled_tps": 55.547210121342616,
    "decode_source": null,
-   "answer_s": 13.046215093085106,
-   "total_cold_s": 32.18049256554974,
-   "total_warm_s": 14.002928966708337,
+   "answer_s": 11.791771334134616,
+   "total_cold_s": 57.13005489956499,
+   "total_warm_s": 14.058685512406134,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 216,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-metal.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: llamacpp-metal (receipt-anchored)"
    }
   },
   {
@@ -3391,22 +3391,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 2294.871826171875,
-   "ttft_cold_s": 26.78798846145049,
-   "ttft_warm_s": 1.3393994230725244,
-   "decode_tps": 50.20613222505967,
+   "prefill_tps": 774.8103515625,
+   "ttft_cold_s": 79.34199623950316,
+   "ttft_warm_s": 3.967099811975158,
+   "decode_tps": 55.547210121342616,
    "decode_measured": false,
-   "decode_modelled_tps": 50.20613222505967,
+   "decode_modelled_tps": 55.547210121342616,
    "decode_source": null,
-   "answer_s": 13.046215093085106,
-   "total_cold_s": 39.83420355453559,
-   "total_warm_s": 14.38561451615763,
+   "answer_s": 11.791771334134616,
+   "total_cold_s": 91.13376757363778,
+   "total_warm_s": 15.758871146109774,
    "provenance": {
-    "stack_eff": 0.4,
+    "stack_eff": 0.32,
     "prefill_tflops_usable": 216,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.mlx.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: mlx (receipt-anchored)"
    }
   },
   {
@@ -3453,7 +3453,7 @@
     "prefill_tflops_usable": 36,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-gguf-cuda.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: default (CUDA-anchored)"
    }
   },
   {
@@ -3500,7 +3500,7 @@
     "prefill_tflops_usable": 36,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.vllm-tp.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: default (CUDA-anchored)"
    }
   },
   {
@@ -3547,7 +3547,7 @@
     "prefill_tflops_usable": 36,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-gguf-cuda.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: default (CUDA-anchored)"
    }
   },
   {
@@ -3594,7 +3594,7 @@
     "prefill_tflops_usable": 36,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.vllm-tp.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: default (CUDA-anchored)"
    }
   },
   {
@@ -3639,7 +3639,7 @@
     "prefill_tflops_usable": 36,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-gguf-cuda.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-gguf-cuda.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: default (CUDA-anchored)"
    }
   },
   {
@@ -3684,7 +3684,7 @@
     "prefill_tflops_usable": 36,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.vllm-tp.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.vllm-tp.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: default (CUDA-anchored)"
    }
   },
   {
@@ -3716,22 +3716,22 @@
    "fit_detail": {
     "needs_gb": 259.02453053474426
    },
-   "prefill_tps": 361.44231262207035,
-   "ttft_cold_s": 170.08246642190784,
-   "ttft_warm_s": 8.504123321095392,
-   "decode_tps": 28.201110760989444,
+   "prefill_tps": 152.54078796386722,
+   "ttft_cold_s": 403.00696502604774,
+   "ttft_warm_s": 20.150348251302386,
+   "decode_tps": 31.20122892705215,
    "decode_measured": false,
-   "decode_modelled_tps": 28.201110760989444,
+   "decode_modelled_tps": 31.20122892705215,
    "decode_source": null,
-   "answer_s": 23.2260355115537,
-   "total_cold_s": 193.30850193346154,
-   "total_warm_s": 31.730158832649092,
+   "answer_s": 20.992762866211997,
+   "total_cold_s": 423.9997278922597,
+   "total_warm_s": 41.14311111751438,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 54,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-metal.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: llamacpp-metal (receipt-anchored)"
    }
   },
   {
@@ -3763,22 +3763,22 @@
    "fit_detail": {
     "needs_gb": 259.02453053474426
    },
-   "prefill_tps": 258.17308044433594,
-   "ttft_cold_s": 238.115452990671,
-   "ttft_warm_s": 11.905772649533551,
-   "decode_tps": 28.201110760989444,
+   "prefill_tps": 87.16616455078125,
+   "ttft_cold_s": 705.2621887955837,
+   "ttft_warm_s": 35.263109439779186,
+   "decode_tps": 31.20122892705215,
    "decode_measured": false,
-   "decode_modelled_tps": 28.201110760989444,
+   "decode_modelled_tps": 31.20122892705215,
    "decode_source": null,
-   "answer_s": 23.2260355115537,
-   "total_cold_s": 261.3414885022247,
-   "total_warm_s": 35.13180816108725,
+   "answer_s": 20.992762866211997,
+   "total_cold_s": 726.2549516617958,
+   "total_warm_s": 56.25587230599118,
    "provenance": {
-    "stack_eff": 0.4,
+    "stack_eff": 0.32,
     "prefill_tflops_usable": 54,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.mlx.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: mlx (receipt-anchored)"
    }
   },
   {
@@ -3810,22 +3810,22 @@
    "fit_detail": {
     "needs_gb": 259.02453053474426
    },
-   "prefill_tps": 361.44231262207035,
-   "ttft_cold_s": 170.08246642190784,
-   "ttft_warm_s": 8.504123321095392,
-   "decode_tps": 28.201110760989444,
+   "prefill_tps": 152.54078796386722,
+   "ttft_cold_s": 403.00696502604774,
+   "ttft_warm_s": 20.150348251302386,
+   "decode_tps": 31.20122892705215,
    "decode_measured": false,
-   "decode_modelled_tps": 28.201110760989444,
+   "decode_modelled_tps": 31.20122892705215,
    "decode_source": null,
-   "answer_s": 23.2260355115537,
-   "total_cold_s": 193.30850193346154,
-   "total_warm_s": 31.730158832649092,
+   "answer_s": 20.992762866211997,
+   "total_cold_s": 423.9997278922597,
+   "total_warm_s": 41.14311111751438,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 54,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-metal.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: llamacpp-metal (receipt-anchored)"
    }
   },
   {
@@ -3857,22 +3857,22 @@
    "fit_detail": {
     "needs_gb": 259.02453053474426
    },
-   "prefill_tps": 258.17308044433594,
-   "ttft_cold_s": 238.115452990671,
-   "ttft_warm_s": 11.905772649533551,
-   "decode_tps": 28.201110760989444,
+   "prefill_tps": 87.16616455078125,
+   "ttft_cold_s": 705.2621887955837,
+   "ttft_warm_s": 35.263109439779186,
+   "decode_tps": 31.20122892705215,
    "decode_measured": false,
-   "decode_modelled_tps": 28.201110760989444,
+   "decode_modelled_tps": 31.20122892705215,
    "decode_source": null,
-   "answer_s": 23.2260355115537,
-   "total_cold_s": 261.3414885022247,
-   "total_warm_s": 35.13180816108725,
+   "answer_s": 20.992762866211997,
+   "total_cold_s": 726.2549516617958,
+   "total_warm_s": 56.25587230599118,
    "provenance": {
-    "stack_eff": 0.4,
+    "stack_eff": 0.32,
     "prefill_tflops_usable": 54,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.mlx.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: mlx (receipt-anchored)"
    }
   },
   {
@@ -3902,22 +3902,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 361.44231262207035,
-   "ttft_cold_s": 170.08246642190784,
-   "ttft_warm_s": 8.504123321095392,
+   "prefill_tps": 152.54078796386722,
+   "ttft_cold_s": 403.00696502604774,
+   "ttft_warm_s": 20.150348251302386,
    "decode_tps": 17.3,
    "decode_measured": true,
    "decode_modelled_tps": 31.20122892705215,
-   "decode_source": "omarshabab.com measured \u2014 GLM-5.1 (=5.3 base) IQ2 on M3U-512 llama.cpp, tuned config",
+   "decode_source": "omarshabab.com measured — GLM-5.1 (=5.3 base) IQ2 on M3U-512 llama.cpp, tuned config",
    "answer_s": 37.861271676300575,
-   "total_cold_s": 207.94373809820843,
-   "total_warm_s": 46.36539499739597,
+   "total_cold_s": 440.8682367023483,
+   "total_warm_s": 58.011619927602965,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 54,
     "params_basis": "active",
-    "decode_basis": "measured: omarshabab.com measured \u2014 GLM-5.1 (=5.3 base) IQ2 on M3U-512 llama.cpp, tuned config = 17.3 t/s",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "decode_basis": "measured: omarshabab.com measured — GLM-5.1 (=5.3 base) IQ2 on M3U-512 llama.cpp, tuned config = 17.3 t/s",
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-metal.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: llamacpp-metal (receipt-anchored)"
    }
   },
   {
@@ -3947,22 +3947,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 258.17308044433594,
-   "ttft_cold_s": 238.115452990671,
-   "ttft_warm_s": 11.905772649533551,
+   "prefill_tps": 87.16616455078125,
+   "ttft_cold_s": 705.2621887955837,
+   "ttft_warm_s": 35.263109439779186,
    "decode_tps": 17.3,
    "decode_measured": true,
    "decode_modelled_tps": 31.20122892705215,
-   "decode_source": "omarshabab.com measured \u2014 GLM-5.1 (=5.3 base) IQ2 on M3U-512 llama.cpp, tuned config",
+   "decode_source": "omarshabab.com measured — GLM-5.1 (=5.3 base) IQ2 on M3U-512 llama.cpp, tuned config",
    "answer_s": 37.861271676300575,
-   "total_cold_s": 275.97672466697156,
-   "total_warm_s": 49.76704432583413,
+   "total_cold_s": 743.1234604718843,
+   "total_warm_s": 73.12438111607976,
    "provenance": {
-    "stack_eff": 0.4,
+    "stack_eff": 0.32,
     "prefill_tflops_usable": 54,
     "params_basis": "active",
-    "decode_basis": "measured: omarshabab.com measured \u2014 GLM-5.1 (=5.3 base) IQ2 on M3U-512 llama.cpp, tuned config = 17.3 t/s",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "decode_basis": "measured: omarshabab.com measured — GLM-5.1 (=5.3 base) IQ2 on M3U-512 llama.cpp, tuned config = 17.3 t/s",
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.mlx.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: mlx (receipt-anchored)"
    }
   },
   {
@@ -3994,22 +3994,22 @@
    "fit_detail": {
     "needs_gb": 259.02453053474426
    },
-   "prefill_tps": 722.8846252441407,
-   "ttft_cold_s": 85.04123321095392,
-   "ttft_warm_s": 4.252061660547696,
-   "decode_tps": 21.142224673073894,
+   "prefill_tps": 305.08157592773443,
+   "ttft_cold_s": 201.50348251302387,
+   "ttft_warm_s": 10.075174125651193,
+   "decode_tps": 22.491728375610524,
    "decode_measured": false,
-   "decode_modelled_tps": 21.142224673073894,
+   "decode_modelled_tps": 22.491728375610524,
    "decode_source": null,
-   "answer_s": 30.98065648853824,
-   "total_cold_s": 116.02188969949216,
-   "total_warm_s": 35.23271814908594,
+   "answer_s": 29.121817099225947,
+   "total_cold_s": 230.62529961224982,
+   "total_warm_s": 39.19699122487714,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 108,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-metal.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: llamacpp-metal (receipt-anchored)"
    }
   },
   {
@@ -4041,22 +4041,22 @@
    "fit_detail": {
     "needs_gb": 259.02453053474426
    },
-   "prefill_tps": 516.3461608886719,
-   "ttft_cold_s": 119.0577264953355,
-   "ttft_warm_s": 5.952886324766776,
-   "decode_tps": 21.142224673073894,
+   "prefill_tps": 174.3323291015625,
+   "ttft_cold_s": 352.63109439779186,
+   "ttft_warm_s": 17.631554719889593,
+   "decode_tps": 22.491728375610524,
    "decode_measured": false,
-   "decode_modelled_tps": 21.142224673073894,
+   "decode_modelled_tps": 22.491728375610524,
    "decode_source": null,
-   "answer_s": 30.98065648853824,
-   "total_cold_s": 150.03838298387373,
-   "total_warm_s": 36.93354281330502,
+   "answer_s": 29.121817099225947,
+   "total_cold_s": 381.7529114970178,
+   "total_warm_s": 46.75337181911554,
    "provenance": {
-    "stack_eff": 0.4,
+    "stack_eff": 0.32,
     "prefill_tflops_usable": 108,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.mlx.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: mlx (receipt-anchored)"
    }
   },
   {
@@ -4088,22 +4088,22 @@
    "fit_detail": {
     "needs_gb": 259.02453053474426
    },
-   "prefill_tps": 1445.7692504882814,
-   "ttft_cold_s": 42.52061660547696,
-   "ttft_warm_s": 2.126030830273848,
+   "prefill_tps": 610.1631518554689,
+   "ttft_cold_s": 100.75174125651193,
+   "ttft_warm_s": 5.0375870628255965,
    "decode_tps": 45.71608634000315,
    "decode_measured": false,
    "decode_modelled_tps": 45.71608634000315,
    "decode_source": null,
    "answer_s": 14.327560656189688,
-   "total_cold_s": 56.84817726166665,
-   "total_warm_s": 16.453591486463537,
+   "total_cold_s": 115.07930191270162,
+   "total_warm_s": 19.365147719015283,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 216,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-metal.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: llamacpp-metal (receipt-anchored)"
    }
   },
   {
@@ -4135,22 +4135,22 @@
    "fit_detail": {
     "needs_gb": 259.02453053474426
    },
-   "prefill_tps": 1032.6923217773438,
-   "ttft_cold_s": 59.52886324766775,
-   "ttft_warm_s": 2.976443162383388,
+   "prefill_tps": 348.664658203125,
+   "ttft_cold_s": 176.31554719889593,
+   "ttft_warm_s": 8.815777359944796,
    "decode_tps": 45.71608634000315,
    "decode_measured": false,
    "decode_modelled_tps": 45.71608634000315,
    "decode_source": null,
    "answer_s": 14.327560656189688,
-   "total_cold_s": 73.85642390385743,
-   "total_warm_s": 17.304003818573076,
+   "total_cold_s": 190.64310785508562,
+   "total_warm_s": 23.143338016134486,
    "provenance": {
-    "stack_eff": 0.4,
+    "stack_eff": 0.32,
     "prefill_tflops_usable": 216,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.mlx.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: mlx (receipt-anchored)"
    }
   },
   {
@@ -4180,22 +4180,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 1445.7692504882814,
-   "ttft_cold_s": 42.52061660547696,
-   "ttft_warm_s": 2.126030830273848,
-   "decode_tps": 41.32030880731054,
+   "prefill_tps": 610.1631518554689,
+   "ttft_cold_s": 100.75174125651193,
+   "ttft_warm_s": 5.0375870628255965,
+   "decode_tps": 45.71608634000315,
    "decode_measured": false,
-   "decode_modelled_tps": 41.32030880731054,
+   "decode_modelled_tps": 45.71608634000315,
    "decode_source": null,
-   "answer_s": 15.8517692366354,
-   "total_cold_s": 58.37238584211236,
-   "total_warm_s": 17.977800066909246,
+   "answer_s": 14.327560656189688,
+   "total_cold_s": 115.07930191270162,
+   "total_warm_s": 19.365147719015283,
    "provenance": {
     "stack_eff": 0.56,
     "prefill_tflops_usable": 216,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.llamacpp-metal.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.llamacpp-metal.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: llamacpp-metal (receipt-anchored)"
    }
   },
   {
@@ -4225,22 +4225,22 @@
    },
    "fits": true,
    "fit_detail": null,
-   "prefill_tps": 1032.6923217773438,
-   "ttft_cold_s": 59.52886324766775,
-   "ttft_warm_s": 2.976443162383388,
-   "decode_tps": 41.32030880731054,
+   "prefill_tps": 348.664658203125,
+   "ttft_cold_s": 176.31554719889593,
+   "ttft_warm_s": 8.815777359944796,
+   "decode_tps": 45.71608634000315,
    "decode_measured": false,
-   "decode_modelled_tps": 41.32030880731054,
+   "decode_modelled_tps": 45.71608634000315,
    "decode_source": null,
-   "answer_s": 15.8517692366354,
-   "total_cold_s": 75.38063248430315,
-   "total_warm_s": 18.82821239901879,
+   "answer_s": 14.327560656189688,
+   "total_cold_s": 190.64310785508562,
+   "total_warm_s": 23.143338016134486,
    "provenance": {
-    "stack_eff": 0.4,
+    "stack_eff": 0.32,
     "prefill_tflops_usable": 216,
     "params_basis": "active",
     "decode_basis": "modelled: bandwidth law (no measured receipt for this config)",
-    "formula": "compute term (usable peak \u00d7 stack efficiency): prefill_tflops_usable \u00d7 1e12 \u00d7 nodes \u00d7 STACK_EFF.mlx.efficiency \u00f7 (2 \u00d7 params_active_b \u00d7 1e9) | long-context degradation: piecewise-linear on contextTokens (curve anchored at 127K ctx)"
+    "formula": "compute term (usable peak × stack efficiency): prefill_tflops_usable × 1e12 × nodes × STACK_EFF.mlx.efficiency ÷ (2 × params_active_b × 1e9) | long-context degradation: piecewise-linear on contextTokens — curve: mlx (receipt-anchored)"
    }
   }
  ]
